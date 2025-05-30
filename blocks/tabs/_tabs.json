@@ -10,7 +10,7 @@
            "template": {
              "name": "Tabs",
              "model": "tabs",
-             "filter": "tabs"
+             "filter": "section"
            }
          }
        }
@@ -30,12 +30,5 @@
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "tabs",
-      "components": [
-        "image"
-      ]
-    }
-  ]
+  "filters": []
 }
