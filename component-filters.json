@@ -39,5 +39,18 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "title",
+    "components": [
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "tabs"
+    ]
   }
 ]
