@@ -17,12 +17,6 @@ export default async function decorate(block) {
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
 
-    tabpanel.dataset.aueType     = 'container';
-    tabpanel.dataset.aueBehavior = 'component';
-    tabpanel.dataset.aueModel    = 'section';
-    tabpanel.dataset.aueLabel    = 'Tab panel';
-    tabpanel.dataset.aueFilter   = 'section';
-
     tabpanel.setAttribute('aria-hidden', !!i);
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
     tabpanel.setAttribute('role', 'tabpanel');
