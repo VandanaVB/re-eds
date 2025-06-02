@@ -1,47 +1,50 @@
-// eslint-disable-next-line import/no-unresolved
-import { toClassName } from '../../scripts/aem.js';
+// /blocks/tab/tab.js
+export default function decorate(section) {
+  // Only run on the first tab section in a run
+  if (section.previousElementSibling?.dataset?.sectionTemplate === 'tab') return;
 
-export default async function decorate(block) {
-  // build tablist
-  const tablist = document.createElement('div');
-  tablist.className = 'tabs-list';
-  tablist.setAttribute('role', 'tablist');
+  const tabs = [];
+  let ptr = section;
+  while (ptr && ptr.dataset.sectionTemplate === 'tab') {
+    tabs.push(ptr);
+    ptr = ptr.nextElementSibling;
+  }
+  if (tabs.length < 2) return; // need at least two to build a tab set
 
-  // decorate tabs and tabpanels
-  const tabs = [...block.children].map((child) => child.firstElementChild);
-  tabs.forEach((tab, i) => {
-    const id = toClassName(tab.textContent);
+  /* ---- build the wrapper ------------------------------------------------ */
+  const wrapper = document.createElement('div');
+  wrapper.className = 'tabs block';
+  wrapper.dataset.blockName = 'tabs';
 
-    // decorate tabpanel
-    const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-panel';
-    tabpanel.id = `tabpanel-${id}`;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+  // tab list
+  const list = document.createElement('div');
+  list.className = 'tabs-list';
+  list.setAttribute('role', 'tablist');
+  wrapper.append(list);
 
-    // build tab button
-    const button = document.createElement('button');
-    button.className = 'tabs-tab';
-    button.id = `tab-${id}`;
-    button.innerHTML = tab.innerHTML;
-    button.setAttribute('aria-controls', `tabpanel-${id}`);
-    button.setAttribute('aria-selected', !i);
-    button.setAttribute('role', 'tab');
-    button.setAttribute('type', 'button');
-    button.addEventListener('click', () => {
-      block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
-        panel.setAttribute('aria-hidden', true);
-      });
-      tablist.querySelectorAll('button').forEach((btn) => {
-        btn.setAttribute('aria-selected', false);
-      });
-      tabpanel.setAttribute('aria-hidden', false);
-      button.setAttribute('aria-selected', true);
-    });
-    tablist.append(button);
-    tab.remove();
+  tabs.forEach((tabSection, i) => {
+    const title = tabSection.dataset.tabTitle || `Tab ${i + 1}`;
+
+    /* button */
+    const btn = document.createElement('button');
+    btn.className = 'tabs-tab';
+    btn.id = `tab-${i}`;
+    btn.type = 'button';
+    btn.role = 'tab';
+    btn.setAttribute('aria-controls', `tabpanel-${i}`);
+    btn.setAttribute('aria-selected', i === 0);
+    btn.textContent = title;
+    list.append(btn);
+
+    /* panel */
+    tabSection.className = 'tabs-panel';
+    tabSection.id = `tabpanel-${i}`;
+    tabSection.setAttribute('role', 'tabpanel');
+    tabSection.setAttribute('aria-hidden', i !== 0);
+    wrapper.append(tabSection);
   });
 
-  block.prepend(tablist);
+  // insert the complete tabs block where the first section was
+  const parent = section.parentElement;
+  parent.insertBefore(wrapper, tabs[0]);
 }
