@@ -14,15 +14,7 @@
             }
           }
         }
-      },
-      "containers": [
-        {
-          "id": ".tabs-panel",
-          "type": "container",
-          "label": "Tab panel",
-          "model": "section"
-        }
-      ]
+      }
     }
   ],
   "models": [],

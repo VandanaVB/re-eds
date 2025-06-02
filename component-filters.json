@@ -41,16 +41,9 @@
     ]
   },
   {
-    "id": "title",
+    "id": "tabs",
     "components": [
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
-      "tabs"
+      "imagetext"
     ]
   }
 ]
