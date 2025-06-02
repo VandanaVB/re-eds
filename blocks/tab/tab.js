@@ -1,29 +1,36 @@
-// /blocks/tab/tab.js
+/* templates/tab/tab.js
+   Turns consecutive Tab-sections into a real Tabs block          */
 export default function decorate(section) {
-  // Only run on the first tab section in a run
-  if (section.previousElementSibling?.dataset?.sectionTemplate === 'tab') return;
+  /* abort if this section is already inside a tabs block */
+  if (section.closest('.tabs.block')) return;
 
-  const tabs = [];
+  /* only run on the first section in a possible group      */
+  if (section.previousElementSibling?.dataset?.aueModel === 'tab') return;
+
+  /* collect consecutive sections that are Tab (model=tab & tab-title) */
+  const run = [];
   let ptr = section;
-  while (ptr && ptr.dataset.sectionTemplate === 'tab') {
-    tabs.push(ptr);
+  while (ptr
+      && ptr.dataset.aueModel === 'tab'
+      && ptr.dataset.tabTitle) {
+    run.push(ptr);
     ptr = ptr.nextElementSibling;
   }
-  if (tabs.length < 2) return; // need at least two to build a tab set
+  if (run.length < 2) return;           // need at least two to build tabs
 
-  /* ---- build the wrapper ------------------------------------------------ */
+  /* build wrapper ------------------------------------------------------- */
   const wrapper = document.createElement('div');
   wrapper.className = 'tabs block';
   wrapper.dataset.blockName = 'tabs';
 
-  // tab list
+  /* tab list */
   const list = document.createElement('div');
   list.className = 'tabs-list';
   list.setAttribute('role', 'tablist');
   wrapper.append(list);
 
-  tabs.forEach((tabSection, i) => {
-    const title = tabSection.dataset.tabTitle || `Tab ${i + 1}`;
+  run.forEach((sec, i) => {
+    const title = sec.dataset.tabTitle || `Tab ${i + 1}`;
 
     /* button */
     const btn = document.createElement('button');
@@ -31,20 +38,19 @@ export default function decorate(section) {
     btn.id = `tab-${i}`;
     btn.type = 'button';
     btn.role = 'tab';
+    btn.textContent = title;
     btn.setAttribute('aria-controls', `tabpanel-${i}`);
     btn.setAttribute('aria-selected', i === 0);
-    btn.textContent = title;
     list.append(btn);
 
     /* panel */
-    tabSection.className = 'tabs-panel';
-    tabSection.id = `tabpanel-${i}`;
-    tabSection.setAttribute('role', 'tabpanel');
-    tabSection.setAttribute('aria-hidden', i !== 0);
-    wrapper.append(tabSection);
+    sec.className = 'tabs-panel';
+    sec.id = `tabpanel-${i}`;
+    sec.setAttribute('role', 'tabpanel');
+    sec.setAttribute('aria-hidden', i !== 0);
+    wrapper.append(sec);
   });
 
-  // insert the complete tabs block where the first section was
-  const parent = section.parentElement;
-  parent.insertBefore(wrapper, tabs[0]);
+  /* replace first section with the new wrapper ------------------------- */
+  section.parentElement.insertBefore(wrapper, run[0]);
 }
