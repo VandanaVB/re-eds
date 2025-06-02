@@ -214,16 +214,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "tabs",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
-        "multi": true
-      }
-    ]
   }
 ]

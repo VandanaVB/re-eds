@@ -17,7 +17,7 @@
       },
       "containers": [
         {
-          "selector": ".tabs-panel",
+          "id": ".tabs-panel",
           "type": "container",
           "label": "Tab panel",
           "model": "section"
@@ -25,18 +25,6 @@
       ]
     }
   ],
-  "models": [
-    {
-      "id": "tabs",
-      "fields": [
-        {
-          "component": "text",
-          "name": "title",
-          "label": "Title",
-          "multi": true
-        }
-      ]
-    }
-  ],
+  "models": [],
   "filters": []
 }
