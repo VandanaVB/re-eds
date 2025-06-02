@@ -23,7 +23,7 @@
       "fields": [
         {
           "component": "text",
-          "name":"tab title",
+          "name":"title",
           "label":"Tab title",
           "multi":false
         }
