@@ -171,7 +171,15 @@
                 }
               }
             }
-          }
+          },
+          "containers": [
+            {
+              "selector": ".tabs-panel",
+              "type": "container",
+              "label": "Tab panel",
+              "model": "section"
+            }
+          ]
         }
       ]
     }
