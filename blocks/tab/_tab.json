@@ -23,9 +23,9 @@
       "fields": [
         {
           "component": "text",
-          "name":      "title",
-          "label":     "Tab title",
-          "multi":     false
+          "name":"title",
+          "label":"Tab title",
+          "multi":false
         }
       ]
     }
