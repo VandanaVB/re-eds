@@ -2,8 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section",
-      "tab"
+      "section"
     ]
   },
   {
@@ -17,8 +16,7 @@
       "cards",
       "columns",
       "fragment",
-      "tabs",
-      "tab"
+      "tabs"
     ]
   },
   {

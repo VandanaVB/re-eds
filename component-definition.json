@@ -171,30 +171,6 @@
                 }
               }
             }
-          },
-          "containers": [
-            {
-              "selector": ".tabs-panel",
-              "type": "container",
-              "label": "Tab panel",
-              "model": "section"
-            }
-          ]
-        },
-        {
-          "title": "Tab",
-          "id":   "tab",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "name":   "Tab",
-                  "model":  "tab",
-                  "filter": "section"
-                }
-              }
-            }
           }
         }
       ]
