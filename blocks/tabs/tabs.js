@@ -51,7 +51,7 @@ export default async function decorate(block) {
 
   function buildHero(panel) {
     const kids = [...panel.children];
-    const [txtDiv, picDiv, pLab, pLink, sLab, sLink, alignDiv] = kids;
+    const [tabTitleDiv,txtDiv, picDiv, pLab, pLink, sLab, sLink, alignDiv] = kids;
     const align = (alignDiv?.textContent || 'center').trim();
     const hero = document.createElement('div');
     hero.className = 'hero-slide';
