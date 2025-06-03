@@ -44,10 +44,6 @@
 /* ---------- Pipe Separator ---------- */
 .tabs-tab::after {
     content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
     margin: auto;
     background: #fff;
     width: 2px;
@@ -69,7 +65,6 @@
 /* ---------- Tab Panel Styling (unchanged) ---------- */
 .tabs-panel {
   display: none;
-  padding: 24px 0;
 }
 .tabs-panel[aria-hidden="false"] {
   display: block;
