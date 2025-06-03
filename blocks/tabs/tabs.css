@@ -68,3 +68,28 @@
 .tabs-panel[aria-hidden="false"] {
   display: block;
 }
+
+/* Remove native button styling */
+.tabs-tab {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Optional: Remove default Safari rounded highlight */
+.tabs-tab::-moz-focus-inner {
+  border: 0;
+}
+
+/* Prevent click or keyboard focus showing ugly browser blue */
+.tabs-tab:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Optional: Add your own focus-visible styling if needed */
+.tabs-tab:focus-visible {
+  outline: none;
+}
