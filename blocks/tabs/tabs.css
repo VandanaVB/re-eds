@@ -65,6 +65,7 @@
 /* ---------- Tab Panel Styling (unchanged) ---------- */
 .tabs-panel {
   display: none;
+  padding: 24px 0;
 }
 .tabs-panel[aria-hidden="false"] {
   display: block;

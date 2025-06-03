@@ -16,6 +16,7 @@ export default async function decorate(block) {
     const tabpanel = block.children[i];
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
+    buildHero(tabpanel);
     tabpanel.setAttribute('aria-hidden', !!i);
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
     tabpanel.setAttribute('role', 'tabpanel');
@@ -47,4 +48,30 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
-}
+
+  function buildHero(panel) {
+    const kids = [...panel.children];
+    const [txtDiv, picDiv, pLab, pLink, sLab, sLink, alignDiv] = kids;
+    const align = (alignDiv?.textContent || 'center').trim();
+    const hero = document.createElement('div');
+    hero.className = 'hero-slide';
+    hero.innerHTML = `
+      <picture class="hero-bg">${picDiv?.innerHTML || ''}</picture>
+      <div class="hero-overlay align-${align}">
+        <div class="hero-copy">${txtDiv?.innerHTML || ''}</div>
+        <div class="cta-row">
+          ${cta(pLab, pLink)}
+          ${cta(sLab, sLink)}
+        </div>
+      </div>`;
+    panel.innerHTML = '';
+    panel.append(hero);
+  }
+  function cta(labelDiv, linkDiv) {
+    const label = labelDiv?.textContent.trim();
+    const href  = linkDiv?.querySelector('a')?.getAttribute('href');
+    return label && href
+      ? `<a class="cta" href="${href}">${label} <span>›</span></a>`
+      : '';
+  }
+ }
