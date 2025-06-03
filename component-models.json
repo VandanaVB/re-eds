@@ -247,14 +247,19 @@
         "value": ""
       },
       {
+        "component": "text",
+        "name": "primaryLabel",
+        "label": "Primary CTA Label"
+      },
+      {
         "component": "aem-content",
         "name": "primaryLink",
         "label": "Primary CTA Link"
       },
       {
         "component": "text",
-        "name": "primaryLabel",
-        "label": "Primary CTA Label"
+        "name": "secondaryLabel",
+        "label": "Secondary CTA Label"
       },
       {
         "component": "aem-content",
@@ -262,9 +267,23 @@
         "label": "Secondary CTA Link"
       },
       {
-        "component": "text",
-        "name": "secondaryLabel",
-        "label": "Secondary CTA Label"
+        "component": "select",
+        "name": "ctaAlign",
+        "label": "CTA Alignment",
+        "options": [
+          {
+            "name": "center",
+            "value": "center"
+          },
+          {
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "name": "right",
+            "value": "right"
+          }
+        ]
       }
     ]
   },
