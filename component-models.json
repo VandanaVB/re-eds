@@ -226,6 +226,13 @@
         "valueType": "string"
       },
       {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Banner Text",
+        "valueType": "string"
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -238,6 +245,26 @@
         "name": "imageAlt",
         "label": "Alt",
         "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "primaryLink",
+        "label": "Primary CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "primaryLabel",
+        "label": "Primary CTA Label"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondaryLink",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "secondaryLabel",
+        "label": "Secondary CTA Label"
       }
     ]
   },
