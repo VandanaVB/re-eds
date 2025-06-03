@@ -78,6 +78,7 @@
 .tabs-tab:focus {
   outline: none;
   box-shadow: none;
+  background: none;
 }
 /
 .tabs-tab:focus-visible {
