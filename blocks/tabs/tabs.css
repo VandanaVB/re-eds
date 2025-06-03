@@ -1,92 +1,42 @@
-.tabs .tabs-list {
-  display: flex;
-  gap: 0.5ch;
-  max-width: 100%;
-  font-size: var(--body-font-size-xs);
-  overflow-x: auto;
+/* ---------- Tabs Container ---------- */
+.tabs.block {
+  width: 100%;
 }
 
-@media (width >= 600px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-@media (width >= 900px) {
-  .tabs .tabs-list {
-    font-size: var(--body-font-size-m);
-  }
-}
-
-.tabs .tabs-list button {
-  flex: 0 0 max-content;
-  margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
-}
-
-.tabs .tabs-list button p {
-  margin: 0;
-}
-
-
-.tabs .tabs-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
-}
-
-.tabs .tabs-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
-  overflow: auto;
-}
-
-.tabs .tabs-panel[aria-hidden='true'] {
-  display: none;
-}
-
-/* Reset tab styles to look like Royal Enfield navigation */
+/* ---------- Tablist Styling ---------- */
 .tabs-list {
   display: flex;
   gap: 0;
   overflow-x: auto;
-  background: #1c1c1c;
-  padding: 10px 16px;
-  scrollbar-width: none;
+  padding: 12px 16px;
+  background-color: #1c1c1c;
   border-bottom: 1px solid #333;
+  scrollbar-width: none;
 }
 .tabs-list::-webkit-scrollbar {
   display: none;
 }
 
+/* ---------- Individual Tab Button ---------- */
 .tabs-tab {
+  flex: 0 0 auto;
   font: 600 15px/1.2 "Inter", sans-serif;
-  background: none;
   color: #e6e6e6;
+  background: none;
   border: none;
-  padding: 0 12px;
   margin: 0;
+  padding: 0 12px;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
+  background-color: transparent;
+  box-shadow: none;
 }
 
-/* Pipe separator (as pseudo-element) */
+/* ---------- Pipe Separator ---------- */
 .tabs-tab::before {
   content: "|";
   color: #666;
@@ -99,13 +49,22 @@
   margin-right: 0;
 }
 
-/* Active tab */
+/* ---------- Active Tab Highlight ---------- */
 .tabs-tab[aria-selected="true"] {
   color: #e83b22; /* Royal Enfield red */
   font-weight: 700;
 }
 
-/* Hover effect */
+/* ---------- Hover State ---------- */
 .tabs-tab:hover {
   color: #ffffff;
+}
+
+/* ---------- Tab Panel Styling (unchanged) ---------- */
+.tabs-panel {
+  display: none;
+  padding: 24px 0;
+}
+.tabs-panel[aria-hidden="false"] {
+  display: block;
 }
