@@ -56,3 +56,55 @@
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
 }
+
+/* ---------- Tab strip ---------- */
+.tabs-list {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 12px 20px;
+  background: #1c1c1c;
+  scrollbar-width: none;               /* Firefox */
+  border-bottom: 2px solid #313131;
+}
+.tabs-list::-webkit-scrollbar {
+  display: none;                       /* Chrome/Safari */
+}
+
+/* ---------- Tab buttons ---------- */
+.tabs-tab {
+  flex: 0 0 auto;
+  font: 600 16px/1.5 "Inter", sans-serif;
+  text-transform: none;
+  letter-spacing: 0.2px;
+  color: #e6e6e6;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+/* Tab separator pipe */
+.tabs-tab::before {
+  content: "|";
+  margin: 0 12px;
+  color: #aaa;
+}
+.tabs-tab:first-child::before {
+  content: "";
+  margin: 0;
+}
+
+/* Active tab */
+.tabs-tab[aria-selected="true"] {
+  color: #e83b22; /* Royal Enfield red */
+  font-weight: 700;
+}
+
+/* Hover effect */
+.tabs-tab:hover {
+  color: #ffffff;
+}
