@@ -35,3 +35,11 @@
     padding: 40px 32px;
   }
 }
+
+.imagetext .hero-slide{
+    position:relative;
+}
+.imagetext .hero-slide picture{
+    position:absolute;
+    inset:0
+}
