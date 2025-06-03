@@ -216,7 +216,7 @@
     ]
   },
   {
-    "id": "imagetext",
+    "id": "tab",
     "fields": [
       {
         "component": "text",
