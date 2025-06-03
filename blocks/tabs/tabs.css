@@ -57,45 +57,46 @@
   display: none;
 }
 
-/* ---------- Tab strip ---------- */
+/* Reset tab styles to look like Royal Enfield navigation */
 .tabs-list {
   display: flex;
-  gap: 24px;
+  gap: 0;
   overflow-x: auto;
-  padding: 12px 20px;
   background: #1c1c1c;
-  scrollbar-width: none;               /* Firefox */
-  border-bottom: 2px solid #313131;
+  padding: 10px 16px;
+  scrollbar-width: none;
+  border-bottom: 1px solid #333;
 }
 .tabs-list::-webkit-scrollbar {
-  display: none;                       /* Chrome/Safari */
+  display: none;
 }
 
-/* ---------- Tab buttons ---------- */
 .tabs-tab {
-  flex: 0 0 auto;
-  font: 600 16px/1.5 "Inter", sans-serif;
-  text-transform: none;
-  letter-spacing: 0.2px;
-  color: #e6e6e6;
+  font: 600 15px/1.2 "Inter", sans-serif;
   background: none;
-  border: 0;
-  padding: 0;
+  color: #e6e6e6;
+  border: none;
+  padding: 0 12px;
+  margin: 0;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
-/* Tab separator pipe */
+/* Pipe separator (as pseudo-element) */
 .tabs-tab::before {
   content: "|";
-  margin: 0 12px;
-  color: #aaa;
+  color: #666;
+  font-weight: 300;
+  font-size: 16px;
+  margin-right: 12px;
 }
 .tabs-tab:first-child::before {
   content: "";
-  margin: 0;
+  margin-right: 0;
 }
 
 /* Active tab */
