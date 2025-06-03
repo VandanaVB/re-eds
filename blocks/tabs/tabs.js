@@ -10,13 +10,12 @@ export default async function decorate(block) {
   // decorate tabs and tabpanels
   const tabs = [...block.children].map((child) => child.firstElementChild);
   tabs.forEach((tab, i) => {
-    const id = toClassName(tab.textContent);
+    const id = toClassName(tab.textContent.trim());
 
     // decorate tabpanel
     const tabpanel = block.children[i];
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
-
     tabpanel.setAttribute('aria-hidden', !!i);
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
     tabpanel.setAttribute('role', 'tabpanel');
@@ -39,6 +38,9 @@ export default async function decorate(block) {
       });
       tabpanel.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
+
+      const offset = button.offsetLeft - tablist.clientWidth / 2 + button.clientWidth / 2;
+      tablist.scrollTo({ left: offset, behavior: 'smooth' });
     });
     tablist.append(button);
     tab.remove();
