@@ -37,16 +37,16 @@
 }
 
 /* ---------- Pipe Separator ---------- */
-.tabs-tab::before {
-  content: "|";
-  color: #666;
-  font-weight: 300;
-  font-size: 16px;
-  margin-right: 12px;
-}
-.tabs-tab:first-child::before {
-  content: "";
-  margin-right: 0;
+.tabs-tab::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    width: 2px;
+    height: 10px;
 }
 
 /* ---------- Active Tab Highlight ---------- */
