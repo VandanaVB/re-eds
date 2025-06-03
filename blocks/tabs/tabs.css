@@ -58,6 +58,7 @@
 /* ---------- Hover State ---------- */
 .tabs-tab:hover {
   color: #ffffff;
+  background:none;
 }
 
 /* ---------- Tab Panel Styling (unchanged) ---------- */
