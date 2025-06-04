@@ -1,4 +1,8 @@
-.tabs-wrapper {
+main > .section > div.tabs-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+media (width >= 900px) {
   max-width: unset;
   padding: 0;
 }
