@@ -129,6 +129,8 @@
 }
 
 .hero-copy {
+  font-size: 24px;
+  line-height: 28px;
   max-inline-size: 35ch;
   margin-bottom: 35px;
   font-family: "guardiansans-semibold";
