@@ -37,24 +37,21 @@
 
 @font-face {
   font-family: 'guardiansans-regular';
-  src: url("global/resources/fonts/guardiansans-regular.eot");
-  src: url("global/resources/fonts/guardiansans-regular.eot?#iefix") format("embedded-opentype"), url("global/resources/fonts/guardiansans-regular.woff") format("woff"), url("global/resources/fonts/guardiansans-regular.ttf") format("truetype"), url("global/resources/fonts/guardiansans-regular.svg#entypo") format("svg");
+  src: url('../fonts/guardiansans-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal
 }
 
 @font-face {
   font-family: 'guardiansans-medium';
-  src: url("global/resources/fonts/guardiansans-medium.eot");
-  src: url("global/resources/fonts/guardiansans-medium.eot?#iefix") format("embedded-opentype"), url("global/resources/fonts/guardiansans-medium.woff") format("woff"), url("global/resources/fonts/guardiansans-medium.ttf") format("truetype"), url("global/resources/fonts/guardiansans-medium.svg#entypo") format("svg");
+  src: url('../fonts/guardiansans-medium.woff') format('woff');
   font-weight: 400;
   font-style: normal
 }
 
 @font-face {
   font-family: 'guardiansans-semibold';
-  src: url("global/resources/fonts/guardiansans-semibold.eot");
-  src: url("global/resources/fonts/guardiansans-semibold.eot#iefix") format("embedded-opentype"), url("global/resources/fonts/guardiansans-semibold.woff") format("woff"), url("global/resources/fonts/guardiansans-semibold.ttf") format("truetype"), url("global/resources/fonts/guardiansans-semibold.svg") format("svg");
+  src: url('../fonts/guardiansans-semibold.woff') format('woff');
   font-weight: 400;
   font-style: normal
 }
