@@ -95,7 +95,8 @@
 
 .hero-slide {
   position: relative;
-  min-height: clamp(360px, 70vw, 720px)
+  /* min-height: clamp(360px, 70vw, 720px)*/
+  height: 100%;
 }
 
 .hero-bg img {
