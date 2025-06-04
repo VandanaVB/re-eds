@@ -48,6 +48,16 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "ctaLabel",
+          "label": "CTA Label"
+        },
+        {
+          "component": "aem-content",
+          "name": "ctaLink",
+          "label": "CTA Link"
         }
       ]
     }

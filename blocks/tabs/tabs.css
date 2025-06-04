@@ -1,3 +1,7 @@
+.tabs-wrapper {
+  max-width: unset;
+  padding: 0;
+}
 /* ---------- Tabs Container ---------- */
 .tabs.block {
   width: 100%;
