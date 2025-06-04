@@ -111,7 +111,6 @@
   place-content: center;
   padding: 0 8%;
   color: #fff;
-  text-shadow: 0 0 8px rgb(0 0 0 /.45);
 }
 
 .hero-overlay.align-left {
@@ -150,12 +149,13 @@
 }
 
 .cta {
+  background: #fff;
+  color: #000;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 28px;
+  padding: 10px 35px 10px 15px;
   border: 2px solid #fff;
-  color: #fff;
   text-decoration: none;
   font: 600 18px/1 "Inter";
   transition: .25s;
