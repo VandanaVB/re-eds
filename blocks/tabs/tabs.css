@@ -20,7 +20,7 @@
 /* ---------- Individual Tab Button ---------- */
 .tabs-tab {
   flex: 0 0 auto;
-  font: 600 15px/1.2 "Inter", sans-serif;
+  font: 600 15px/1.2 guardiansans-regular;
   color: #e6e6e6;
   background: none;
   border: none;
@@ -157,7 +157,7 @@
   padding: 10px 35px 10px 15px;
   border: 2px solid #fff;
   text-decoration: none;
-  font: 600 18px/1 "Inter";
+  font: 600 18px/1 "guardiansans-regular";
   transition: .25s;
 }
 
