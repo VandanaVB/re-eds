@@ -176,7 +176,9 @@
 .cta:is(:hover, :focus-visible) span {
   transform: translateX(4px)
 }
-
+a:any-link {
+    color:#000;
+}
 @media (max-width:768px) {
   .tabs-list {
     gap: 14px;
