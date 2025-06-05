@@ -16,7 +16,7 @@ export default async function decorate(block) {
     const id = toClassName(tab.textContent.trim());
 
     // decorate tabpanel
-    const tabpanel = block.children[i];
+    const tabpanel = tabs[i];
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
     buildHero(tabpanel);
