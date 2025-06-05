@@ -325,5 +325,72 @@
         "value": ""
       }
     ]
+  },
+  {
+    "id": "slide",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "headline",
+        "label": "Headline",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "subhead",
+        "label": "Sub-headline",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "primaryLabel",
+        "label": "Primary CTA Label",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "primaryLink",
+        "label": "Primary CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "secondaryLabel",
+        "label": "Secondary CTA Label",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondaryLink",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "component": "select",
+        "name": "ctaAlign",
+        "label": "CTA Alignment",
+        "valueType": "string",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Center",
+            "value": "center"
+          },
+          {
+            "label": "Right",
+            "value": "right"
+          }
+        ],
+        "default": "center"
+      }
+    ]
   }
 ]
