@@ -205,8 +205,14 @@ a:any-link {
   }
 }
 
-.tabs-heading {
-  font: 800 28px/1.2 "Inter", sans-serif;
+.tabs-title {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.tabs-title h2 {
+  font: 800 22px/1 guardiansans-regular;
   color: #fff;
-  margin: 0 0 12px;
+  margin: 0;
 }
