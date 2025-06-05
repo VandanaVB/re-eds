@@ -2,13 +2,16 @@
 import { toClassName } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
+
+  const headingRow = block.firstElementChild;
+  headingRow.classList.add('tabs-heading');
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
   // decorate tabs and tabpanels
-  const tabs = [...block.children].map((child) => child.firstElementChild);
+  const tabs = [...block.children].slice(1).map((child) => child.firstElementChild);
   tabs.forEach((tab, i) => {
     const id = toClassName(tab.textContent.trim());
 
