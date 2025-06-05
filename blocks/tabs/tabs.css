@@ -170,7 +170,7 @@ main > .section > div.tabs-wrapper {
   padding: 10px 35px 10px 15px;
   border: 2px solid #fff;
   text-decoration: none;
-  font: 600 18px/1 "guardiansans-regular";
+  font: 14px "guardiansans-regular";
   transition: .25s;
 }
 
