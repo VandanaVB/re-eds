@@ -52,7 +52,8 @@
     "id": "tabs",
     "components": [
       "imagetext",
-      "tab"
+      "tab",
+      "title"
     ]
   }
 ]
