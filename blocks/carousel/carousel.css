@@ -35,7 +35,6 @@
   place-content: center start;
   padding: 0 8%;
   color: #fff;
-  text-shadow: 0 2px 8px rgb(0 0 0 /.6);
   background: linear-gradient(to top, rgb(0 0 0 /.55) 0%, rgb(0 0 0 /.15) 40%, transparent 70%);
 }
 
@@ -77,7 +76,7 @@
   padding: 10px 35px 10px 15px;
   border: 2px solid #fff;
   text-decoration: none;
-  font: 600 18px/1 "guardiansans-regular";
+  font: 14px "guardiansans-regular";
   transition: .25s;
 }
 
