@@ -3,19 +3,20 @@ import { toClassName } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
 
+  const headingRow = block.firstElementChild;
+  const titleHTML  = headingRow.innerHTML;
+  headingRow.remove();
+
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
   //Inject Title
-  //const titleSpan = document.createElement('span');
-  //titleSpan.className = 'tabs-title';
-  //titleSpan.innerHTML = titleHTML;
-  const headingRow = block.firstElementChild;
-  headingRow.classList.add('tabs-heading');
-  tablist.append(headingRow.innerHTML);
-  headingRow.remove();
+  const titleSpan = document.createElement('span');
+  titleSpan.className = 'tabs-title';
+  titleSpan.innerHTML = titleHTML;
+  tablist.append(titleSpan);
 
   // decorate tabs and tabpanels
   const tabs = [...block.children].map((child) => child.firstElementChild);
