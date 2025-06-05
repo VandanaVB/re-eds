@@ -12,7 +12,7 @@ main > .section > div.cards-wrapper {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
 }
 
 .cards > ul > li {
@@ -38,12 +38,12 @@ main > .section > div.cards-wrapper {
 .cards .cards-card-image img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
 }
 .cards .cards-card-image:hover img {
  transform: scale(1.1);
+ transition: all ease 1s;
 }
 
 /* Title overlay on image */
@@ -52,7 +52,7 @@ main > .section > div.cards-wrapper {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  background: linear-gradient(to bottom,transparent 0, rgba(0,0,0,0.50) 100%);
   color: #fff;
   padding: 16px;
   font-family: "guardiansans-semibold";
