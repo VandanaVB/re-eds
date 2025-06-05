@@ -35,9 +35,21 @@ export default function decorate(block) {
   slides.forEach((slide) => {
     slide.classList.add('carousel-slide');
     const parts = [...slide.children];
-    const [picture, headDiv, subDiv,
+    const [desktopPic,mobilePicDiv, headDiv, subDiv,
            pLabDiv, pLinkDiv, sLabDiv, sLinkDiv, alignDiv] = parts;
 
+  /* -------- build <picture> that swaps source ---------- */
+  let pictureHTML = desktopPic.outerHTML;          // default
+  if (mobilePicDiv && mobilePicDiv.querySelector('img')) {
+    const desktopSrc = desktopPic.querySelector('img').src;
+    const mobileSrc  = mobilePicDiv.querySelector('img').src;
+    const alt        = desktopPic.querySelector('img').alt || '';
+    pictureHTML = `
+      <picture>
+        <source media="(max-width: 767px)" srcset="${mobileSrc}">
+        <img src="${desktopSrc}" alt="${alt}" loading="lazy">
+      </picture>`;
+  }
     const align = (alignDiv?.textContent || 'left').trim();
 
     /* build overlay */
@@ -52,7 +64,8 @@ export default function decorate(block) {
       </div>`;
 
     slide.innerHTML = '';               // clear authored row
-    slide.append(picture, overlay);
+    slide.insertAdjacentHTML('beforeend', pictureHTML);
+    slide.append(overlay);
   });
 
   /* ---------- arrow / autoplay handlers ---------- */
@@ -60,19 +73,19 @@ export default function decorate(block) {
   const prev = block.querySelector('.carousel-arrow.prev');
 
   function show(i) {
-    index = (i + slides.length) % slides.length;
+    index = (i slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  next.addEventListener('click', () => show(index + 1));
+  next.addEventListener('click', () => show(index 1));
   prev.addEventListener('click', () => show(index - 1));
 
   /* Auto-play (8 s) — pause on hover */
-  let timer = setInterval(() => show(index + 1), 8000);
+  let timer = setInterval(() => show(index 1), 8000);
   block.addEventListener('mouseenter', () => clearInterval(timer));
   block.addEventListener('mouseleave', () => {
     clearInterval(timer);
-    timer = setInterval(() => show(index + 1), 8000);
+    timer = setInterval(() => show(index 1), 8000);
   });
 
   show(0); // init

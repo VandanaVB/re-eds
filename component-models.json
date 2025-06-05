@@ -331,8 +331,15 @@
     "fields": [
       {
         "component": "reference",
-        "name": "image",
-        "label": "Background Image",
+        "name": "dkImage",
+        "label": "Desktop Background Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "mobImage",
+        "label": "Mobile Background Image",
         "valueType": "string",
         "multi": false
       },
