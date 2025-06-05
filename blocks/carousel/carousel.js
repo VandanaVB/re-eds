@@ -51,19 +51,19 @@ export default function decorate(block) {
   const prev = block.querySelector('.carousel-arrow.prev');
 
   function show(i) {
-    index = (i slides.length) % slides.length;
+    index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  next.addEventListener('click', () => show(index 1));
+  next.addEventListener('click', () => show(index + 1));
   prev.addEventListener('click', () => show(index - 1));
 
   /* Auto-play (8 s) — pause on hover */
-  let timer = setInterval(() => show(index 1), 8000);
+  let timer = setInterval(() => show(index + 1), 8000);
   block.addEventListener('mouseenter', () => clearInterval(timer));
   block.addEventListener('mouseleave', () => {
     clearInterval(timer);
-    timer = setInterval(() => show(index 1), 8000);
+    timer = setInterval(() => show(index + 1), 8000);
   });
 
   show(0);
