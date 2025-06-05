@@ -5,18 +5,27 @@ export default async function decorate(block) {
 
   const headingRow = block.firstElementChild;
   headingRow.classList.add('tabs-heading');
+  const titleHTML  = headingRow.innerHTML;
+  headingRow.remove();
+
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
+  //Inject Title
+  //const titleSpan = document.createElement('span');
+  //titleSpan.className = 'tabs-title';
+  //titleSpan.innerHTML = titleHTML;           // shows <h2>Motorcycles</h2>
+  tablist.append(titleHTML);
+
   // decorate tabs and tabpanels
-  const tabs = [...block.children].slice(1).map((child) => child.firstElementChild);
+  const tabs = [...block.children].map((child) => child.firstElementChild);
   tabs.forEach((tab, i) => {
     const id = toClassName(tab.textContent.trim());
 
     // decorate tabpanel
-    const tabpanel = block.children[i+1];
+    const tabpanel = block.children[i];
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
     buildHero(tabpanel);
