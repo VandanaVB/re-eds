@@ -136,6 +136,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "RE Theme",
+            "value": "retheme"
+          },
+          {
+            "name": "No Space",
+            "value": "nomargin"
           }
         ]
       }

@@ -255,3 +255,13 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.retheme {
+  background-color: #fff;
+  color: #000;
+}
+
+main .section.nomargin {
+  padding:0;
+  margin:0;
+}
