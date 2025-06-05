@@ -257,7 +257,7 @@ main .section.highlight {
 }
 
 main .section.retheme {
-  background-color: #000;
+  background-color: #212529;
   color: #fff;
   h2 {
     text-align:center;
@@ -267,4 +267,8 @@ main .section.retheme {
 main .section.nomargin {
   padding:0;
   margin:0;
+  h2 {
+     margin: 0;
+     padding: 15px 0;
+  }
 }
