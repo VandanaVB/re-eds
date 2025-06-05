@@ -271,4 +271,7 @@ main .section.nomargin {
      margin: 0;
      padding: 15px 0;
   }
+  .tabs-title h2{
+    padding: 0px;
+  }
 }
