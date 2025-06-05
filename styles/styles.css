@@ -257,8 +257,11 @@ main .section.highlight {
 }
 
 main .section.retheme {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
+  h2 {
+    text-align:center;
+  }
 }
 
 main .section.nomargin {
