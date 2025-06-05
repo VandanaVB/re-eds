@@ -87,7 +87,6 @@
           "component": "select",
           "name": "ctaAlign",
           "label": "CTA Alignment",
-          "valueType": "string",
           "options": [
             {
               "label": "Left",

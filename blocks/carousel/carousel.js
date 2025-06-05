@@ -63,7 +63,7 @@ export default function decorate(block) {
         ${cta(sLabDiv, sLinkDiv)}
       </div>`;
 
-    slide.innerHTML = '';               // clear authored row
+    slide.innerHTML = '';
     slide.insertAdjacentHTML('beforeend', pictureHTML);
     slide.append(overlay);
   });
