@@ -17,7 +17,7 @@ main > .section > div.tabs-wrapper {
   gap: 0;
   overflow-x: auto;
   padding: 20px 0;
-  background-color: #1c1c1c;
+  background-color: #212121;
   border-bottom: 1px solid #333;
   scrollbar-width: none;
 }
