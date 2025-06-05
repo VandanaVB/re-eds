@@ -1,29 +1,9 @@
-/*  Carousel decorate — Royal Enfield-style banner
-    --------------------------------------------------------------
-    Expected author structure inside block:
-    <div class="carousel">           (auto-wrapped by EDS)
-      <div data-aue-model="slide">  ← row 0
-        <picture>…</picture>
-        <div>headline</div>
-        <div>subhead</div>
-        <div>primaryLabel</div>
-        <div><a>primaryLink</a></div>
-        <div>secondaryLabel</div>
-        <div><a>secondaryLink</a></div>
-        <div>ctaAlign (left|center|right)</div>
-      </div>
-      … more slide rows …
-    </div>
-----------------------------------------------------------------*/
-
 export default function decorate(block) {
-  /* ---------- wrap children in .carousel-track ---------- */
   const track = document.createElement('div');
   track.className = 'carousel-track';
   while (block.firstElementChild) track.append(block.firstElementChild);
   block.append(track);
 
-  /* ---------- add arrows ---------- */
   block.insertAdjacentHTML('beforeend',
     '<button class="carousel-arrow prev" type="button">‹</button>' +
     '<button class="carousel-arrow next" type="button">›</button>');
@@ -31,15 +11,13 @@ export default function decorate(block) {
   const slides = [...track.children];
   let index = 0;
 
-  /* ---------- turn each authored row into a proper slide ---------- */
   slides.forEach((slide) => {
     slide.classList.add('carousel-slide');
     const parts = [...slide.children];
-    const [desktopPic,mobilePicDiv, headDiv, subDiv,
+    const [desktopPic, mobilePicDiv, headDiv, subDiv,
            pLabDiv, pLinkDiv, sLabDiv, sLinkDiv, alignDiv] = parts;
 
-  /* -------- build <picture> that swaps source ---------- */
-  let pictureHTML = desktopPic.outerHTML;          // default
+  let pictureHTML = desktopPic.outerHTML;
   if (mobilePicDiv && mobilePicDiv.querySelector('img')) {
     const desktopSrc = desktopPic.querySelector('img').src;
     const mobileSrc  = mobilePicDiv.querySelector('img').src;
@@ -88,7 +66,7 @@ export default function decorate(block) {
     timer = setInterval(() => show(index 1), 8000);
   });
 
-  show(0); // init
+  show(0);
 
   function cta(labelDiv, linkDiv) {
     const label = labelDiv?.textContent.trim();
