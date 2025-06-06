@@ -16,15 +16,15 @@
       }
     },
     {
-      "title": "Card",
-      "id": "card",
+      "title": "MotoCard",
+      "id": "motocard",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Card",
-              "model": "card"
+              "name": "MotoCard",
+              "model": "motocard"
             }
           }
         }
@@ -33,7 +33,7 @@
   ],
   "models": [
     {
-      "id": "card",
+      "id": "motocard",
       "fields": [
         {
           "component": "reference",
@@ -51,8 +51,13 @@
         },
         {
           "component": "aem-content",
-          "name": "cardLink",
-          "label": "Card Link"
+          "name": "primaryLink",
+          "label": "Primary Link"
+        },
+        {
+          "component": "aem-content",
+          "name": "secondaryLink",
+          "label": "Secondary Link"
         }
       ]
     }
@@ -61,7 +66,7 @@
     {
       "id": "motocards",
       "components": [
-        "card"
+        "motocard"
       ]
     }
   ]

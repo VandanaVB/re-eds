@@ -7,25 +7,24 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'motocards-card-image';
-      else div.className = 'motocards-card-body';
-    });
-    const link = li.querySelector('a');
-    if (link) {
-      const url = link.getAttribute('href');
-      const wrapper = document.createElement('a');
-      wrapper.href = url;
-      wrapper.className = 'motocards-link';
-      moveInstrumentation(li, wrapper);
-
-      // Remove old links inside
-      li.querySelectorAll('a').forEach((a) => a.remove());
-
-      // Move all li children into wrapper
-      while (li.firstChild) wrapper.append(li.firstChild);
-      li.appendChild(wrapper);
+    const [imgDiv, textDiv, primaryDiv, secondaryDiv] = [...row.children];
+    if (imgDiv) {
+      imgDiv.className = 'motocards-card-image';
+      li.append(imgDiv);
+    }
+    if (textDiv) {
+      textDiv.className = 'motocards-card-body';
+      const ctaRow = document.createElement('div');
+      ctaRow.className = 'cta-row';
+      [primaryDiv, secondaryDiv].forEach((div) => {
+        const link = div?.querySelector('a');
+        if (link) {
+          link.classList.add('cta');
+          ctaRow.append(link);
+        }
+      });
+      if (ctaRow.children.length) textDiv.append(ctaRow);
+      li.append(textDiv);
     }
     ul.append(li);
   });
