@@ -1,0 +1,39 @@
+{
+  "definitions": [
+    {
+      "title": "Support Contact",
+      "id": "supportcontact",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Support Contact",
+              "model": "supportcontact"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "supportcontact",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,10 @@
+.supportcontact {
+  text-align: center;
+  padding: 40px 24px;
+  background: #111;
+  color: #fff;
+}
+
+.supportcontact .button-container {
+  margin-top: 16px;
+}
