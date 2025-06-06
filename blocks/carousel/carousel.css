@@ -40,7 +40,7 @@ main > .section > div.carousel-wrapper {
   inset: 0;
   display: grid;
   place-content: end start;
-  padding: 0 8%;
+  padding: 0 10% 8% 10%;
   color: #fff;
   background: linear-gradient(to top, rgb(0 0 0 /.55) 0%, rgb(0 0 0 /.15) 40%, transparent 70%);
 }
