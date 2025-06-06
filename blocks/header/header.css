@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #0a0a0a;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -51,7 +51,7 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: #fff;
 }
 
 /* hamburger */
@@ -68,7 +68,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: #0a0a0a;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -171,6 +171,9 @@ header nav .nav-sections ul {
 
 header nav .nav-sections ul > li {
   font-weight: 500;
+  :hover > a{
+    color: #da291c;
+  }
 }
 
 header nav .nav-sections ul > li > ul {
