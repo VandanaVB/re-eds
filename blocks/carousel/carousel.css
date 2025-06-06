@@ -22,8 +22,8 @@ main > .section > div.carousel-wrapper {
 .carousel-slide {
   flex: 0 0 100%;
   position: relative;
-  min-height: clamp(360px, 70vw, 720px);
-  /* responsive height */
+  max-height:calc(100% - 8px);
+  /* min-height: clamp(360px, 70vw, 720px); */
 }
 
 .carousel-slide picture img {
