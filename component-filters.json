@@ -31,11 +31,7 @@
   {
     "id": "motocards",
     "components": [
-<<<<<<< HEAD
       "motocard"
-=======
-      "card"
->>>>>>> 4b8272069cf1b3f8abd33015e03b3940b24ec9ae
     ]
   },
   {
