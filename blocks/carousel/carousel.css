@@ -1,4 +1,11 @@
-
+main > .section > div.carousel-wrapper {
+  max-width: unset;
+  padding: 0;
+  media (width >= 900px) {
+    max-width: unset;
+    padding: 0;
+  }
+}
 .carousel {
   position: relative;
   width: 100%;
@@ -99,30 +106,29 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, .45);
-  border: none;
   color: #fff;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  background: none;
+  border: none;
   display: grid;
   place-content: center;
-  font: 32px/1 monospace;
+  font: 50px monospace;
   cursor: pointer;
   z-index: 2;
   transition: background .25s;
 }
 
 .carousel-arrow:hover {
-  background: rgba(0, 0, 0, .7);
+  background: #da291c;
 }
 
 .carousel-arrow.prev {
-  left: 24px;
+  left: 0px;
 }
 
 .carousel-arrow.next {
-  right: 24px;
+  right: 0px;
 }
 
 @media (max-width: 768px) {
