@@ -39,19 +39,19 @@ main > .section > div.carousel-wrapper {
   position: absolute;
   inset: 0;
   display: grid;
-  place-content: center start;
+  place-content: end start;
   padding: 0 8%;
   color: #fff;
   background: linear-gradient(to top, rgb(0 0 0 /.55) 0%, rgb(0 0 0 /.15) 40%, transparent 70%);
 }
 
 .carousel-overlay.align-center {
-  place-content: center;
+  place-content: end center;
   text-align: center;
 }
 
 .carousel-overlay.align-right {
-  place-content: center end;
+  place-content: end end;
   text-align: right;
 }
 
