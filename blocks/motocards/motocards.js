@@ -9,11 +9,11 @@ export default function decorate(block) {
     moveInstrumentation(row, li);
     const [imgDiv, textDiv, primaryDiv, secondaryDiv] = [...row.children];
     if (imgDiv) {
-      imgDiv.className = 'moto-cards-card-image';
+      imgDiv.className = 'motocards-card-image';
       li.append(imgDiv);
     }
     if (textDiv) {
-      textDiv.className = 'moto-cards-card-body';
+      textDiv.className = 'motocards-card-body';
       const ctaRow = document.createElement('div');
       ctaRow.className = 'cta-row';
       [primaryDiv, secondaryDiv].forEach((div) => {

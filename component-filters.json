@@ -14,7 +14,7 @@
       "title",
       "hero",
       "cards",
-      "moto-cards",
+      "motocards",
       "columns",
       "fragment",
       "tabs",
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "id": "moto-cards",
+    "id": "motocards",
     "components": [
       "moto-card"
     ]
