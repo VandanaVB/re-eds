@@ -117,10 +117,13 @@ main > .section > div.carousel-wrapper {
   cursor: pointer;
   z-index: 2;
   transition: background .25s;
+  :focus, :hover{
+    background:none;
+  }
 }
 
 .carousel-arrow:hover {
-  background: #da291c;
+  color: #da291c;
 }
 
 .carousel-arrow.prev {
