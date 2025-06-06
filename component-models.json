@@ -399,7 +399,7 @@
     ]
   },
   {
-    "id": "moto-card",
+    "id": "motocard",
     "fields": [
       {
         "component": "reference",

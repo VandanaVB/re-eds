@@ -128,15 +128,15 @@
           }
         },
         {
-          "title": "Moto Card",
-          "id": "moto-card",
+          "title": "MotoCard",
+          "id": "motocard",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Moto Card",
-                  "model": "moto-card"
+                  "name": "MotoCard",
+                  "model": "motocard"
                 }
               }
             }
