@@ -52,6 +52,10 @@ header nav p {
 
 header nav a:any-link {
   color: #fff;
+  :hover{
+      color: #da291c;
+      text-decoration: none;
+  }
 }
 
 /* hamburger */
@@ -172,9 +176,6 @@ header nav .nav-sections ul {
 
 header nav .nav-sections ul > li {
   font-weight: 500;
-  :hover > a{
-    color: #da291c;
-  }
 }
 
 header nav .nav-sections ul > li > ul {
