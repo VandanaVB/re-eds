@@ -8,7 +8,7 @@
         "name": "jcr:title",
         "label": "Title"
       },
-  {
+      {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
@@ -424,6 +424,40 @@
         "component": "aem-content",
         "name": "secondaryLink",
         "label": "Secondary Link"
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "contact-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   }

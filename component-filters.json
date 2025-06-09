@@ -19,7 +19,9 @@
       "fragment",
       "tabs",
       "carousel",
-      "imagetext"
+      "imagetext",
+      "accordion",
+      "contact"
     ]
   },
   {
@@ -61,6 +63,18 @@
       "imagetext",
       "tab",
       "title"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "contact",
+    "components": [
+      "contact-item"
     ]
   }
 ]

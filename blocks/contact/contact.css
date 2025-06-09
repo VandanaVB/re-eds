@@ -1,0 +1,19 @@
+main > .section > div.contact-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.contact-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}

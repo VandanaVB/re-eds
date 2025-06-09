@@ -1,0 +1,37 @@
+main > .section > div.accordion-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.accordion {
+  border-top: 1px solid #ccc;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-title {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.2em;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.accordion-title::after {
+  content: '\25BC';
+  float: right;
+  transition: transform 0.3s;
+}
+
+.accordion-title[aria-expanded='true']::after {
+  transform: rotate(-180deg);
+}
+
+.accordion-panel {
+  padding: 0 16px 16px;
+}
