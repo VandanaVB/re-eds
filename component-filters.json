@@ -30,12 +30,6 @@
     ]
   },
   {
-    "id": "motocards",
-    "components": [
-      "motocard"
-    ]
-  },
-  {
     "id": "supportcards",
     "components": [
       "supportcard"

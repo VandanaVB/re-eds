@@ -399,35 +399,6 @@
     ]
   },
   {
-    "id": "motocard",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "primaryLink",
-        "label": "Primary Link"
-      },
-      {
-        "component": "aem-content",
-        "name": "secondaryLink",
-        "label": "Secondary Link"
-      }
-    ]
-  },
-  {
     "id": "supportcard",
     "fields": [
       {
