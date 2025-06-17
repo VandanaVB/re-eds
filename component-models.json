@@ -402,8 +402,9 @@
     "id": "supportcard",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom:dynamic-media-asset",
         "valueType": "string",
+        "configUrl": "/tools/assets-selector/image.config.json",
         "name": "image",
         "label": "Image",
         "multi": false
