@@ -21,6 +21,9 @@ main > .section > div.supportcards-wrapper {
   text-decoration: none;
   position: relative;
   background: #212121;
+  :hover .supportcards-card-body{
+    transform: translateY(0);
+  }
 }
 
 .supportcards .supportcards-card-image img {
@@ -39,14 +42,22 @@ main > .section > div.supportcards-wrapper {
 
 .supportcards .supportcards-card-body {
   position: absolute;
+  width: 100%;
+  height: auto;
+  top: auto;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.5) 100%);
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  top: auto;
+  height: auto;
+  background: #212121;
+  transform: translateY(65px);
+  transition: all ease .25s;
   color: #fff;
   padding: 16px;
   box-sizing: border-box;
-  z-index: 1;
 }
 
 .supportcards .supportcards-card-body h3 {
