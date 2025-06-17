@@ -21,9 +21,10 @@ main > .section > div.supportcards-wrapper {
   text-decoration: none;
   position: relative;
   background: #212121;
-  :hover .supportcards-card-body{
-    transform: translateY(0);
-  }
+}
+
+.supportcards a.card-link:hover .supportcards-card-body{
+  transform: translateY(0);
 }
 
 .supportcards .supportcards-card-image img {
