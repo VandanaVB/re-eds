@@ -78,11 +78,11 @@ main > .section > div.supportcards-wrapper {
   font-size: 14px;
   font-family: var(--body-mon-font-family);
   }
-  supportcards .supportcards-card-link:hover {
+  .supportcards .supportcards-card-link:hover {
     background: #fff;
     color: #da291c;
   }
-  supportcards .supportcards-card-link::before {
+  .supportcards .supportcards-card-link::before {
       position: absolute;
       right: 0px;
       top: 50%;
@@ -92,7 +92,7 @@ main > .section > div.supportcards-wrapper {
       margin-top: -7px;
       right: 15px;
   }
-  supportcards .supportcards-card-link:hover::before {
+  .supportcards .supportcards-card-link:hover::before {
       animation-name: hvr-icon-wobble-horizontal;
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
