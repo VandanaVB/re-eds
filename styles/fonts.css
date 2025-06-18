@@ -62,3 +62,11 @@
   font-weight: 400;
   font-style: normal
 }
+
+
+@font-face {
+  font-family: 'reicons';
+  src: url('../fonts/reicons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal
+}
