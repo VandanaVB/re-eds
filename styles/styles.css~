@@ -21,7 +21,7 @@
 
   /* fonts */
   --body-font-family: guardiansans-regular, sans-serif;
-  --body-mon-font-family: guardiansans-regular, sans-serif;
+  --body-mon-font-family: montserrat-regular, sans-serif;
   --header-font-family: guardiansans-medium, sans-serif;
   --heading-font-family: guardiansans-semibold, sans-serif;
 

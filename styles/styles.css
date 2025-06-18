@@ -277,3 +277,28 @@ main .section.nomargin {
     padding: 0px;
   }
 }
+@keyframes hvr-icon-wobble-horizontal {
+    16.65% {
+        transform: translateX(2px)
+    }
+
+    33.3% {
+        transform: translateX(-1px)
+    }
+
+    49.95% {
+        transform: translateX(1px)
+    }
+
+    66.6% {
+        transform: translateX(-1px)
+    }
+
+    83.25% {
+        transform: translateX(1px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
