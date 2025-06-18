@@ -34,7 +34,7 @@ main > .section > div.supportcards-wrapper {
 
 .supportcards .supportcards-card-image:hover img{
     transform: scale(1.05);
-    transition: all ease .25s;
+    transition: all ease 3s;
 }
 
 .supportcards .supportcards-card-icon {
