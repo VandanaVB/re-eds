@@ -20,7 +20,7 @@ export default function decorate(block) {
     const link = linkDiv?.querySelector('a');
     const label = labelDiv?.textContent.trim() || link?.textContent.trim() || '';
     if (link) {
-      const btn = document.createElement('span');
+      const btn = document.createElement('div');
       btn.className = 'supportcards-card-link';
       btn.textContent = label || 'Know More';
       bodyDiv.append(btn);

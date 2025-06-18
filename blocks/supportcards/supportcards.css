@@ -68,6 +68,7 @@ main > .section > div.supportcards-wrapper {
 .supportcards .supportcards-card-body p {
   margin: 0 0 16px;
   font-size: 14px;
+  font-family: var(--body-mon-font-family);
 }
 
 .supportcards .supportcards-card-link {
@@ -75,6 +76,27 @@ main > .section > div.supportcards-wrapper {
   border: 1px solid #fff;
   padding: 6px 12px;
   font-size: 14px;
+  font-family: var(--body-mon-font-family);
+  :hover {
+    background: #fff;
+    color: #da291c;
+  }
+  ::before {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      content: "A";
+      font-family: reicons;
+      font-size: 12px;
+      margin-top: -7px;
+      right: 15px;
+  }
+   :hover ::before {
+      animation-name: hvr-icon-wobble-horizontal;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+   }
 }
 
 @media (max-width: 768px) {
