@@ -29,12 +29,10 @@ main > .section > div.supportcards-wrapper {
 }
 
 .supportcards .supportcards-card-image{
-  overflow: hidden;
-  img{
-      width: 100%;
-      display: block;
-      transition: all ease 3s;
-  }
+  } img{
+  width: 100%;
+  display: block;
+  transition: all ease 3s;
 }
 
 .supportcards a.card-link:hover img{
