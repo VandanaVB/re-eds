@@ -31,6 +31,7 @@ main > .section > div.supportcards-wrapper {
 .supportcards .supportcards-card-image img{
   width: 100%;
   display: block;
+  transition: all ease 3s;
 }
 
 .supportcards a.card-link:hover img{
@@ -60,8 +61,7 @@ main > .section > div.supportcards-wrapper {
   height: auto;
   background: #212121;
   transform: translateY(52px);
-  transition: all ease 3s;
-  transform: scale(1.01);
+  transition: all ease .25s;
   color: #fff;
   padding: 16px;
   box-sizing: border-box;
