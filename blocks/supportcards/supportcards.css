@@ -77,11 +77,12 @@ main > .section > div.supportcards-wrapper {
   padding: 6px 12px;
   font-size: 14px;
   font-family: var(--body-mon-font-family);
-  :hover {
+  }
+  supportcards .supportcards-card-link:hover {
     background: #fff;
     color: #da291c;
   }
-  ::before {
+  supportcards .supportcards-card-link::before {
       position: absolute;
       right: 0px;
       top: 50%;
@@ -91,12 +92,12 @@ main > .section > div.supportcards-wrapper {
       margin-top: -7px;
       right: 15px;
   }
-   :hover ::before {
+  supportcards .supportcards-card-link:hover::before {
       animation-name: hvr-icon-wobble-horizontal;
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
       animation-iteration-count: 1;
-   }
+  }
 }
 
 @media (max-width: 768px) {
