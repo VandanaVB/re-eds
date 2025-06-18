@@ -1,6 +1,7 @@
 main > .section > div.supportcards-wrapper {
   max-width: unset;
   padding: 0;
+  margin-bottom:65px;
 }
 
 .supportcards > ul {

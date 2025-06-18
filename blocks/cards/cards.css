@@ -2,6 +2,8 @@
 main > .section > div.cards-wrapper {
   max-width: unset;
   padding: 0;
+  position: relative;
+  z-index: 10;
    media (width >= 900px) {
       max-width: unset;
       padding: 0;
