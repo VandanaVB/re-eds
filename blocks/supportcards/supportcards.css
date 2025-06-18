@@ -82,17 +82,16 @@ main > .section > div.supportcards-wrapper {
     background: #fff;
     color: #da291c;
   }
-  .supportcards .supportcards-card-link::before {
-      position: absolute;
-      right: 0px;
-      top: 50%;
+  .supportcards .supportcards-card-link::after {
+      position: static;
       content: "A";
+      display: inline-block;
       font-family: reicons;
       font-size: 12px;
-      margin-top: -7px;
-      right: 15px;
+      vertical-align: middle;
+      margin-left: 8px;
   }
-  .supportcards .supportcards-card-link:hover::before {
+  .supportcards .supportcards-card-link:hover::after {
       animation-name: hvr-icon-wobble-horizontal;
       animation-duration: 1s;
       animation-timing-function: ease-in-out;
