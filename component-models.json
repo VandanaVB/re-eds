@@ -167,6 +167,12 @@
         "valueType": "string"
       },
       {
+        "component": "text",
+        "name": "ctaLabel",
+        "label": "CTA Label",
+        "valueType": "string"
+      },
+      {
         "component": "aem-content",
         "name": "cardLink",
         "label": "Card Link"

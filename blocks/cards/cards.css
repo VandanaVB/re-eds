@@ -4,10 +4,13 @@ main > .section > div.cards-wrapper {
   padding: 0;
   position: relative;
   z-index: 10;
-   media (width >= 900px) {
-      max-width: unset;
-      padding: 0;
-   }
+}
+
+@media (width >= 900px) {
+  main > .section > div.cards-wrapper {
+    max-width: unset;
+    padding: 0;
+  }
 }
 .cards > ul {
   list-style: none;
@@ -17,6 +20,9 @@ main > .section > div.cards-wrapper {
   grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
 }
 
+@media (max-width: 768px) {
+  .cards > ul { grid-template-columns: 1fr; }
+}
 .cards > ul > li {
   background: transparent;
   border-radius: 0;
@@ -42,10 +48,11 @@ main > .section > div.cards-wrapper {
   height: auto;
   object-fit: fill;
   display: block;
+  transition: transform 1s ease;
 }
 .cards .cards-card-image:hover img {
  transform: scale(1.1);
- transition: all ease 1s;
+ /*transition: all ease 1s;*/
 }
 
 /* Title overlay on image */
@@ -54,9 +61,9 @@ main > .section > div.cards-wrapper {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to bottom,transparent 0, rgba(0,0,0,0.50) 100%);
-  color: #fff;
   padding: 16px;
+  background: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.50) 100%);
+  color: #fff;
   font-family: "guardiansans-semibold";
   z-index: 1;
 }
@@ -67,8 +74,45 @@ main > .section > div.cards-wrapper {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .cards > ul {
-    grid-template-columns: 1fr;
-  }
+.cards .cards-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 32px;
+  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%);
+  color: #fff;
+  z-index: 2;
+}
+
+.cards .cards-overlay .cards-card-body p {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cards .cards-btn {
+  align-self: flex-start;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font: 600 16px/1 "Inter", sans-serif;
+  padding: 14px 28px;
+  display: inline-flex;
+  gap: 8px;
+  transition: background .25s, transform .25s;
+}
+
+.cards .cards-btn::after {
+  content: "›";
+  font-weight: 700;
+}
+
+.cards .cards-btn:hover {
+  background: #e83b22;
+  color: #fff;
+  transform: translateY(-2px);
 }

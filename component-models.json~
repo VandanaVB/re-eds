@@ -448,5 +448,27 @@
         "label": "Link"
       }
     ]
+  },
+  {
+    "id": "dynamic-media-asset",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://main--re-eds--vandanavb.aem.page/tools/assets-selector/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "imageTitle",
+        "label": "Alt Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
