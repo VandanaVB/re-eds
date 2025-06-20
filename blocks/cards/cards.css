@@ -81,15 +81,19 @@ main > .section > div.cards-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 32px;
+  gap: 24px;
   background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%);
   color: #fff;
   z-index: 2;
 }
 
+.cards .cards-overlay .cards-card-body {
+  margin: 0;
+}
+
 .cards .cards-overlay .cards-card-body p {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--body-mon-font-family);
   margin: 0;
   line-height: 1.2;
 }
@@ -99,11 +103,12 @@ main > .section > div.cards-wrapper {
   background: #fff;
   color: #000;
   text-decoration: none;
-  font: 600 16px/1 "Inter", sans-serif;
+  font: 600 16px/1 "montserrat-regular";
   padding: 14px 28px;
   display: inline-flex;
   gap: 8px;
   transition: background .25s, transform .25s;
+  margin-top: 0; /* safe default in case inherited */
 }
 
 .cards .cards-btn::after {
