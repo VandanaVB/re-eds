@@ -106,10 +106,9 @@ main > .section > div.cards-wrapper {
   display: inline-block;
   border: 1px solid #fff;
   background: #fff;
+  color:#000;
   padding: 6px 12px;
   font-size: 14px;
-  gap: 24px;
-  margin-top: 4px;
   font-family: var(--body-mon-font-family);
 }
 .cards .cards-btn::after {
