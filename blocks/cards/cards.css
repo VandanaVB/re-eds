@@ -86,6 +86,9 @@ main > .section > div.cards-wrapper {
   color: #fff;
   z-index: 2;
 }
+.cards .cards-overlay .cards-card-body h2{
+  margin-bottom: 15px;
+}
 
 .cards .cards-overlay .cards-card-body {
   margin: 0;
@@ -96,17 +99,20 @@ main > .section > div.cards-wrapper {
   font-family: var(--body-mon-font-family);
   margin: 0;
   line-height: 1.2;
+  font-weight: normal;
 }
 
-.cards .card-btn {
+.cards .cards-btn {
   display: inline-block;
   border: 1px solid #fff;
   background: #fff;
   padding: 6px 12px;
   font-size: 14px;
+  gap: 24px;
+  margin-top: 4px;
   font-family: var(--body-mon-font-family);
 }
-.cards .card-btn::after {
+.cards .cards-btn::after {
   position: static;
   content: "A";
   display: inline-block;
@@ -115,7 +121,7 @@ main > .section > div.cards-wrapper {
   vertical-align: middle;
   margin-left: 8px;
 }
-.cards .card-btn:hover::after {
+.cards .cards-btn:hover::after {
   animation-name: hvr-icon-wobble-horizontal;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
