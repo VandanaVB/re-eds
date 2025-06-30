@@ -72,8 +72,8 @@ export default function decorate(block) {
 
   /* ---------- inject into block ---------- */
   block.innerHTML = '';
-  block.classList.add('accordion-tabs');
-  block.append(nav, content);
+  //block.classList.add('accordion-tabs');
+  //block.append(nav, content);
 
   /* ---------- wiring: nav click + accordion ---------- */
   nav.addEventListener('click', (e) => {
