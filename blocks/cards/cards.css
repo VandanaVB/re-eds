@@ -124,6 +124,7 @@ main > .section > div.cards-wrapper {
   font-size: 12px;
   vertical-align: middle;
   margin-left: 8px;
+  margin-top: 1.5px;
 }
 .cards .cards-btn:hover::after {
   animation-name: hvr-icon-wobble-horizontal;
