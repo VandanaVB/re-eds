@@ -92,6 +92,8 @@ main > .section > div.cards-wrapper {
 
 .cards .cards-overlay .cards-card-body {
   margin: 0;
+  position:unset;
+  background:none;
 }
 
 .cards .cards-overlay .cards-card-body p {
@@ -109,6 +111,9 @@ main > .section > div.cards-wrapper {
   padding: 6px 12px;
   font-size: 14px;
   font-family: var(--body-mon-font-family);
+}
+.cards .cards-btn:hover {
+   text-decoration: none;
 }
 .cards .cards-btn::after {
   position: static;
