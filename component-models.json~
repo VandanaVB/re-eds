@@ -483,14 +483,12 @@
       {
         "component": "richtext",
         "name": "title",
-        "label": "Block Title",
-        "valueType": "string"
+        "label": "Block Title"
       },
       {
         "component": "richtext",
         "name": "intro",
-        "label": "Block Description",
-        "valueType": "string"
+        "label": "Block Description"
       }
     ]
   },
@@ -511,14 +509,12 @@
       {
         "component": "richtext",
         "name": "question",
-        "label": "Question",
-        "valueType": "string"
+        "label": "Question"
       },
       {
         "component": "richtext",
         "name": "answer",
-        "label": "Answer",
-        "valueType": "string"
+        "label": "Answer"
       }
     ]
   }
