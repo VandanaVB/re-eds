@@ -111,7 +111,6 @@ main > .section > div.cards-wrapper {
   padding: 10px 15px;
   font-size: 14px;
   font-family: var(--body-mon-font-family);
-  max-width: max-content;
 }
 .cards .cards-btn:hover {
    text-decoration: none;
