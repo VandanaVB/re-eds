@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": "accordionitem",
+      "id": "accordion-item",
       "fields": [
         {
           "component": "richtext",
@@ -103,7 +103,7 @@
     {
       "id": "accordion-tab",
       "components": [
-        "accordionitem"
+        "accordion-item"
       ]
     }
   ]
