@@ -476,5 +476,46 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "accordion-tabs",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Block Title"
+      },
+      {
+        "component": "richtext",
+        "name": "intro",
+        "label": "Block Description"
+      }
+    ]
+  },
+  {
+    "id": "accordion-tab",
+    "fields": [
+      {
+        "component": "text",
+        "name": "tabTitle",
+        "label": "Tab Title",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "accordionitem",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "question",
+        "label": "Question"
+      },
+      {
+        "component": "richtext",
+        "name": "answer",
+        "label": "Answer"
+      }
+    ]
   }
 ]
