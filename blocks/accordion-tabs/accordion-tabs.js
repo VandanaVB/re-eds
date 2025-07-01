@@ -1,43 +1,51 @@
-export default function decorate(block) {
-  /* ─── separate author rows ─── */
-  const rows = [...block.children];            // 0 = block heading row, rest = accordion-tab rows
-  const heading = rows.shift();                // remove first row for title/intro
+/* ------------------------------------------------------------
+   Accordion-Tabs  –  single source for Author + Preview/Publish
+------------------------------------------------------------ */
 
-  /* Build NAV */
+/**
+ * Builds side-nav, tab-panels and accordions.
+ * Runs only in Preview / Publish (or when UE switches to preview).
+ */
+function build(block) {
+  /* ─── separate author rows ─── */
+  const rows    = [...block.children];          // row-0 = heading, rest = tabs
+  const heading = rows.shift();                 // remove heading row
+
+  /* NAV -------------------------------------------------------------------- */
   const nav = document.createElement('nav');
   nav.className = 'accordion-nav';
   nav.innerHTML = `
-    <h3>${heading?.querySelector('[data-aue-prop="title"]')?.innerHTML || 'Categories'}</h3>
-    <ul></ul>`;
+    <h3>${heading?.querySelector('[data-aue-prop="title"]')?.innerHTML
+            || 'Categories'}</h3><ul></ul>`;
   const ulNav = nav.querySelector('ul');
 
-  /* Content wrapper */
+  /* CONTENT WRAPPER -------------------------------------------------------- */
   const content = document.createElement('div');
   content.className = 'accordion-content';
 
-  /* Insert heading intro */
-  if (heading) {
-    const intro = heading.querySelector('[data-aue-prop="intro"]')?.innerHTML || '';
-    if (intro) {
-      const introDiv = document.createElement('div');
-      introDiv.className = 'accordion-intro';
-      introDiv.innerHTML = intro;
-      content.append(introDiv);
-    }
+  /* optional intro text from heading row */
+  const introHTML = heading?.querySelector('[data-aue-prop="intro"]')?.innerHTML;
+  if (introHTML) {
+    const introDiv = document.createElement('div');
+    introDiv.className = 'accordion-intro';
+    introDiv.innerHTML = introHTML;
+    content.append(introDiv);
   }
 
-  /* Build each tab */
+  /* BUILD TABS + ACCORDIONS ------------------------------------------------ */
   rows.forEach((row, idx) => {
-    const tabTitle = row.querySelector('[data-aue-prop="tabTitle"]')?.textContent.trim() || `Tab ${idx+1}`;
+    const tabTitle =
+      row.querySelector('[data-aue-prop="tabTitle"]')?.textContent.trim()
+      || `Tab ${idx + 1}`;
 
-    /* ---------- side-nav button ---------- */
+    /* side-nav button */
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = tabTitle;
     if (idx === 0) btn.classList.add('active');
     ulNav.append(btn);
 
-    /* ---------- tab panel ---------- */
+    /* tab-panel */
     const panel = document.createElement('section');
     panel.className = 'accordion-panel';
     panel.hidden = idx !== 0;
@@ -48,48 +56,65 @@ export default function decorate(block) {
     panel.append(h2);
 
     /* accordion container */
-    const accordWrapper = document.createElement('div');
-    accordWrapper.className = 'accordion-accordion';
-    panel.append(accordWrapper);
+    const accordWrap = document.createElement('div');
+    accordWrap.className = 'accordion-accordion';
+    panel.append(accordWrap);
 
-    /* each accordionitem inside the row becomes accordion item */
+    /* every child row = one Q/A pair */
     [...row.children].forEach((item) => {
-      const ques = item.querySelector('[data-aue-prop="question"]')?.innerHTML || '';
-      const ans  = item.querySelector('[data-aue-prop="answer"]')?.innerHTML   || '';
+      const q = item.querySelector('[data-aue-prop="question"]')?.innerHTML || '';
+      const a = item.querySelector('[data-aue-prop="answer"]')?.innerHTML   || '';
+      if (!q) return;
 
-      if (ques) {
-        const accItem = document.createElement('div');
-        accItem.className = 'accordion-accordion-item';
-        accItem.innerHTML = `
-          <div class="accordion-question">${ques}</div>
-          <div class="accordion-answer"><p>${ans}</p></div>`;
-        accordWrapper.append(accItem);
-      }
+      const accItem = document.createElement('div');
+      accItem.className = 'accordion-accordion-item';
+      accItem.innerHTML = `
+        <div class="accordion-question">${q}</div>
+        <div class="accordion-answer"><p>${a}</p></div>`;
+      accordWrap.append(accItem);
     });
 
-    //content.append(panel);
+    content.append(panel);          // ← always append!
   });
 
-  /* ---------- inject into block ---------- */
-  //block.innerHTML = '';
-  //block.classList.add('accordion-tabs');
-  //block.append(nav, content);
+  /* inject into block */
+  block.innerHTML = '';
+  block.classList.add('accordion-tabs');
+  block.append(nav, content);
 
-  /* ---------- wiring: nav click + accordion ---------- */
+  /* NAV click – switch panels --------------------------------------------- */
   nav.addEventListener('click', (e) => {
-    if (!e.target.closest('button')) return;
-    const buttons = nav.querySelectorAll('button');
-    buttons.forEach((b, i) => {
-      const active = b === e.target;
+    const btn = e.target.closest('button');
+    if (!btn) return;
+
+    [...nav.querySelectorAll('button')].forEach((b, i) => {
+      const active = b === btn;
       b.classList.toggle('active', active);
       content.querySelectorAll('.accordion-panel')[i].hidden = !active;
     });
   });
 
+  /* Accordion toggle ------------------------------------------------------- */
   content.addEventListener('click', (e) => {
     const q = e.target.closest('.accordion-question');
     if (!q) return;
     q.classList.toggle('open');
     q.nextElementSibling.classList.toggle('open');
   });
+}
+
+/* ------------------------------------------------------------
+   Main entry – called by Franklin runtime
+------------------------------------------------------------ */
+export default function decorate(block) {
+  /* Inside Universal-Editor’s AUTHOR view? → defer. */
+  if (window.hlx && window.hlx.inEditor) {
+    /* Run build() only when the editor switches this block to Preview */
+    const once = () => { build(block); };
+    block.addEventListener('aue-block-preview', once, { once: true });
+    return;                           // leave authoring DOM unchanged
+  }
+
+  /* Preview / Publish context – build immediately */
+  build(block);
 }
