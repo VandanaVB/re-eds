@@ -21,7 +21,8 @@
       "tabs",
       "carousel",
       "imagetext",
-      "dynamic-media-asset"
+      "dynamic-media-asset",
+      "accordion-tabs"
     ]
   },
   {
@@ -63,6 +64,18 @@
       "imagetext",
       "tab",
       "title"
+    ]
+  },
+  {
+    "id": "accordion-tabs",
+    "components": [
+      "accordion-tab"
+    ]
+  },
+  {
+    "id": "accordion-tab",
+    "components": [
+      "accordionitem"
     ]
   }
 ]

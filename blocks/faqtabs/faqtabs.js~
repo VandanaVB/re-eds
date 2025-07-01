@@ -7,7 +7,6 @@
  * Runs only in Preview / Publish (or when UE switches to preview).
  */
 function build(block) {
-  /* ─── separate author rows ─── */
   const rows    = [...block.children];          // row-0 = heading, rest = tabs
   const heading = rows.shift();                 // remove heading row
 

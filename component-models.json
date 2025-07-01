@@ -478,47 +478,49 @@
     ]
   },
   {
-    "id": "accordion-tabs",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "title",
-        "label": "Block Title",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "intro",
-        "label": "Block Description",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "accordion-tab",
+    "id": "faqtabs",
     "fields": [
       {
         "component": "text",
-        "name": "tabTitle",
-        "label": "Tab Title",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "accordionitem",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "question",
-        "label": "Question",
-        "valueType": "string"
+        "name": "headline",
+        "label": "Block Title",
+        "valueType": "string",
+        "required": true
       },
       {
         "component": "richtext",
-        "name": "answer",
-        "label": "Answer",
+        "name": "description",
+        "label": "Block Description",
         "valueType": "string"
+      },
+      {
+        "component": "container",
+        "name": "faqItems",
+        "label": "FAQ rows",
+        "multi": true,
+        "fields": [
+          {
+            "component": "text",
+            "name": "tab",
+            "label": "Category (Tab title)",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "question",
+            "label": "Question",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "richtext",
+            "name": "answer",
+            "label": "Answer",
+            "valueType": "string",
+            "required": true
+          }
+        ]
       }
     ]
   }

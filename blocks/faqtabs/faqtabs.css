@@ -1,0 +1,76 @@
+/* layout */
+.faqtabs {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+/* nav */
+.faqtabs__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faqtabs__nav li {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.faqtabs__nav li.is-active {
+  color: #c32424;
+  /* RE red */
+  font-weight: 700;
+}
+
+.faqtabs--author .faqtabs__nav {
+  display: none;
+}
+
+/* nav doesn’t exist in author mode */
+
+/* accordion */
+.faqtabs__panel details {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 1rem 0;
+}
+
+.faqtabs__panel summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+}
+
+.faqtabs__panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqtabs__panel summary::after {
+  content: '▾';
+  position: absolute;
+  right: 0;
+  transition: transform .2s;
+}
+
+.faqtabs__panel details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faqtabs__panel p {
+  margin: .75rem 0 1.25rem;
+  line-height: 1.6;
+}
+
+/* Author-side helper */
+.faqtabs--author table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.faqtabs--author td,
+.faqtabs--author th {
+  border: 1px dashed #ccc;
+  padding: .5rem;
+}
