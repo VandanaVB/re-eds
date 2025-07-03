@@ -1,76 +1,81 @@
-/* layout */
-.faqtabs {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
+/* ----- layout ----- */
+.faqtabs-nav {
+  float: left;
+  width: 260px;
+  background: #eee;
+  padding: 0
 }
 
-/* nav */
-.faqtabs__nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.faqtabs-panel {
+  margin-left: 260px;
+  padding: 0 32px
 }
 
-.faqtabs__nav li {
-  padding: .75rem 1rem;
-  border-bottom: 1px solid #ddd;
+.faqtabs-panel[aria-hidden="true"] {
+  display: none
+}
+
+/* ----- nav buttons ----- */
+.faqtabs-tab {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 18px 24px;
+  font: 600 16px/1 guardiansans-regular;
   cursor: pointer;
+  border-bottom: 1px solid #d0d0d0;
+  color: #212121
 }
 
-.faqtabs__nav li.is-active {
-  color: #c32424;
-  /* RE red */
-  font-weight: 700;
+.faqtabs-tab[aria-selected="true"] {
+  color: #da291c;
+  font-weight: 700
 }
 
-.faqtabs--author .faqtabs__nav {
-  display: none;
-}
-
-/* nav doesn’t exist in author mode */
-
-/* accordion */
-.faqtabs__panel details {
-  border-bottom: 1px solid #e2e2e2;
-  padding: 1rem 0;
-}
-
-.faqtabs__panel summary {
-  list-style: none;
+/* ----- accordion inside the table ----- */
+.faq-q {
   cursor: pointer;
   position: relative;
-  font-weight: 600;
+  padding-right: 24px;
+  font-weight: 600
 }
 
-.faqtabs__panel summary::-webkit-details-marker {
-  display: none;
-}
-
-.faqtabs__panel summary::after {
+.faq-q::after {
   content: '▾';
   position: absolute;
-  right: 0;
-  transition: transform .2s;
+  right: 4px;
+  transition: .25s
 }
 
-.faqtabs__panel details[open] summary::after {
-  transform: rotate(180deg);
+.is-open .faq-q::after {
+  transform: rotate(180deg)
 }
 
-.faqtabs__panel p {
-  margin: .75rem 0 1.25rem;
-  line-height: 1.6;
+.faq-a[hidden] {
+  display: none
 }
 
-/* Author-side helper */
-.faqtabs--author table {
-  width: 100%;
-  border-collapse: collapse;
-}
+/* ----- mobile: stack ----- */
+@media (max-width:768px) {
+  .faqtabs-nav {
+    float: none;
+    width: auto;
+    display: flex;
+    overflow-x: auto;
+    background: #212121
+  }
 
-.faqtabs--author td,
-.faqtabs--author th {
-  border: 1px dashed #ccc;
-  padding: .5rem;
+  .faqtabs-tab {
+    color: #e6e6e6;
+    white-space: nowrap
+  }
+
+  .faqtabs-tab[aria-selected="true"] {
+    color: #da291c
+  }
+
+  .faqtabs-panel {
+    margin-left: 0;
+    padding: 16px
+  }
 }
