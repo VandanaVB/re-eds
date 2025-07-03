@@ -46,12 +46,10 @@ export default function decorate(block) {
 
         qCell.classList.add('faq-q');
         aCell.classList.add('faq-a');
-        aCell.hidden = true;
 
         /* Toggle answer visibility */
         qCell.addEventListener('click', () => {
-          const open = tr.classList.toggle('is-open');
-          aCell.hidden = !open;
+          tr.classList.toggle('is-collapsed');
         });
       });
     }

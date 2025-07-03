@@ -55,24 +55,6 @@
   display: none
 }
 
-/* collapsed state */
-.is-collapsed .faq-a {
-  /* keep the cell in the layout so UE can still read it */
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: max-height .25s ease, opacity .25s ease;
-  overflow: hidden;
-  border: 0;
-}
-
-/* expanded */
-.faq-a {
-  max-height: 1000px;
-  opacity: 1;
-  transition: max-height .25s ease, opacity .25s ease;
-}
 /* ----- mobile: stack ----- */
 @media (max-width:768px) {
   .faqtabs-nav {
