@@ -46,6 +46,7 @@
           "component": "container",
           "name": "faqRows",
           "label": "FAQ Rows",
+          "presentation": "table",
           "multi": true,
           "fields": [
             {
