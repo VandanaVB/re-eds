@@ -1,80 +1,106 @@
+// eslint-disable-next-line import/no-unresolved
+import { toClassName } from '../../scripts/aem.js';   // same helper you use in tabs.js :contentReference[oaicite:6]{index=6}
+
 export default function decorate(block) {
-  const inEditor =
+  /* -------------------------------------------------------------
+   *  Detect authoring vs. publish
+   * ----------------------------------------------------------- */
+  const isAuthor =
     window?.helix?.sidekick?.isEditor?.() ||
     document.documentElement.classList.contains('universal-editor');
 
-  const table = block.querySelector('table');
-  if (!table) return;               // author deleted the table – be safe
+  /* -------------------------------------------------------------
+   *  Grab optional headline (first row) and build skeleton
+   * ----------------------------------------------------------- */
+  const headingRow = block.firstElementChild;
+  const headerHTML = headingRow?.innerHTML || '';
+  headingRow?.remove();
 
-  if (inEditor) {
-    // Authoring mode → leave the table visible, add minimal styling
-    block.classList.add('faqtabs--author');
-    return;
-  }
+  const nav   = document.createElement('ul');  nav.className = 'faqtabs-nav';    nav.setAttribute('role','tablist');
+  const panes = document.createElement('div'); panes.className = 'faqtabs-panels';
+  block.prepend(nav);
+  block.append(panes);
 
-  /* ---------- PUBLISH-MODE TRANSFORM ---------- */
-  const rows = [...table.tBodies[0].rows];
-  const data = {};
+  /* -------------------------------------------------------------
+   *  Convert every remaining row (= faqtab item)
+   * ----------------------------------------------------------- */
+  [...block.children].forEach((row, idx) => {
+    if (row.classList.contains('faqtabs-nav') || row.classList.contains('faqtabs-panels')) return;
 
-  rows.forEach((tr) => {
-    const [tabCell, qCell, aCell] = tr.cells;
-    if (!tabCell || !qCell || !aCell) return;
+    const [titleDiv] = row.children;
+    const tabTitle = titleDiv?.textContent.trim() || `Tab ${idx+1}`;
+    const id = toClassName(tabTitle);
 
-    const tab = tabCell.textContent.trim();
-    if (!data[tab]) data[tab] = [];
-    data[tab].push({
-      question: qCell.innerHTML.trim(),
-      answer:   aCell.innerHTML.trim(),
-    });
-  });
+    /* ---- left-hand tab button -------------------------------- */
+    const btn = document.createElement('button');
+    btn.className = 'faqtabs-tab';
+    btn.id = `tab-${id}`;
+    btn.textContent = tabTitle;
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', !idx);
+    btn.setAttribute('aria-controls', `panel-${id}`);
+    nav.append(btn);
 
-  // build left nav
-  const nav = document.createElement('ul');
-  nav.className = 'faqtabs__nav';
-
-  // build right panels
-  const panelWrap = document.createElement('div');
-  panelWrap.className = 'faqtabs__panels';
-
-  Object.entries(data).forEach(([tab, qa], idx) => {
-    /* nav item */
-    const li = document.createElement('li');
-    li.textContent = tab;
-    li.dataset.tab = tab;
-    if (idx === 0) li.classList.add('is-active');
-    nav.append(li);
-
-    /* panel */
+    /* ---- right-hand panel ------------------------------------ */
     const panel = document.createElement('div');
-    panel.className = 'faqtabs__panel';
-    panel.dataset.tab = tab;
-    if (idx !== 0) panel.hidden = true;
+    panel.className = 'faqtabs-panel';
+    panel.id = `panel-${id}`;
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', `tab-${id}`);
+    panel.hidden = !!idx;
 
-    qa.forEach(({ question, answer }) => {
+    /* Collect Q-A rows from the UE table (preferred) … */
+    const table = row.querySelector('table');
+    const qaRows = [];
+    if (table) {
+      [...table.tBodies[0].rows].forEach((tr) => {
+        const q = tr.cells[0]?.innerHTML.trim();
+        const a = tr.cells[1]?.innerHTML.trim();
+        if (q && a) qaRows.push({ q, a });
+      });
+    } else {
+      /* …or gracefully fall back to consecutive <div>s */
+      const cells = [...row.children].slice(1);   // skip titleDiv
+      for (let i = 0; i < cells.length; i += 2) {
+        qaRows.push({ q: cells[i]?.innerHTML.trim(), a: cells[i+1]?.innerHTML.trim() });
+      }
+    }
+
+    qaRows.forEach(({ q, a }) => {
       const details = document.createElement('details');
-      const summary = document.createElement('summary');
-      summary.innerHTML = question;
-      const p = document.createElement('p');
-      p.innerHTML = answer;
-      details.append(summary, p);
+      const summary = document.createElement('summary'); summary.innerHTML = q;
+      const body    = document.createElement('p');       body.innerHTML    = a;
+      details.append(summary, body);
       panel.append(details);
     });
 
-    panelWrap.append(panel);
+    panes.append(panel);
+    row.remove(); // scrub original author markup
   });
 
-  // event delegation for tab clicks
+  /* -------------------------------------------------------------
+   *  Interaction – switch panels
+   * ----------------------------------------------------------- */
   nav.addEventListener('click', (e) => {
-    const li = e.target.closest('li');
-    if (!li) return;
-    const { tab } = li.dataset;
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const target = btn.getAttribute('aria-controls');
 
-    [...nav.children].forEach((n) => n.classList.toggle('is-active', n === li));
-    [...panelWrap.children].forEach((p) => {
-      p.hidden = p.dataset.tab !== tab;
-    });
+    nav.querySelectorAll('button').forEach((b) => b.setAttribute('aria-selected', b === btn));
+    panes.querySelectorAll('.faqtabs-panel').forEach((p) => { p.hidden = p.id !== target; });
   });
 
-  // swap elements into the block & hide original table
-  table.replaceWith(nav, panelWrap);
+  /* -------------------------------------------------------------
+   *  Put header back on top (optional)
+   * ----------------------------------------------------------- */
+  if (headerHTML) {
+    const hdr = document.createElement('div');
+    hdr.className = 'faqtabs-head';
+    hdr.innerHTML = headerHTML;
+    block.prepend(hdr);
+  }
+
+  /* Author mode stops here – raw table stays visible for editing */
+  if (isAuthor) return;
 }

@@ -478,34 +478,21 @@
     ]
   },
   {
-    "id": "faqtabs",
+    "id": "faqtab",
     "fields": [
       {
         "component": "text",
-        "name": "headline",
-        "label": "Block Title",
+        "name": "tabTitle",
+        "label": "Tab Title",
         "valueType": "string",
         "required": true
       },
       {
-        "component": "richtext",
-        "name": "description",
-        "label": "Block Description",
-        "valueType": "string"
-      },
-      {
         "component": "container",
-        "name": "faqItems",
-        "label": "FAQ rows",
+        "name": "faqRows",
+        "label": "FAQ Rows",
         "multi": true,
         "fields": [
-          {
-            "component": "text",
-            "name": "tab",
-            "label": "Category (Tab title)",
-            "valueType": "string",
-            "required": true
-          },
           {
             "component": "text",
             "name": "question",

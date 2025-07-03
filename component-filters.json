@@ -67,15 +67,9 @@
     ]
   },
   {
-    "id": "accordion-tabs",
+    "id": "faqtabs",
     "components": [
-      "accordion-tab"
-    ]
-  },
-  {
-    "id": "accordion-tab",
-    "components": [
-      "accordionitem"
+      "faqtab"
     ]
   }
 ]
