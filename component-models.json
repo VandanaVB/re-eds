@@ -511,5 +511,39 @@
         ]
       }
     ]
+  },
+  {
+    "id": "featured-doodle",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Section Title",
+        "value": "DOODLE OF THE WEEK"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Featured Image"
+      },
+      {
+        "component": "text",
+        "name": "authorName",
+        "label": "Author Name",
+        "value": "JATISH KUMAR"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Description",
+        "value": "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MAURIS PELLENTESQUE NEQUE DUIS VITAE DAPIBUS URNA QUI TINCIDUNT"
+      },
+      {
+        "component": "text",
+        "name": "shareButton",
+        "label": "Share Button",
+        "value": "Share Now"
+      }
+    ]
   }
 ]

@@ -1,0 +1,156 @@
+.featured-doodle {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.featured-doodle-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.featured-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.featured-card {
+  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.featured-image-container {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f0f0f0;
+  filter: grayscale(100%);
+}
+
+.featured-content {
+  color: white;
+  text-align: left;
+}
+
+.featured-author {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.featured-description {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.share-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.share-btn:hover {
+  background: white;
+  color: #ff6b35;
+  transform: translateY(-2px);
+}
+
+.share-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Star decoration */
+.featured-card::after {
+  content: '★';
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.3);
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .featured-doodle {
+    padding: 40px 16px;
+  }
+
+  .featured-doodle-container {
+    max-width: 100%;
+  }
+
+  .featured-card {
+    padding: 16px;
+  }
+
+  .featured-image-container {
+    padding: 16px;
+  }
+
+  .featured-image {
+    height: 180px;
+  }
+
+  .featured-title {
+    font-size: 16px;
+  }
+
+  .featured-author {
+    font-size: 14px;
+  }
+
+  .featured-description {
+    font-size: 11px;
+  }
+
+  .share-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
