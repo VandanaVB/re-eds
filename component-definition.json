@@ -345,6 +345,96 @@
           }
         }
       ]
+    },
+    {
+      "title": "Doodle Components",
+      "id": "doodle",
+      "components": [
+        {
+          "title": "Header",
+          "id": "header",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/header",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero Section",
+          "id": "hero",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/hero",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "CTA Buttons",
+          "id": "cta-buttons",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/cta-buttons",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Featured Card",
+          "id": "featured-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/featured-card",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Doodle Grid",
+          "id": "doodle-grid",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/doodle-grid",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Load More",
+          "id": "load-more",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/load-more",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Footer",
+          "id": "footer",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "doodle/components/footer",
+                "template": {}
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }

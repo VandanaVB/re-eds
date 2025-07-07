@@ -1,0 +1,74 @@
+.featured-card {
+  background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+  margin: 2rem 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.featured-title {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.featured-image-container {
+  padding: 1rem;
+  background: white;
+  margin: 1rem;
+  border-radius: 15px;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.featured-info {
+  padding: 1rem 1.5rem 1.5rem;
+  color: white;
+}
+
+.featured-artist {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.featured-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.share-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.share-button:hover {
+  background: white;
+  color: #ff9800;
+}
+
+@media (max-width: 768px) {
+  .featured-card {
+    margin: 1rem;
+  }
+
+  .featured-info {
+    padding: 1rem;
+  }
+}

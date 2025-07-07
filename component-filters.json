@@ -23,7 +23,14 @@
       "imagetext",
       "dynamic-media-asset",
       "faqtabs",
-      "featured-doodle"
+      "featured-doodle",
+      "header",
+      "hero",
+      "cta-buttons",
+      "featured-card",
+      "doodle-grid",
+      "load-more",
+      "footer"
     ]
   },
   {

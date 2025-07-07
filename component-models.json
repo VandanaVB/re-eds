@@ -8,7 +8,7 @@
         "name": "jcr:title",
         "label": "Title"
       },
-  {
+      {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
@@ -543,6 +543,123 @@
         "name": "shareButton",
         "label": "Share Button",
         "value": "Share Now"
+      }
+    ]
+  },
+  {
+    "id": "cta-buttons",
+    "fields": [
+      {
+        "component": "multifield",
+        "name": "buttons",
+        "label": "CTA Buttons",
+        "fields": [
+          {
+            "component": "text",
+            "name": "text",
+            "label": "Button Text"
+          },
+          {
+            "component": "text",
+            "name": "url",
+            "label": "Button URL"
+          },
+          {
+            "component": "select",
+            "name": "variant",
+            "label": "Button Variant",
+            "options": [
+              {
+                "text": "Primary",
+                "value": "primary"
+              },
+              {
+                "text": "Secondary",
+                "value": "secondary"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "featured-card",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Card Title",
+        "value": "DOODLE OF THE WEEK"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Featured Image"
+      },
+      {
+        "component": "text",
+        "name": "artistName",
+        "label": "Artist Name"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "name": "shareText",
+        "label": "Share Button Text",
+        "value": "Share Now"
+      }
+    ]
+  },
+  {
+    "id": "doodle-grid",
+    "fields": [
+      {
+        "component": "multifield",
+        "name": "doodles",
+        "label": "Doodle Items",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Doodle Image"
+          },
+          {
+            "component": "text",
+            "name": "artistName",
+            "label": "Artist Name"
+          },
+          {
+            "component": "text",
+            "name": "doodleId",
+            "label": "Doodle ID"
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "load-more",
+    "fields": [
+      {
+        "component": "text",
+        "name": "buttonText",
+        "label": "Load More Button Text",
+        "value": "Load More"
+      },
+      {
+        "component": "text",
+        "name": "loadUrl",
+        "label": "Load More URL"
       }
     ]
   }
