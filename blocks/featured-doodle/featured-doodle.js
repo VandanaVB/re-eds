@@ -69,16 +69,10 @@ function readBlockConfig(block) {
       const cols = [...row.children];
       if (cols[0]) {
         const col = cols[0].querySelector('[data-aue-prop]').dataset.aueProp;
-        const name = toClassName(cols[0].textContent);
+        const name = cols[0].textContent;
         config[col] = name;
       }
     }
   });
   return config;
-}
-
-function toClassName(name) {
-  return name && typeof name === 'string'
-    ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-')
-    : '';
 }
