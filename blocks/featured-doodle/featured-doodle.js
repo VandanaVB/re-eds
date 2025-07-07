@@ -23,7 +23,7 @@ export default function decorate(block) {
 
   const image = document.createElement('img');
   image.className = 'featured-image';
-  image.src = config.image || '/placeholder-doodle.jpg';
+  image.src = config.image;
   image.alt = 'Featured doodle';
 
   imageContainer.appendChild(image);
@@ -67,10 +67,10 @@ function readBlockConfig(block) {
   block.querySelectorAll(':scope > div').forEach((row) => {
     if (row.children) {
       const cols = [...row.children];
-      if (cols[1]) {
-        const col = cols[1];
+      if (cols[0]) {
+        const col = cols[0].querySelector('[data-aue-prop]').dataset.aueProp;
         const name = toClassName(cols[0].textContent);
-        config[name] = col.textContent;
+        config[col] = name;
       }
     }
   });
