@@ -68,8 +68,9 @@ function readBlockConfig(block) {
     if (row.children) {
       const cols = [...row.children];
       if (cols[0]) {
+       const picture = cols[0].querySelector('picture img');
+       const name = picture ? picture.src : cols[0].textContent;
         const col = cols[0].querySelector('[data-aue-prop]').dataset.aueProp;
-        const name = cols[0].textContent;
         config[col] = name;
       }
     }
