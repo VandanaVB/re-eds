@@ -662,5 +662,25 @@
         "label": "Load More URL"
       }
     ]
+  },
+  {
+    "id": "doodle-detail",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Doodle Image"
+      },
+      {
+        "name": "artistCredit",
+        "component": "text",
+        "label": "Artist Credit"
+      },
+      {
+        "name": "description",
+        "component": "text",
+        "label": "Description"
+      }
+    ]
   }
 ]

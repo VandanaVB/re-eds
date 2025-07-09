@@ -1,0 +1,45 @@
+on
+// 3. _block.json
+{
+  "definitions": [
+    {
+      "id": "zoom-frame",
+      "title": "Zoom Frame Block",
+      "components": [
+        "image",
+        "text"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "zoom-frame-model",
+      "fields": [
+        {
+          "id": "illustration",
+          "type": "image",
+          "label": "Illustration"
+        },
+        {
+          "id": "artistCredit",
+          "type": "text",
+          "label": "Artist Credit"
+        },
+        {
+          "id": "description", 
+          "type": "text",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "zoom-frame-filter",
+      "components": [
+        "image",
+        "text"
+      ]
+    }
+  ]
+}

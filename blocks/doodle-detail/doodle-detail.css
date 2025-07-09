@@ -1,0 +1,30 @@
+/* 2. CSS Block */
+.doodle-detail {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.doodle-detail .illustration {
+  margin-bottom: 16px;
+}
+
+.doodle-detail .illustration img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.doodle-detail .artist-credit {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.doodle-detail .description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
