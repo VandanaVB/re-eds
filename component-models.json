@@ -687,7 +687,7 @@
     "id": "open-frame",
     "fields": [
       {
-        "component": "image",
+        "component": "reference",
         "name": "illustration",
         "label": "Illustration",
         "required": true
@@ -699,7 +699,7 @@
         "required": true
       },
       {
-        "component": "textarea",
+        "component": "richtext",
         "name": "description",
         "label": "Description",
         "required": true
