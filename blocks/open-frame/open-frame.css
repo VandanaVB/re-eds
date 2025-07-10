@@ -1,0 +1,36 @@
+/* block.css */
+.open-frame-container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.open-frame-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.open-frame-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.open-frame-content {
+  text-align: left;
+}
+
+.open-frame-artist {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+.open-frame-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}

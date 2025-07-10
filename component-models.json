@@ -682,5 +682,28 @@
         "label": "Description"
       }
     ]
+  },
+  {
+    "id": "open-frame",
+    "fields": [
+      {
+        "component": "image",
+        "name": "illustration",
+        "label": "Illustration",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "artist",
+        "label": "Artist Credit",
+        "required": true
+      },
+      {
+        "component": "textarea",
+        "name": "description",
+        "label": "Description",
+        "required": true
+      }
+    ]
   }
 ]
