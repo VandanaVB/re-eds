@@ -705,5 +705,45 @@
         "required": true
       }
     ]
+  },
+  {
+    "id": "feature-cards",
+    "fields": [
+      {
+        "component": "container",
+        "name": "cards",
+        "label": "Feature Cards",
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "name": "cardImage",
+            "label": "Card Image"
+          },
+          {
+            "component": "text",
+            "name": "cardTitle",
+            "label": "Card Title",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "cardDescription",
+            "label": "Card Description"
+          },
+          {
+            "component": "text",
+            "name": "cardCtaLabel",
+            "label": "CTA Label",
+            "valueType": "string"
+          },
+          {
+            "component": "aem-content",
+            "name": "cardCta",
+            "label": "Card CTA Link"
+          }
+        ]
+      }
+    ]
   }
 ]
