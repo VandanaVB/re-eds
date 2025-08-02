@@ -1,3 +1,4 @@
+/* --- Base Mobile Styles (Dark background) --- */
 footer {
   background-color: var(--light-color);
   font-size: var(--body-font-size-xs);
@@ -9,107 +10,120 @@ footer .footer > div {
   padding: 40px 24px 24px;
 }
 
-footer .footer p {
-  margin: 0;
-}
-
-/* Updated styles to use the correct class `default-content-wrapper` */
 footer .footer .default-content-wrapper {
   background-color: #1a1a1a;
   color: #fff;
   padding: 40px 20px;
 }
 
-footer .footer .default-content-wrapper h3 {
+footer .footer h3 {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
+  /* Stacking on mobile */
+  display: block;
 }
 
-footer .footer .default-content-wrapper ul {
+footer .footer ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 0;
 }
 
-footer .footer .default-content-wrapper li {
+footer .footer li {
   margin-bottom: 10px;
 }
 
-footer .footer .default-content-wrapper a {
+footer .footer a {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
 }
 
-footer .footer .default-content-wrapper a:hover {
+footer .footer a:hover {
   text-decoration: underline;
 }
 
-/* There is no `.red-link` in your HTML, but keeping the style in case it's used elsewhere. */
-footer .footer .default-content-wrapper .red-link a {
-  color: #ff0000;
-}
-
-/* The copyright section and other lists are directly under the `default-content-wrapper` */
-footer .footer .default-content-wrapper > p:last-of-type {
+/* --- Copyright and Legal Links Section (Mobile & Desktop) --- */
+/* The final p and ul elements in the default-content-wrapper form the copyright bar. */
+footer .footer .default-content-wrapper p:last-of-type,
+footer .footer .default-content-wrapper ul:last-of-type {
   border-top: 1px solid #333;
-  margin-top: 40px;
   padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 12px;
-  color: #888;
+  margin-top: 20px;
 }
 
-footer .footer .default-content-wrapper > ul:last-of-type {
-  display: flex;
-  gap: 20px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Align copyright text and legal links for mobile (stacked) */
+footer .footer .default-content-wrapper ul:last-of-type {
+  display: block;
 }
 
-/* Responsive styles for larger screens */
-@media (width >= 900px) {
+footer .footer .default-content-wrapper ul:last-of-type li {
+  margin-bottom: 5px;
+}
+
+/* --- Responsive Desktop Styles (Light background) --- */
+@media (min-width: 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
   }
-
+  
+  /* Reset the main background and text color for desktop */
   footer .footer .default-content-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 60px;
+    background-color: var(--light-color);
+    color: #000;
   }
 
-  footer .footer .default-content-wrapper h3 {
-    margin-bottom: 15px;
-  }
-
+  /* Target all links in the main content for desktop to change color */
   footer .footer .default-content-wrapper > h3,
   footer .footer .default-content-wrapper > ul {
-    /* Align h3 and ul in the same grid column */
-    grid-column: span 1;
+    color: #000;
   }
   
-  /* You may need to adjust this depending on how many columns you want per group. */
-  /* For example, if "Motorcycles" and its list should be in one column */
+  footer .footer .default-content-wrapper > ul a {
+    color: #000;
+  }
+
+  /* Grid layout to create the columns from sibling elements */
+  footer .footer .default-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px;
+    padding: 60px 0; /* Remove padding from sides for a wider content area */
+  }
+
+  /* Style each h3 and its following ul to occupy a grid column */
+  footer .footer .default-content-wrapper h3,
   footer .footer .default-content-wrapper h3 + ul {
     grid-column: span 1;
+    margin-bottom: 0;
   }
 
-  footer .footer .default-content-wrapper > p:last-of-type {
-    width: 100%;
-    grid-column: 1 / -1; /* Make the copyright line span all columns */
+  /* Hide the h3s on desktop and align the ul content */
+  /* This is a hacky way to prevent the h3 from taking up space while the ul is in its column */
+  footer .footer .default-content-wrapper h3:not(:first-of-type) {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+  }
+  
+  footer .footer .default-content-wrapper ul {
+    margin-top: -36px; /* Adjust to move the ul up to the top of its grid cell */
   }
 
-  footer .footer .default-content-wrapper > ul:last-of-type {
-    width: 100%;
-    grid-column: 1 / -1;
+  /* The copyright bar needs to span the full width */
+  footer .footer .default-content-wrapper p:last-of-type {
+    grid-column: 1 / span 4;
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  footer .footer .default-content-wrapper ul:last-of-type {
+    grid-column: 5 / span 2;
+    margin-top: 40px;
+    display: flex;
     justify-content: flex-end;
+    gap: 20px;
   }
 }
