@@ -1,31 +1,59 @@
-/* ---------- 2-col layout driven by the section class ---------- */
+/* ==============================================================
+   GRID LAYOUT
+   ============================================================== */
 .faqtab-container {
   display: grid;
   grid-template-columns: 320px 1fr;
-  .default-content-wrapper {
-    grid-column: 1 / -1;
-   }
 }
 
-/* ---------- left rail ---------- */
+/* Row 1 – full-width headline */
+.faqtab-container>.default-content-wrapper:first-child {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Row 2 – “Categories / Pick a Category” (grey box) */
+.faqtab-left {
+  grid-column: 1;
+  grid-row: 2;
+  background: #e5e6e8;
+  padding: 32px 32px 0;
+}
+
+.faqtab-left h2:first-child {
+  margin-top: 0;
+}
+
+/* Row 3 – nav list and panels */
 .faqtab-nav {
+  grid-column: 1;
+  grid-row: 3 / -1;
   list-style: none;
   margin: 0;
-  padding: 32px 0;
+  padding: 0;
   background: #e5e6e8;
-  grid-column: 1;
 }
 
+.faqtab-wrapper {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* ==============================================================
+   NAV LIST
+   ============================================================== */
 .faqtab-nav-item {
-  padding: 16px 24px;
+  padding: 18px 24px;
   cursor: pointer;
   position: relative;
-  font: 600 18px/1 "Helvetica Neue", sans-serif;
+  font: 600 20px/1.2 "Helvetica Neue", sans-serif;
   border-bottom: 1px solid #d1d1d1;
 }
 
 .faqtab-nav-item[aria-selected="true"] {
   color: #c32424;
+  font-weight: 700;
 }
 
 .faqtab-nav-item[aria-selected="true"]::after {
@@ -34,32 +62,33 @@
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 22px;
 }
 
-/* ---------- panels ---------- */
+/* ==============================================================
+   PANELS / ACCORDION
+   ============================================================== */
 .faqtab.block {
   padding: 40px 48px;
-  grid-column: 2;
 }
 
 .faqtab.block[hidden] {
   display: none !important;
 }
 
-/* ---------- accordion ---------- */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
-   display: block;
-   width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .faqtab.block summary {
-  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   cursor: pointer;
   font-weight: 700;
-  position: relative;
   padding-right: 32px;
 }
 
@@ -69,9 +98,8 @@
 
 .faqtab.block summary::after {
   content: '▾';
-  position: absolute;
-  right: 0;
   transition: transform .25s;
+  flex-shrink: 0;
 }
 
 .faqtab.block details[open] summary::after {
@@ -83,22 +111,23 @@
   line-height: 1.6;
 }
 
-.faqtab-wrapper{
-    grid-column:2;
-    grid-row: 2;
-}
-
-/* ---------- mobile ---------- */
+/* ==============================================================
+   MOBILE
+   ============================================================== */
 @media (max-width: 768px) {
   .faqtab-container {
     grid-template-columns: 1fr;
+  }
+
+  .faqtab-left,
+  .faqtab-nav {
+    grid-column: 1;
   }
 
   .faqtab-nav {
     display: flex;
     overflow-x: auto;
     background: #212121;
-    padding: 0
   }
 
   .faqtab-nav-item {
@@ -108,17 +137,10 @@
   }
 
   .faqtab-nav-item[aria-selected="true"] {
-    color: #c32424
+    color: #c32424;
   }
 
-  .faqtab.block {
-    padding: 32px 20px;
-  }
-  
-  .faqtab.block p {
-    font-size: var(--heading-font-size-xl);
-    line-height: 28px;
-    font-family: "guardiansans-semibold";
-    word-break: break-word;
+  .faqtab-wrapper {
+    padding: 0 20px;
   }
 }

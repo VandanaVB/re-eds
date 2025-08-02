@@ -1,84 +1,107 @@
-/*  This decorator fires once for **every** .faqtab.block.
- *  The first one encountered becomes the “coordinator” that
- *  creates the nav; subsequent blocks only attach themselves.
+/*  Decorator fires once per .faqtab.block.
+ *  ■ Builds an accordion for its own Q-A rows
+ *  ■ Registers itself so the first block can build / refresh the nav
+ *  ■ Keeps UE bindings intact (no author markup removed)
  */
 export default function decorate(block) {
   const section = block.closest('.faqtab-container');
-  if (!section) return;                       // safety
+  if (!section) return;
 
-  /* ------------------------------------------------------------
-   *  Build an accordion inside *this* block
-   * ---------------------------------------------------------- */
-  [...block.querySelectorAll('[data-aue-model="questionanswer"]')]
-    .forEach((qa) => {
+  /* ------------------------------------------------------------------
+   * 1. Build accordion inside *this* block (idempotent)
+   * ---------------------------------------------------------------- */
+  const inEditor = !!document.documentElement.dataset.editor;
+
+  [...block.querySelectorAll('[data-aue-model="questionanswer"]')].forEach(
+    (qa, rowIdx) => {
+      if (qa.querySelector('details')) return;          // already done
+
       const q = qa.querySelector('[data-aue-prop="question"]');
       const a = qa.querySelector('[data-aue-prop="answer"]');
       if (!q || !a) return;
 
-      /* Author nodes stay; append UX layer */
-      const details = document.createElement('details');
-      const summary = document.createElement('summary');
+      const details  = document.createElement('details');
+      const summary  = document.createElement('summary');
+      const body     = document.createElement('div');
+
       summary.innerHTML = q.innerHTML;
-      const body = document.createElement('div');
-      body.className = 'faqtab-answer';
-      body.innerHTML = a.innerHTML;
+      body.className    = 'faqtab-answer';
+      body.innerHTML    = a.innerHTML;
+
       details.append(summary, body);
+      if (!rowIdx) details.open = true;                 // first row open
       qa.textContent = '';
       qa.append(details);
-    });
+    }
+  );
 
-  /* ------------------------------------------------------------
-   *  Register block in a section-level registry
-   * ---------------------------------------------------------- */
+  /* ------------------------------------------------------------------
+   * 2. Register this panel
+   * ---------------------------------------------------------------- */
   if (!section.faqtabs) section.faqtabs = [];
   section.faqtabs.push(block);
 
-  /*  If this is NOT the first block, the nav is already built.
-   *  Accordion above is enough.
-   */
-  //if (section.faqtabs.length > 1) return;
-   buildOrRefreshNav();
-  /* ------------------------------------------------------------
-   *  Helper: create nav once, then replace its innerHTML
-   * ---------------------------------------------------------- */
-     function buildOrRefreshNav() {
-      let nav = section.querySelector('.faqtab-nav');
-      if (!nav) {
-         nav = document.createElement('ul');
-         nav.className = 'faqtab-nav';
-         nav.setAttribute('role', 'tablist');
-         /* ── NEW: place nav after title/text wrapper ───────────── */
-         const titleBlock = section.querySelector('.default-content-wrapper');
-         if (titleBlock) {
-           titleBlock.insertAdjacentElement('afterend', nav);
-         } else {
-           section.prepend(nav);  // fallback
-         }
-      }
-      nav.innerHTML = '';
-      section.faqtabs.forEach((panel, idx) => {
-        const titleEl = panel.querySelector('[data-aue-prop="tabTitle"]');
-        const title = titleEl ? titleEl.textContent.trim() : `Tab ${idx + 1}`;
-        const li = document.createElement('li');
-        li.className = 'faqtab-nav-item';
-        li.textContent = title;
-        li.setAttribute('role', 'tab');
-        li.setAttribute('aria-controls', panel.id || `faqtab-${idx}`);
-        li.setAttribute('aria-selected', !idx);
+  /* always refresh nav (handles lazy-loaded blocks) */
+  buildOrRefreshNav();
 
-        /* ensure each panel has an ID and default visibility */
-        panel.id = panel.id || `faqtab-${idx}`;
-        panel.setAttribute('role', 'tabpanel');
-        panel.hidden = !!idx;
+  /* ------------------------------------------------------------------
+   * Helper: create / refresh nav + left column wrapper
+   * ---------------------------------------------------------------- */
+  function buildOrRefreshNav() {
+    /* left wrapper: “Categories / Pick a Category” — one-time */
+    if (!section.querySelector('.faqtab-left')) {
+      const left      = document.createElement('div');
+      left.className  = 'faqtab-left';
 
-        li.addEventListener('click', () => {
-          nav.querySelectorAll('.faqtab-nav-item')
-             .forEach((n) => n.setAttribute('aria-selected', n === li));
-          section.faqtabs.forEach((p) => { p.hidden = p !== panel; });
-        });
+      const catsH2    = section.querySelector(
+        '.default-content-wrapper h2:nth-of-type(2)'
+      );
+      const promptP   =
+        catsH2?.nextElementSibling?.tagName === 'P' ? catsH2.nextElementSibling : null;
 
-        nav.append(li);
+      if (catsH2)  left.append(catsH2);
+      if (promptP) left.append(promptP);
+
+      section.append(left);                            // grid handles placement
+    }
+
+    /* nav list */
+    let nav = section.querySelector('.faqtab-nav');
+    if (!nav) {
+      nav = document.createElement('ul');
+      nav.className = 'faqtab-nav';
+      nav.setAttribute('role', 'tablist');
+      section.querySelector('.faqtab-left').after(nav);
+    }
+
+    /* rebuild items */
+    nav.innerHTML = '';
+    section.faqtabs.forEach((panel, idx) => {
+      const titleEl = panel.querySelector('[data-aue-prop="tabTitle"]');
+      const title   = titleEl ? titleEl.textContent.trim() : `Tab ${idx + 1}`;
+
+      panel.id = panel.id || `faqtab-${idx}`;
+      panel.setAttribute('role', 'tabpanel');
+      panel.hidden = !!idx;                            // show first only
+
+      const li = document.createElement('li');
+      li.className = 'faqtab-nav-item';
+      li.textContent = title;
+      li.setAttribute('role', 'tab');
+      li.setAttribute('aria-controls', panel.id);
+      li.setAttribute('aria-selected', !idx);
+
+      li.addEventListener('click', () => {
+        nav.querySelectorAll('.faqtab-nav-item')
+          .forEach(n => n.setAttribute('aria-selected', n === li));
+        section.faqtabs.forEach(p => { p.hidden = p !== panel; });
+
+        /* auto-expand first Q-A of the newly shown panel */
+        const first = panel.querySelector('details');
+        if (first) first.open = true;
+      });
+
+      nav.append(li);
     });
   }
-
 }
