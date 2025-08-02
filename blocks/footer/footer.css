@@ -1,114 +1,160 @@
-/* --- Footer Styling --- */
-
-/* Main footer container */
+/* --- Global Footer Styles --- */
 footer {
-  background-color: #f5f5f5; /* Light grey to match screenshot */
-  font-size: 14px;
-  color: #333;
-  border-top: 1px solid #e0e0e0;
+  background: #e5e3e3; /* Exact background color */
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 0 24px;
 }
 
-footer .footer p {
-  margin: 0;
-}
-
-/* Wrapper for the main link columns (created by JS) */
-.footer-links-wrapper {
-  display: grid;
-  gap: 24px 32px; /* row and column gap */
-  padding-bottom: 40px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* Individual column styles */
-.footer-column h3 {
-  font-weight: 700; /* Bold heading */
-  font-size: 1em;
-  color: #000;
-  margin: 0 0 20px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* --- Row Wrappers (Created by JS) --- */
+.footer-social-wrapper {
+  padding: 25px 0;
   display: flex;
-  flex-direction: column;
-  gap: 16px; /* Space between links */
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.footer-column a {
-  text-decoration: none;
-  color: #333;
+.footer-links-wrapper {
+  padding: 35px 0 30px;
+  border-top: 1px solid #bababa;
+  border-bottom: 1px solid #bababa;
+  display: grid;
+  gap: 30px; /* Spacing between columns */
 }
 
-.footer-column a:hover {
-  text-decoration: underline;
-}
-
-/* Wrapper for copyright and legal links (created by JS) */
 .footer-bottom-wrapper {
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  font-size: 12px;
 }
 
-.footer-bottom-wrapper ul {
+/* --- Social Links (Placeholder) --- */
+/* These styles will work if social link content is added to the AEM fragment */
+.footer-social-wrapper p {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 20px 0 0;
+  font-size: 15px;
+  color: #000;
+}
+
+.footer-social-wrapper ul {
+  display: inline-block;
+  vertical-align: middle;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+/* --- Main Link Columns --- */
+.list-of-links h3 {
+  font-size: 20px; /* Original font size */
+  font-weight: 600; /* Bolder than normal, but not quite 700 */
+  color: #000;
+  margin: 0 0 15px;
+}
+
+.list-of-links .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-of-links .nav-list li a {
+  font-size: 13px; /* Original font size */
+  color: #000;
+  line-height: 30px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.list-of-links .nav-list li a:hover {
+  color: #da291c; /* Exact red hover color */
+}
+
+/* --- Bottom Row (Copyright & Legal) --- */
+.footer-bottom-wrapper .copyright-text p {
+  color: #000;
+  font-size: 10px;
+  margin: 0;
+}
+
+.footer-bottom-wrapper .extra-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
 }
 
-.footer-bottom-wrapper a {
-  color: #333;
+.footer-bottom-wrapper .extra-links li {
+  padding: 4px 7px;
+  position: relative;
+}
+
+.footer-bottom-wrapper .extra-links li a {
+  font-size: 10px;
+  color: #000;
   text-decoration: none;
 }
 
-.footer-bottom-wrapper a:hover {
-  text-decoration: underline;
+.footer-bottom-wrapper .extra-links li a:hover {
+  color: #da291c;
 }
 
-/* --- Responsive Media Queries --- */
-@media (min-width: 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+/* The pipe '|' separator between legal links */
+.footer-bottom-wrapper .extra-links li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #000;
+  width: 1px;
+  height: 10px;
+}
 
-  /* Create the 7-column layout on large screens */
+/* --- Responsive Layout --- */
+@media (min-width: 992px) {
   .footer-links-wrapper {
     grid-template-columns: repeat(7, 1fr);
   }
 }
 
-@media (max-width: 899px) {
-  /* On tablets, use 3 or 4 columns */
+@media (max-width: 991px) and (min-width: 768px) {
   .footer-links-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 }
 
-@media (max-width: 599px) {
-  /* On mobile, stack them in 2 columns */
+@media (max-width: 767px) {
   .footer-links-wrapper {
     grid-template-columns: 1fr 1fr;
+    border: 0;
+    padding-top: 15px;
   }
 
-  /* Stack copyright and legal links on mobile */
+  .list-of-links {
+    margin-bottom: 25px;
+  }
+
+  .footer-social-wrapper {
+    justify-content: flex-start;
+  }
+  
   .footer-bottom-wrapper {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-bottom-wrapper .extra-links {
+    margin-top: 10px;
   }
 }
