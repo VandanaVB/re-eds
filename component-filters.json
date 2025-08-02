@@ -2,14 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section",
-      "faqtab-container"
-    ]
-  },
-  {
-    "id": "faqtab-container",
-    "components": [
-      "faqtab"
+      "section"
     ]
   },
   {
