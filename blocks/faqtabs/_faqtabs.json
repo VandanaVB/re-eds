@@ -46,22 +46,19 @@
           "component": "container",
           "name": "faqRows",
           "label": "FAQ Rows",
-          "presentation": "table",
           "multi": true,
           "fields": [
             {
               "component": "text",
               "name": "question",
               "label": "Question",
-              "valueType": "string",
-              "required": true
+              "valueType": "string"
             },
             {
               "component": "richtext",
               "name": "answer",
               "label": "Answer",
-              "valueType": "string",
-              "required": true
+              "valueType": "string"
             }
           ]
         }
