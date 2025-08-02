@@ -38,10 +38,6 @@
 }
 
 /* ---------- panels ---------- */
-.faqtab.block {
-  padding: 40px 48px;
-  grid-column: 2;
-}
 
 .faqtab.block[hidden] {
   display: none !important;
@@ -50,7 +46,8 @@
 /* ---------- accordion ---------- */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
-  padding: 28px 0;
+  padding: 28px 0 40px 48px;
+  margin-right: 48px;
 }
 
 .faqtab.block summary {
@@ -74,6 +71,10 @@
 
 .faqtab.block details[open] summary::after {
   transform: rotate(180deg);
+}
+
+.faqtab.block details:not([open]) {
+  padding-bottom: 0;
 }
 
 .faqtab-answer {
