@@ -113,11 +113,12 @@
 
   .faqtab.block {
     padding: 32px 20px;
-    > p{
-        font-size:: var(--heading-font-size-xl);
-        line-height: 28px;
-        font-family: "guardiansans-semibold";
-        word-break: break-word;
-    }
+  }
+  
+  .faqtab.block p {
+    font-size: var(--heading-font-size-xl);
+    line-height: 28px;
+    font-family: "guardiansans-semibold";
+    word-break: break-word;
   }
 }
