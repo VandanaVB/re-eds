@@ -9,6 +9,10 @@ footer .footer > div {
   padding: 0 30px; /* Fluid layout with side padding */
 }
 
+footer a {
+  font-family: "montserrat-regular";
+}
+
 /* --- Row Wrappers (Created by JS) --- */
 .footer-social-wrapper {
   padding: 25px 0;
@@ -72,8 +76,9 @@ footer .footer > div {
 
 /* --- Main Link Columns --- */
 .list-of-links h3 {
+  font-family: "guardiansans-semibold";
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   margin: 0 0 15px;
 }
