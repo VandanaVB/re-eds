@@ -43,10 +43,16 @@ export default function decorate(block) {
      function buildOrRefreshNav() {
       let nav = section.querySelector('.faqtab-nav');
       if (!nav) {
-        nav = document.createElement('ul');
-        nav.className = 'faqtab-nav';
-        nav.setAttribute('role', 'tablist');
-        section.prepend(nav);
+         nav = document.createElement('ul');
+         nav.className = 'faqtab-nav';
+         nav.setAttribute('role', 'tablist');
+         /* ── NEW: place nav after title/text wrapper ───────────── */
+         const titleBlock = section.querySelector('.default-content-wrapper');
+         if (titleBlock) {
+           titleBlock.insertAdjacentElement('afterend', nav);
+         } else {
+           section.prepend(nav);  // fallback
+         }
       }
       nav.innerHTML = '';
       section.faqtabs.forEach((panel, idx) => {
