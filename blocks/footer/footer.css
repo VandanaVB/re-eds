@@ -1,7 +1,11 @@
-/* --- Base Mobile Styles (Dark background) --- */
+/* --- Footer Styling --- */
+
+/* Main footer container */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #f5f5f5; /* Light grey to match screenshot */
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #e0e0e0;
 }
 
 footer .footer > div {
@@ -10,120 +14,101 @@ footer .footer > div {
   padding: 40px 24px 24px;
 }
 
-footer .footer .default-content-wrapper {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 40px 20px;
+footer .footer p {
+  margin: 0;
 }
 
-footer .footer h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  /* Stacking on mobile */
-  display: block;
+/* Wrapper for the main link columns (created by JS) */
+.footer-links-wrapper {
+  display: grid;
+  gap: 24px 32px; /* row and column gap */
+  padding-bottom: 40px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-footer .footer ul {
-  list-style-type: none;
-  margin: 0 0 20px 0;
+/* Individual column styles */
+.footer-column h3 {
+  font-weight: 700; /* Bold heading */
+  font-size: 1em;
+  color: #000;
+  margin: 0 0 20px;
+}
+
+.footer-column ul {
+  list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between links */
 }
 
-footer .footer li {
-  margin-bottom: 10px;
-}
-
-footer .footer a {
-  color: #fff;
+.footer-column a {
   text-decoration: none;
-  font-size: 14px;
+  color: #333;
 }
 
-footer .footer a:hover {
+.footer-column a:hover {
   text-decoration: underline;
 }
 
-/* --- Copyright and Legal Links Section (Mobile & Desktop) --- */
-/* The final p and ul elements in the default-content-wrapper form the copyright bar. */
-footer .footer .default-content-wrapper p:last-of-type,
-footer .footer .default-content-wrapper ul:last-of-type {
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  margin-top: 20px;
+/* Wrapper for copyright and legal links (created by JS) */
+.footer-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 12px;
 }
 
-/* Align copyright text and legal links for mobile (stacked) */
-footer .footer .default-content-wrapper ul:last-of-type {
-  display: block;
+.footer-bottom-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
-footer .footer .default-content-wrapper ul:last-of-type li {
-  margin-bottom: 5px;
+.footer-bottom-wrapper a {
+  color: #333;
+  text-decoration: none;
 }
 
-/* --- Responsive Desktop Styles (Light background) --- */
+.footer-bottom-wrapper a:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive Media Queries --- */
 @media (min-width: 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
   }
-  
-  /* Reset the main background and text color for desktop */
-  footer .footer .default-content-wrapper {
-    background-color: var(--light-color);
-    color: #000;
+
+  /* Create the 7-column layout on large screens */
+  .footer-links-wrapper {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (max-width: 899px) {
+  /* On tablets, use 3 or 4 columns */
+  .footer-links-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  /* On mobile, stack them in 2 columns */
+  .footer-links-wrapper {
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* Target all links in the main content for desktop to change color */
-  footer .footer .default-content-wrapper > h3,
-  footer .footer .default-content-wrapper > ul {
-    color: #000;
-  }
-  
-  footer .footer .default-content-wrapper > ul a {
-    color: #000;
-  }
-
-  /* Grid layout to create the columns from sibling elements */
-  footer .footer .default-content-wrapper {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
-    gap: 20px;
-    padding: 60px 0; /* Remove padding from sides for a wider content area */
-  }
-
-  /* Style each h3 and its following ul to occupy a grid column */
-  footer .footer .default-content-wrapper h3,
-  footer .footer .default-content-wrapper h3 + ul {
-    grid-column: span 1;
-    margin-bottom: 0;
-  }
-
-  /* Hide the h3s on desktop and align the ul content */
-  /* This is a hacky way to prevent the h3 from taking up space while the ul is in its column */
-  footer .footer .default-content-wrapper h3:not(:first-of-type) {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-  }
-  
-  footer .footer .default-content-wrapper ul {
-    margin-top: -36px; /* Adjust to move the ul up to the top of its grid cell */
-  }
-
-  /* The copyright bar needs to span the full width */
-  footer .footer .default-content-wrapper p:last-of-type {
-    grid-column: 1 / span 4;
-    text-align: left;
-    margin-top: 40px;
-  }
-
-  footer .footer .default-content-wrapper ul:last-of-type {
-    grid-column: 5 / span 2;
-    margin-top: 40px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+  /* Stack copyright and legal links on mobile */
+  .footer-bottom-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
