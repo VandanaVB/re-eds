@@ -1,20 +1,15 @@
-/* ------------------------------------------------------------
- * Two-column layout
- * ---------------------------------------------------------- */
+/* ---------- 2-col layout driven by the section class ---------- */
 .faqtab-container {
   display: grid;
   grid-template-columns: 320px 1fr;
 }
 
-/* ------------------------------------------------------------
- * Left nav styling
- * ---------------------------------------------------------- */
+/* ---------- left rail ---------- */
 .faqtab-nav {
   list-style: none;
   margin: 0;
   padding: 32px 0;
   background: #e5e6e8;
-  /* warm grey */
 }
 
 .faqtab-nav-item {
@@ -27,7 +22,6 @@
 
 .faqtab-nav-item[aria-selected="true"] {
   color: #c32424;
-  /* RE red */
 }
 
 .faqtab-nav-item[aria-selected="true"]::after {
@@ -39,22 +33,22 @@
   font-size: 22px;
 }
 
-/* ------------------------------------------------------------
- * Right-hand panel base
- * ---------------------------------------------------------- */
-.faqtab-panel {
+/* ---------- panels ---------- */
+.faqtab.block {
   padding: 40px 48px;
 }
 
-/* ------------------------------------------------------------
- * Accordion
- * ---------------------------------------------------------- */
-.faqtab-panel details {
+.faqtab.block[hidden] {
+  display: none !important;
+}
+
+/* ---------- accordion ---------- */
+.faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
 }
 
-.faqtab-panel summary {
+.faqtab.block summary {
   list-style: none;
   cursor: pointer;
   font-weight: 700;
@@ -62,18 +56,18 @@
   padding-right: 32px;
 }
 
-.faqtab-panel summary::-webkit-details-marker {
+.faqtab.block summary::-webkit-details-marker {
   display: none;
 }
 
-.faqtab-panel summary::after {
+.faqtab.block summary::after {
   content: '▾';
   position: absolute;
   right: 0;
   transition: transform .25s;
 }
 
-.faqtab-panel details[open] summary::after {
+.faqtab.block details[open] summary::after {
   transform: rotate(180deg);
 }
 
@@ -82,9 +76,7 @@
   line-height: 1.6;
 }
 
-/* ------------------------------------------------------------
- * Mobile: stack nav on top
- * ---------------------------------------------------------- */
+/* ---------- mobile ---------- */
 @media (max-width: 768px) {
   .faqtab-container {
     grid-template-columns: 1fr;
@@ -94,7 +86,7 @@
     display: flex;
     overflow-x: auto;
     background: #212121;
-    padding: 0;
+    padding: 0
   }
 
   .faqtab-nav-item {
@@ -104,10 +96,10 @@
   }
 
   .faqtab-nav-item[aria-selected="true"] {
-    color: #c32424;
+    color: #c32424
   }
 
-  .faqtab-panel {
+  .faqtab.block {
     padding: 32px 20px;
   }
 }
