@@ -22,8 +22,8 @@
       "fields": [
         {
           "component": "container",
-          "name": "test",
           "label": "Multi Text",
+          "multi": true,
           "fields": [
             {
               "component": "reference",
