@@ -65,7 +65,7 @@ export default function decorate(block) {
       nav = document.createElement('ul');
       nav.className = 'faqtab-nav';
       nav.setAttribute('role', 'tablist');
-      section.querySelector('.faqtab-left').after(nav);
+      section.querySelector('.faqtab-left').append(nav);
     }
 
     /* rebuild items */
