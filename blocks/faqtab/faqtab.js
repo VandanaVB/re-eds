@@ -35,44 +35,43 @@ export default function decorate(block) {
   /*  If this is NOT the first block, the nav is already built.
    *  Accordion above is enough.
    */
-  if (section.faqtabs.length > 1) return;
-
+  //if (section.faqtabs.length > 1) return;
+   buildOrRefreshNav();
   /* ------------------------------------------------------------
-   *  This is the first faqtab ⇒ build nav & wiring
+   *  Helper: create nav once, then replace its innerHTML
    * ---------------------------------------------------------- */
-  const nav = document.createElement('ul');
-  nav.className = 'faqtab-nav';
-  nav.setAttribute('role', 'tablist');
-  //section.insertBefore(nav, section.faqtabs[0]);   // before first panel
-  section.prepend(nav);
-  /* Helper to (re)populate nav whenever blocks load later */
-  function refreshNav() {
-    nav.innerHTML = '';
-    section.faqtabs.forEach((panel, idx) => {
-      const titleEl = panel.querySelector('[data-aue-prop="tabTitle"]');
-      const title = titleEl ? titleEl.textContent.trim() : `Tab ${idx + 1}`;
-      const li = document.createElement('li');
-      li.className = 'faqtab-nav-item';
-      li.textContent = title;
-      li.setAttribute('role', 'tab');
-      li.setAttribute('aria-controls', panel.id || `faqtab-${idx}`);
-      li.setAttribute('aria-selected', !idx);
+     function buildOrRefreshNav() {
+      let nav = section.querySelector('.faqtab-nav');
+      if (!nav) {
+        nav = document.createElement('ul');
+        nav.className = 'faqtab-nav';
+        nav.setAttribute('role', 'tablist');
+        section.prepend(nav);
+      }
+      nav.innerHTML = '';
+      section.faqtabs.forEach((panel, idx) => {
+        const titleEl = panel.querySelector('[data-aue-prop="tabTitle"]');
+        const title = titleEl ? titleEl.textContent.trim() : `Tab ${idx + 1}`;
+        const li = document.createElement('li');
+        li.className = 'faqtab-nav-item';
+        li.textContent = title;
+        li.setAttribute('role', 'tab');
+        li.setAttribute('aria-controls', panel.id || `faqtab-${idx}`);
+        li.setAttribute('aria-selected', !idx);
 
-      /* ensure each panel has an ID and default visibility */
-      panel.id = panel.id || `faqtab-${idx}`;
-      panel.setAttribute('role', 'tabpanel');
-      panel.hidden = !!idx;
+        /* ensure each panel has an ID and default visibility */
+        panel.id = panel.id || `faqtab-${idx}`;
+        panel.setAttribute('role', 'tabpanel');
+        panel.hidden = !!idx;
 
-      li.addEventListener('click', () => {
-        nav.querySelectorAll('.faqtab-nav-item')
-           .forEach((n) => n.setAttribute('aria-selected', n === li));
-        section.faqtabs.forEach((p) => { p.hidden = p !== panel; });
-      });
+        li.addEventListener('click', () => {
+          nav.querySelectorAll('.faqtab-nav-item')
+             .forEach((n) => n.setAttribute('aria-selected', n === li));
+          section.faqtabs.forEach((p) => { p.hidden = p !== panel; });
+        });
 
-      nav.append(li);
+        nav.append(li);
     });
   }
 
-  /* initial fill */
-  refreshNav();
 }
