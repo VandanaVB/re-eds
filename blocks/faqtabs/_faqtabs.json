@@ -21,28 +21,23 @@
       "id": "faqtabs",
       "fields": [
         {
-          "component": "text",
-          "name": "tabTitle",
-          "label": "Tab Title",
-          "valueType": "string",
-          "required": true
-        },
-        {
           "component": "container",
-          "name": "faqRows",
-          "label": "FAQ Rows",
+          "name": "test",
+          "label": "Multi Text",
           "multi": true,
           "fields": [
             {
-              "component": "text",
-              "name": "question",
-              "label": "Question",
+              "component": "reference",
+              "name": "image",
+              "value": "",
+              "label": "Sample Image",
               "valueType": "string"
             },
             {
-              "component": "richtext",
-              "name": "answer",
-              "label": "Answer",
+              "component": "text",
+              "name": "alt",
+              "value": "",
+              "label": "Alt Text",
               "valueType": "string"
             }
           ]
