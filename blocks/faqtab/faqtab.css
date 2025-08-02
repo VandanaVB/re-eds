@@ -78,7 +78,7 @@
 }
 
 .faqtab.block details[open] summary::after {
-  transform: rotate(180deg);
+  /*transform: rotate(180deg);*/
 }
 
 .faqtab-answer {
