@@ -65,14 +65,11 @@
 }
 
 .faqtab-nav-item[aria-selected="true"]::after {
+  content: '›';
   position: absolute;
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  margin-top: -10px;
-  content: "\0041";
-  display: none;
-  font-family: "reicons";
 }
 
 /* ==============================================================
