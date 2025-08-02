@@ -43,8 +43,8 @@ export default function decorate(block) {
   const nav = document.createElement('ul');
   nav.className = 'faqtab-nav';
   nav.setAttribute('role', 'tablist');
-  section.insertBefore(nav, section.faqtabs[0]);   // before first panel
-
+  //section.insertBefore(nav, section.faqtabs[0]);   // before first panel
+  section.prepend(nav);
   /* Helper to (re)populate nav whenever blocks load later */
   function refreshNav() {
     nav.innerHTML = '';
