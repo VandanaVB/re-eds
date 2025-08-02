@@ -1,99 +1,113 @@
-/* ----- layout ----- */
-.faqtabs-nav {
-  float: left;
-  width: 260px;
-  background: #eee;
-  padding: 0
+/* ------------------------------------------------------------
+ * Two-column layout
+ * ---------------------------------------------------------- */
+.faqtab-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
 }
 
-.faqtabs-panel {
-  margin-left: 260px;
-  padding: 0 32px
+/* ------------------------------------------------------------
+ * Left nav styling
+ * ---------------------------------------------------------- */
+.faqtab-nav {
+  list-style: none;
+  margin: 0;
+  padding: 32px 0;
+  background: #e5e6e8;
+  /* warm grey */
 }
 
-.faqtabs-panel[aria-hidden="true"] {
-  display: none
-}
-
-/* ----- nav buttons ----- */
-.faqtabs-tab {
-  all: unset;
-  display: block;
-  width: 100%;
-  padding: 18px 24px;
-  font: 600 16px/1 guardiansans-regular;
-  cursor: pointer;
-  border-bottom: 1px solid #d0d0d0;
-  color: #212121
-}
-
-.faqtabs-tab[aria-selected="true"] {
-  color: #da291c;
-  font-weight: 700
-}
-
-/* ----- accordion inside the table ----- */
-.faq-q {
+.faqtab-nav-item {
+  padding: 16px 24px;
   cursor: pointer;
   position: relative;
-  padding-right: 24px;
-  font-weight: 600
+  font: 600 18px/1 "Helvetica Neue", sans-serif;
+  border-bottom: 1px solid #d1d1d1;
 }
 
-.faq-q::after {
+.faqtab-nav-item[aria-selected="true"] {
+  color: #c32424;
+  /* RE red */
+}
+
+.faqtab-nav-item[aria-selected="true"]::after {
+  content: '›';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+/* ------------------------------------------------------------
+ * Right-hand panel base
+ * ---------------------------------------------------------- */
+.faqtab-panel {
+  padding: 40px 48px;
+}
+
+/* ------------------------------------------------------------
+ * Accordion
+ * ---------------------------------------------------------- */
+.faqtab-panel details {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 28px 0;
+}
+
+.faqtab-panel summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  position: relative;
+  padding-right: 32px;
+}
+
+.faqtab-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqtab-panel summary::after {
   content: '▾';
   position: absolute;
-  right: 4px;
-  transition: .25s
+  right: 0;
+  transition: transform .25s;
 }
 
-.is-open .faq-q::after {
-  transform: rotate(180deg)
+.faqtab-panel details[open] summary::after {
+  transform: rotate(180deg);
 }
 
-.faq-a[hidden] {
-  display: none
+.faqtab-answer {
+  margin-top: 18px;
+  line-height: 1.6;
 }
 
-/* collapsed state */
-.is-collapsed .faq-a {
-  /* keep the cell in the layout so UE can still read it */
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: max-height .25s ease, opacity .25s ease;
-  overflow: hidden;
-  border: 0;
-}
+/* ------------------------------------------------------------
+ * Mobile: stack nav on top
+ * ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .faqtab-container {
+    grid-template-columns: 1fr;
+  }
 
-/* expanded */
-.faq-a {
-  max-height: 1000px;
-  opacity: 1;
-  transition: max-height .25s ease, opacity .25s ease;
-}
-/* ----- mobile: stack ----- */
-@media (max-width:768px) {
-  .faqtabs-nav {
-    float: none;
-    width: auto;
+  .faqtab-nav {
     display: flex;
     overflow-x: auto;
-    background: #212121
+    background: #212121;
+    padding: 0;
   }
 
-  .faqtabs-tab {
+  .faqtab-nav-item {
+    flex: 0 0 auto;
     color: #e6e6e6;
-    white-space: nowrap
+    border: none;
   }
 
-  .faqtabs-tab[aria-selected="true"] {
-    color: #da291c
+  .faqtab-nav-item[aria-selected="true"] {
+    color: #c32424;
   }
 
-  .faqtabs-panel {
-    margin-left: 0;
-    padding: 16px
+  .faqtab-panel {
+    padding: 32px 20px;
   }
 }
