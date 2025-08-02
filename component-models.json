@@ -481,7 +481,7 @@
     "id": "faqtabs",
     "fields": [
       {
-        "component": "container",
+        "component": "repeat",
         "name": "test",
         "label": "Multi Text",
         "multi": true,
