@@ -300,168 +300,46 @@
           }
         },
         {
-          "title": "FAQTabs",
-          "id": "faqtabs",
+          "title": "FAQTab",
+          "id": "faqtab",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "FAQTabs",
-                  "filter": "faqtabs"
+                  "name": "FAQTab",
+                  "model": "faqtab",
+                  "filter": "faqtab"
                 }
               }
             }
           }
         },
         {
-          "title": "FAQ Tab",
-          "id": "faqtab",
+          "id": "questionanswer",
+          "title": "Question and Answer",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "FAQ Tab",
-                  "model": "faqtab"
+                  "name": "Question Answer",
+                  "model": "questionanswer"
                 }
               }
             }
           }
         },
         {
-          "title": "Featured Doodle",
-          "id": "featured-doodle",
+          "title": "Feature Cards",
+          "id": "feature-cards",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Featured Doodle",
-                  "model": "featured-doodle"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "title": "Doodle Components",
-      "id": "doodle",
-      "components": [
-        {
-          "title": "Header",
-          "id": "header",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/header",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Hero Section",
-          "id": "hero",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/hero",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "CTA Buttons",
-          "id": "cta-buttons",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/cta-buttons",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Featured Card",
-          "id": "featured-card",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Featured Card",
-                  "model": "featured-card"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Doodle Grid",
-          "id": "doodle-grid",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/doodle-grid",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Load More",
-          "id": "load-more",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/load-more",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Footer",
-          "id": "footer",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "doodle/components/footer",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Doodle Detail",
-          "id": "doodle-detail",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Doodle Detail",
-                  "model": "doodle-detail"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Open Frame",
-          "id": "open-frame",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Open Frame",
-                  "model": "open-frame"
+                  "name": "Feature Cards",
+                  "model": "feature-cards"
                 }
               }
             }
