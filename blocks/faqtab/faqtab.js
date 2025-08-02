@@ -56,7 +56,8 @@ export default function decorate(block) {
       /*  grab the *entire* text component that holds Categories + prompt  */
       const catsBlock = section.querySelector('.default-content-wrapper > [data-aue-prop="text"]');
       if (catsBlock) left.append(catsBlock);
-      section.append(left);                            // grid handles placement
+      const firstWrapper = section.querySelector('.faqtab-wrapper');
+      section.insertBefore(left, firstWrapper);     // now comes first
     }
 
     /* nav list */
