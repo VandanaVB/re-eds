@@ -67,6 +67,8 @@
 .faqtab-nav-item[aria-selected="true"]::after {
   position: absolute;
   right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
   margin-top: -10px;
   content: "\0041";
   display: none;
