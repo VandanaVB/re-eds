@@ -313,22 +313,7 @@
               }
             }
           }
-        },
-        {
-          "title": "FAQ Tab",
-          "id": "faqtab",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "FAQ Tab",
-                  "model": "faqtab"
-                }
-              }
-            }
-          }
-        },
+        }
         {
           "title": "Feature Cards",
           "id": "feature-cards",

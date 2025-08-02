@@ -68,11 +68,5 @@
       "tab",
       "title"
     ]
-  },
-  {
-    "id": "faqtabs",
-    "components": [
-      "faqtab"
-    ]
   }
 ]
