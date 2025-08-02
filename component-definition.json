@@ -330,36 +330,6 @@
           }
         },
         {
-          "title": "Featured Doodle",
-          "id": "featured-doodle",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Featured Doodle",
-                  "model": "featured-doodle"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Submission Form",
-          "id": "submission-form",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "submission-form",
-                  "model": "submission-form"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Feature Cards",
           "id": "feature-cards",
           "plugins": {

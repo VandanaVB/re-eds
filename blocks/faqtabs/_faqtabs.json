@@ -64,5 +64,13 @@
         }
       ]
     }
-  ]
+  ],
+  "filters": [
+  {
+    "id": "faqtabs",
+    "components": [
+      "faqtab"
+    ]
+  }
+]
 }
