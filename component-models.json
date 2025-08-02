@@ -545,5 +545,30 @@
         ]
       }
     ]
+  },
+  {
+    "id": "faqtab-container",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "FAQ Container"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "RE Theme",
+            "value": "retheme"
+          },
+          {
+            "name": "No Space",
+            "value": "nomargin"
+          }
+        ]
+      }
+    ]
   }
 ]
