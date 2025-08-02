@@ -53,15 +53,9 @@ export default function decorate(block) {
       const left      = document.createElement('div');
       left.className  = 'faqtab-left';
 
-      const catsH2    = section.querySelector(
-        '.default-content-wrapper h2:nth-of-type(2)'
-      );
-      const promptP   =
-        catsH2?.nextElementSibling?.tagName === 'P' ? catsH2.nextElementSibling : null;
-
-      if (catsH2)  left.append(catsH2);
-      if (promptP) left.append(promptP);
-
+      /*  grab the *entire* text component that holds Categories + prompt  */
+      const catsBlock = section.querySelector('.default-content-wrapper > [data-aue-prop="text"]');
+      if (catsBlock) left.append(catsBlock);
       section.append(left);                            // grid handles placement
     }
 

@@ -28,7 +28,6 @@
 /* Row 3 – nav list and panels */
 .faqtab-nav {
   grid-column: 1;
-  grid-row: 3 / -1;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -37,7 +36,6 @@
 
 .faqtab-wrapper {
   grid-column: 2;
-  grid-row: 3;
 }
 
 /* ==============================================================
