@@ -23,7 +23,6 @@ export default function decorate(block) {
       body.className = 'faqtab-answer';
       body.innerHTML = a.innerHTML;
       details.append(summary, body);
-      qa.textContent = '';
       qa.append(details);
     });
 

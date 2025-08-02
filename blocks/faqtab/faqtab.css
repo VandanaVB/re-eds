@@ -39,18 +39,18 @@
 
 /* ---------- panels ---------- */
 .faqtab.block {
+  padding: 40px 48px;
   grid-column: 2;
-  padding: 0 48px;
 }
 
 .faqtab.block[hidden] {
   display: none !important;
 }
 
-/* ---------- accordion (CORRECTED) ---------- */
+/* ---------- accordion ---------- */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
-  padding: 28px 0; /* CRITICAL: This adds consistent vertical space */
+  padding: 28px 0;
 }
 
 .faqtab.block summary {
@@ -58,7 +58,7 @@
   cursor: pointer;
   font-weight: 700;
   position: relative;
-  padding-right: 32px; /* Makes room for the dropdown arrow */
+  padding-right: 32px;
 }
 
 .faqtab.block summary::-webkit-details-marker {
@@ -69,13 +69,11 @@
   content: '▾';
   position: absolute;
   right: 0;
-  top: 50%; /* ADDED: Vertically center the arrow */
-  transform: translateY(-50%); /* ADDED: Vertically center the arrow */
   transition: transform .25s;
 }
 
 .faqtab.block details[open] summary::after {
-  transform: rotate(180deg); /* MODIFIED: Kept the rotation for open state */
+  transform: rotate(180deg);
 }
 
 .faqtab-answer {
@@ -97,7 +95,7 @@
     display: flex;
     overflow-x: auto;
     background: #212121;
-    padding: 0;
+    padding: 0
   }
 
   .faqtab-nav-item {
@@ -107,7 +105,7 @@
   }
 
   .faqtab-nav-item[aria-selected="true"] {
-    color: #c32424;
+    color: #c32424
   }
 
   .faqtab.block {
