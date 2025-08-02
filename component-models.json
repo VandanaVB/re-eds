@@ -478,7 +478,7 @@
     ]
   },
   {
-    "id": "faqtab",
+    "id": "faqtabs",
     "fields": [
       {
         "component": "text",
@@ -486,29 +486,23 @@
         "label": "Tab Title",
         "valueType": "string",
         "required": true
+      }
+    ]
+  },
+  {
+    "id": "questionanswer",
+    "fields": [
+      {
+        "component": "text",
+        "name": "question",
+        "label": "Question",
+        "valueType": "string"
       },
       {
-        "component": "container",
-        "name": "faqRows",
-        "label": "FAQ Rows",
-        "presentation": "table",
-        "multi": true,
-        "fields": [
-          {
-            "component": "text",
-            "name": "question",
-            "label": "Question",
-            "valueType": "string",
-            "required": true
-          },
-          {
-            "component": "richtext",
-            "name": "answer",
-            "label": "Answer",
-            "valueType": "string",
-            "required": true
-          }
-        ]
+        "component": "richtext",
+        "name": "answer",
+        "label": "Answer",
+        "valueType": "string"
       }
     ]
   },
