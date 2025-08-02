@@ -51,6 +51,8 @@
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
+   display: block;
+   width: 100%;
 }
 
 .faqtab.block summary {
@@ -83,6 +85,7 @@
 
 .faqtab-wrapper{
     grid-column:2;
+    grid-row: 2;
 }
 
 /* ---------- mobile ---------- */
@@ -110,5 +113,11 @@
 
   .faqtab.block {
     padding: 32px 20px;
+    > p{
+        font-size:: var(--heading-font-size-xl);
+        line-height: 28px;
+        font-family: "guardiansans-semibold";
+        word-break: break-word;
+    }
   }
 }
