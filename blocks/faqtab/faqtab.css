@@ -1,13 +1,8 @@
-/* ---------- 2-col layout driven by the section class ---------- */
 .faqtab-container {
   display: grid;
   grid-template-columns: 320px 1fr;
-  .default-content-wrapper {
-    grid-column: 1 / -1;
-   }
 }
 
-/* ---------- left rail ---------- */
 .faqtab-nav {
   list-style: none;
   margin: 0;
@@ -37,17 +32,15 @@
   font-size: 22px;
 }
 
-/* ---------- panels ---------- */
 .faqtab.block {
-  padding: 40px 48px;
   grid-column: 2;
+  padding: 0 48px;
 }
 
 .faqtab.block[hidden] {
   display: none !important;
 }
 
-/* ---------- accordion ---------- */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
@@ -69,6 +62,8 @@
   content: '▾';
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   transition: transform .25s;
 }
 
@@ -81,33 +76,24 @@
   line-height: 1.6;
 }
 
-.faqtab-wrapper{
-    grid-column:2;
-}
-
-/* ---------- mobile ---------- */
 @media (max-width: 768px) {
   .faqtab-container {
     grid-template-columns: 1fr;
   }
-
   .faqtab-nav {
     display: flex;
     overflow-x: auto;
     background: #212121;
-    padding: 0
+    padding: 0;
   }
-
   .faqtab-nav-item {
     flex: 0 0 auto;
     color: #e6e6e6;
     border: none;
   }
-
   .faqtab-nav-item[aria-selected="true"] {
-    color: #c32424
+    color: #c32424;
   }
-
   .faqtab.block {
     padding: 32px 20px;
   }
