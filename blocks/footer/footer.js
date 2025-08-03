@@ -133,4 +133,23 @@ export default async function decorate(block) {
   }
 
   block.append(footer);
+
+  // --- Accordion Logic for Mobile ---
+  const mediaQuery = window.matchMedia('(max-width: 767px)');
+  const accordionLinks = footer.querySelectorAll('.list-of-links h3');
+  
+  const setupAccordion = () => {
+    accordionLinks.forEach(h3 => {
+      h3.addEventListener('click', (e) => {
+        if (mediaQuery.matches) {
+          const parent = e.target.closest('.list-of-links');
+          parent.classList.toggle('expanded');
+        }
+      });
+    });
+  };
+
+  if (mediaQuery.matches) {
+    setupAccordion();
+  }
 }

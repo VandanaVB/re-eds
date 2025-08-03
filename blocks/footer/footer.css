@@ -166,17 +166,17 @@ footer {
   
   /* Centering and stacking the social links section */
   .footer-social-wrapper {
-    justify-content: center; /* Center the child element horizontally */
-    flex-direction: column; /* Stack the children vertically */
-    align-items: center; /* Center the child element */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
 
   /* Make the social links themselves stack */
   .social-links {
-    flex-direction: column; /* Stack the <p> and <ul> vertically */
-    align-items: center; /* Center the text and icons */
-    gap: 15px; /* Add space between the text and the icons */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 
   .footer-links-wrapper {
@@ -184,26 +184,51 @@ footer {
     border-bottom: 0;
     padding-top: 15px;
   }
-
+  
+  /* Accordion styles for mobile */
   .list-of-links {
-    margin-bottom: 25px;
-  }
-
-  .list-of-links h3 {
     margin-bottom: 0;
   }
 
-  .list-of-links .nav-list {
-    margin-top: 10px;
+  .list-of-links h3 {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #bababa;
+    margin-bottom: 0;
   }
 
+  .list-of-links h3::after {
+    content: '+'; /* Plus icon */
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+    font-weight: 300;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+  }
+
+  .list-of-links.expanded h3::after {
+    content: '-'; /* Minus icon */
+  }
+
+  .list-of-links .nav-list {
+    display: none; /* Hide the list by default */
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  .list-of-links.expanded .nav-list {
+    display: block; /* Show the list when expanded */
+  }
+  
   .footer-bottom-wrapper {
     flex-direction: column;
-    align-items: center; /* Center the copyright and links */
+    align-items: center;
     gap: 10px;
   }
   
-  /* Since we centered the bottom wrapper, we also need to center its text content */
   .footer-bottom-wrapper .copyright-text p {
     text-align: center;
   }
