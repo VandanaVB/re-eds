@@ -86,7 +86,7 @@ main > .section > div.tabs-wrapper {
 }
 
 /* ---------- Pipe Separator ---------- */
-.tabs-tab::after {
+.tabs-tab:not(:last-child)::after {
     content: '';
     margin: auto;
     background: #fff;
