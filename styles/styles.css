@@ -286,6 +286,14 @@ main .section.retheme {
   }
 }
 
+main .section.icontheme {
+  background-color: #212121;
+  color: #fff;
+  h2 {
+    text-align:center;
+  }
+}
+
 main .section.nomargin {
   padding:0;
   margin:0;

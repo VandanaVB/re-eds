@@ -15,7 +15,7 @@ export default function decorate(block) {
       }
     });
   });
-  
+
   block.querySelectorAll('.icon-text').forEach((icontext) => {
     // read the authored props
     const iconName = icontext.querySelector('[data-aue-prop="iconType"]')?.textContent.trim();
@@ -32,7 +32,7 @@ export default function decorate(block) {
       <div class="inner-box">
         <a href="#" class="icon-wit-link">
           <span class="${iconName}"></span>
-          <h4><button type="button" class="custom-btn arrow-r">${label}</button></h4>
+          <p><button type="button" class="custom-btn arrow-r">${label}</button></p>
         </a>
       </div>`;
 

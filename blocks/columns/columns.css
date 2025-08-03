@@ -42,7 +42,6 @@
 .icon-wit-btn {
   width: 100%;
   display: block;
-  background: #212121;       /* dark background */
 }
 .icon-wit-btn .inner-box {
   padding: 20px 0;
@@ -62,7 +61,7 @@
 }
 
 /* ── the label under the icon ──────────────────────────────────── */
-.icon-wit-btn h4 {
+.icon-wit-btn p {
   margin: 0;
   font-size: 16px;
   color: #b4b2b2;

@@ -144,6 +144,10 @@
           {
             "name": "No Space",
             "value": "nomargin"
+          },
+          {
+            "name": "Icon Theme",
+            "value": "icontheme"
           }
         ]
       }
