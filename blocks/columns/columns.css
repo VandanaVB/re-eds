@@ -44,7 +44,7 @@
   display: block;
 }
 .icon-wit-btn .inner-box {
-  padding: 20px 0;
+  padding: 15px 0;
 }
 .icon-wit-btn .icon-wit-link {
   display: inline-block;
@@ -57,7 +57,6 @@
   display: block;
   font-size: 60px;
   line-height: 1;
-  margin-bottom: 12px;
 }
 
 /* ── the label under the icon ──────────────────────────────────── */
@@ -65,7 +64,6 @@
   margin: 0;
   font-size: 16px;
   color: #b4b2b2;
-  font-family: "guardiansans-semibold";
 }
 .icon-wit-btn .custom-btn {
   background: none;
@@ -75,6 +73,8 @@
   font: inherit;
   cursor: pointer;
   margin: 0;
+  font-family: "montserrat-regular";
+  font-size: 14px;
 }
 /* the little arrow after the text */
 .icon-wit-btn .custom-btn.arrow-r::after {
@@ -96,4 +96,11 @@
 @media (max-width: 767px) {
   .icon-wit-btn span { font-size: 48px; }
   .icon-wit-btn h4   { font-size: 14px; }
+}
+
+@media (width >= 900px) {
+  .icontheme .columns > div {
+    align-items: center;
+    flex-direction: unset;
+  }
 }
