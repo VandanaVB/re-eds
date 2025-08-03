@@ -42,6 +42,26 @@
   --nav-height: 64px;
 }
 
+[class*='reicons-']:before {
+    display: inline-block;
+    font-family: 'royalenfield icon';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+[class*='icon-']:before {
+    display: inline-block;
+    font-family: 'reicons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
 /* fallback fonts */
 @font-face {
   font-family: roboto-condensed-fallback;
@@ -301,4 +321,421 @@ main .section.nomargin {
     100% {
         transform: translateX(0)
     }
+}
+
+
+.icon-arrow-forward:before {
+    content: '\0041'
+}
+
+.icon-button-arrow:before {
+    content: '\0042'
+}
+
+.icon-arrow-down:before {
+    content: '\0043'
+}
+
+.icon-search:before {
+    content: '\0044'
+}
+
+.icon-globe:before {
+    content: '\0045'
+}
+
+.icon-fb:before {
+    content: '\0046'
+}
+
+.icon-tw:before {
+    content: '\0047'
+}
+
+.icon-yt:before {
+    content: '\0048'
+}
+
+.icon-ig:before {
+    content: '\0049'
+}
+
+.icon-hand-point:before {
+    content: '\004a'
+}
+
+.icon-map-store-point:before {
+    content: '\004b'
+}
+
+.icon-thread:before {
+    content: '\004c'
+}
+
+.icon-ride-out:before {
+    content: '\004d'
+}
+
+.icon-star:before {
+    content: '\004e'
+}
+
+.icon-star-filled:before {
+    content: '\004f'
+}
+
+.icon-date:before {
+    content: '\0050'
+}
+
+.icon-play:before {
+    content: '\0051'
+}
+
+.icon-download:before {
+    content: '\0052'
+}
+
+.icon-destination:before {
+    content: '\0053'
+}
+
+.icon-distance:before {
+    content: '\0054'
+}
+
+.icon-duration:before {
+    content: '\0055'
+}
+
+.icon-origin:before {
+    content: '\0056'
+}
+
+.icon-price:before {
+    content: '\0057'
+}
+
+.icon-hilly-terrain:before {
+    content: '\0058'
+}
+
+.icon-re-store-point:before {
+    content: '\0059'
+}
+
+.icon-re-service-point:before {
+    content: '\005a'
+}
+
+.icon-after_sales:before {
+    content: '\0061'
+}
+
+.icon-country-side:before {
+    content: '\0062'
+}
+
+.icon-customisation:before {
+    content: '\0063'
+}
+
+.icon-desert:before {
+    content: '\0064'
+}
+
+.icon-dirt-track:before {
+    content: '\0065'
+}
+
+.icon-highways:before {
+    content: '\0066'
+}
+
+.icon-off-roading:before {
+    content: '\0067'
+}
+
+.icon-members:before {
+    content: '\0068'
+}
+
+.icon-motorcycle:before {
+    content: '\0069'
+}
+
+.icon-motorcycle_maintainance:before {
+    content: '\006a'
+}
+
+.icon-new_to_motorcycling:before {
+    content: '\006b'
+}
+
+.icon-post:before {
+    content: '\006c'
+}
+
+.icon-pause:before {
+    content: '\006d'
+}
+
+.icon-time:before {
+    content: '\006e'
+}
+
+.icon-eye:before {
+    content: '\006f'
+}
+
+.icon-close:before {
+    content: '\0070'
+}
+
+.icon-visible:before {
+    content: '\0071'
+}
+
+.icon-invisible:before {
+    content: '\0072'
+}
+
+.icon-ribbon:before {
+    content: '\0073'
+}
+
+.icon-call:before {
+    content: '\0074'
+}
+
+.icon-chat:before {
+    content: '\0075'
+}
+
+.icon-faq:before {
+    content: '\0076'
+}
+
+.icon-check:before {
+    content: '\0077'
+}
+
+.icon-mail:before {
+    content: '\0078'
+}
+
+.icon-rsa:before {
+    content: '\0079'
+}
+
+.icon-arrow-backward:before {
+    content: '\007a'
+}
+
+.icon-arrow-up:before {
+    content: '\0030'
+}
+
+.icon-user:before {
+    content: '\0031'
+}
+
+.icon-delet:before {
+    content: '\0032'
+}
+
+.icon-edit:before {
+    content: '\0033'
+}
+
+.icon-muted:before {
+    content: '\0034'
+}
+
+.icon-unmute:before {
+    content: '\0035'
+}
+
+.icon-finance:before {
+    content: '\0036'
+}
+
+.icon-gplus:before {
+    content: '\0037'
+}
+
+.icon-motorcycle-accessories:before {
+    content: '\0038'
+}
+
+.icon-arrow-down-double:before {
+    content: '\0039'
+}
+
+.icon-plus:before {
+    content: '\0021'
+}
+
+.icon-rupee:before {
+    content: '\0022'
+}
+
+.icon-motorcycle-men:before {
+    content: '\0023'
+}
+
+.icon-location:before {
+    content: '\0024'
+}
+
+.icon-minus:before {
+    content: '\0025'
+}
+
+.icon-my-motorcycle:before {
+    content: '\0026'
+}
+
+.icon-my-discussions:before {
+    content: '\0027'
+}
+
+.icon-international:before {
+    content: '\0028'
+}
+
+.icon-new-branch-members:before {
+    content: '\0028'
+}
+
+.icon-corporate:before {
+    content: '\0029'
+}
+
+.icon-experimental-partners:before {
+    content: '\0029'
+}
+
+.icon-awards:before {
+    content: '\002a'
+}
+
+.icon-offers:before {
+    content: '\002a'
+}
+
+.icon-on-site-minor-repairs:before {
+    content: '\002b'
+}
+
+.icon-vehicle-breakdown:before {
+    content: '\002c'
+}
+
+.icon-battery-drain:before {
+    content: '\002d'
+}
+
+.icon-incorrect-fuelling:before {
+    content: '\002e'
+}
+
+.icon-fuel-delivery:before {
+    content: '\002f'
+}
+
+.icon-flat-tyre-assistance:before {
+    content: '\005b'
+}
+
+.icon-key-lock-out:before {
+    content: '\005c'
+}
+
+.icon-medical-referral:before {
+    content: '\005d'
+}
+
+.icon-announcement:before {
+    content: '\005e'
+}
+
+.icon-financial:before {
+    content: '\005f'
+}
+
+.icon-cart:before {
+    content: '\0060'
+}
+
+.icon-events:before {
+    content: '\007b'
+}
+
+.icon-vehicle-accident:before {
+    content: '\007c'
+}
+
+.icon-accessories:before {
+    content: '\007d'
+}
+
+.icon-local-rides:before {
+    content: '\007d'
+}
+
+.icon-product-launches:before {
+    content: '\007e'
+}
+
+.icon-european-rides:before {
+    content: '\007e'
+}
+
+.icon-difficulty:before {
+    content: '\003f'
+}
+
+.icon-reviews:before {
+    content: '\003d'
+}
+
+.icon-product-reviews:before {
+    content: '\003b'
+}
+
+.icon-features-branch-profiles:before {
+    content: '\003b'
+}
+
+.icon-icon-public:before {
+    content: '\0040'
+}
+
+.icon-icon-private:before {
+    content: '\003c'
+}
+
+.icon-icon-closed:before {
+    content: '\003e'
+}
+
+.icon-camera:before {
+    content: '\20b9'
+}
+
+.icon-eurorides:before {
+    content: '\007e'
+}
+
+.icon-localrides:before {
+    content: '\007d'
+}
+
+.icon-branchprofiles:before {
+    content: '\0029'
+}
+
+.icon-branchmember:before {
+    content: '\0028'
 }

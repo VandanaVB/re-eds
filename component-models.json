@@ -574,6 +574,11 @@
         "value": "",
         "label": "Icon Label",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "iconLink",
+        "label": "Icon Link"
       }
     ]
   }
