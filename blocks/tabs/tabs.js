@@ -80,7 +80,7 @@ export default async function decorate(block) {
     },
     { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
   );
-  observer.observe(block);
+ observer.observe(tablist);
 
   function buildHero(panel) {
     const kids = [...panel.children];
