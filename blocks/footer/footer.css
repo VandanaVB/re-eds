@@ -22,10 +22,10 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
 
 .footer-links-wrapper {
   padding: 35px 0 30px;
-  border-bottom: 1px solid #bababa;
   display: grid;
   gap: 30px;
 }
