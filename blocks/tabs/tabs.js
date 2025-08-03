@@ -21,7 +21,7 @@ export default async function decorate(block) {
     logoWrapper.className = 'tab-logo';
     logoWrapper.innerHTML = `
       <a href="/in/en/home" title="Royal Enfield">
-        <img src="/content/dam/royal-enfield/india/logos/logo.svg"
+        <img src="/icons/re-logo.svg"
              alt="Royal Enfield" />
       </a>`;
   tablist.append(logoWrapper);
