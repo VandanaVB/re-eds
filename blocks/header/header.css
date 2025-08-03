@@ -290,3 +290,28 @@ header nav .nav-tools .default-content-wrapper > ul {
   font-size:12px;
   gap: 16px;
 }
+
+header nav .nav-tools .default-content-wrapper > ul > li {
+    padding: 26px 15px;
+}
+
+header nav .nav-tools .nav-drop::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 2.5em;
+  right: 0px;
+  transform: rotate(135deg);
+  width: 5px;
+  height: 5px;
+  border: 2px solid currentcolor;
+  border-radius: 0 1px 0 0;
+  border-width: 2px 2px 0 0;
+  transition: transform .6s ease;
+}
+
+header nav .nav-tools .nav-drop {
+  position: relative;
+  padding-right: 16px;
+  cursor: pointer;
+}
