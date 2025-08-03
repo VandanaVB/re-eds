@@ -100,7 +100,6 @@
 
 @media (width >= 900px) {
   .icontheme .columns > div {
-    align-items: center;
-    flex-direction: unset;
+    gap:0px;
   }
 }
