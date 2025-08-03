@@ -11,6 +11,11 @@ footer {
   text-decoration: none;
 }
 
+/* This is the key change for desktop padding */
+.footer > div {
+  padding: 0 30px;
+}
+
 /* --- Wrapper Sections --- */
 .footer-social-wrapper {
   padding: 25px 0;
@@ -72,7 +77,7 @@ footer {
 
 /* --- Main Link Columns --- */
 .list-of-links {
-  margin-bottom: 25px; /* Added spacing between columns for mobile */
+  margin-bottom: 25px;
 }
 
 .list-of-links h3 {
@@ -154,6 +159,11 @@ footer {
 }
 
 @media (max-width: 767px) {
+  /* This is the key change for mobile padding */
+  .footer > div {
+    padding: 0 15px;
+  }
+  
   .footer-social-wrapper {
     justify-content: flex-start;
     flex-direction: column;
@@ -162,7 +172,6 @@ footer {
   }
 
   .footer-links-wrapper {
-    /* Updated to a single column to stack the lists */
     grid-template-columns: 1fr;
     border-bottom: 0;
     padding-top: 15px;
