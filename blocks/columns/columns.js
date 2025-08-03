@@ -15,7 +15,7 @@ export default function decorate(block) {
       }
     });
   });
-────────────────────────────────────────────────────────────────
+  
   block.querySelectorAll('.icon-text').forEach((icontext) => {
     // read the authored props
     const iconName = icontext.querySelector('[data-aue-prop="iconType"]')?.textContent.trim();
