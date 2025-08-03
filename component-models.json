@@ -550,39 +550,30 @@
     "id": "icontext",
     "fields": [
       {
-        "component": "container",
-        "label": "Container",
-        "name": "container",
-        "valueType": "string",
-        "multi": true,
-        "fields": [
+        "component": "select",
+        "name": "iconType",
+        "label": "Select Icon",
+        "options": [
           {
-            "component": "select",
-            "name": "iconType",
-            "label": "Seclect Icon",
-            "options": [
-              {
-                "name": "Store Pointer Icon",
-                "value": "icon-map-store-point"
-              },
-              {
-                "name": "Servide Icon",
-                "value": "icon-rsa"
-              },
-              {
-                "name": "Book Ride Icon",
-                "value": "icon-hand-point"
-              }
-            ]
+            "name": "Store Pointer Icon",
+            "value": "icon-map-store-point"
           },
           {
-            "component": "text",
-            "name": "iconLabel",
-            "value": "",
-            "label": "Icon Label",
-            "valueType": "string"
+            "name": "Service Icon",
+            "value": "icon-rsa"
+          },
+          {
+            "name": "Book Ride Icon",
+            "value": "icon-hand-point"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "iconLabel",
+        "value": "",
+        "label": "Icon Label",
+        "valueType": "string"
       }
     ]
   }
