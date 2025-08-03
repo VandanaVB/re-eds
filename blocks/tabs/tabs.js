@@ -73,14 +73,25 @@ export default async function decorate(block) {
 
   block.prepend(tablist);
 
-  // ───  add drop-shadow when “stuck” ─────────────────────────────
-  const observer = new IntersectionObserver(
-    ([e]) => {
-      tablist.classList.toggle('is-fixed', !e.isIntersecting);
-    },
-    { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
-  );
- observer.observe(tablist);
+    // ───  insert a 1px sentinel and watch *that* ───────────────────
+    const sentinel = document.createElement('div');
+    sentinel.className = 'tabs-sentinel';
+    // zero height so it doesn't affect layout
+    sentinel.style.cssText = 'height:1px; margin:0; padding:0;';
+    // insert sentinel immediately before the tabbar
+    tablist.before(sentinel);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // when the sentinel scrolls *out* of view, stick the tabs
+        tablist.classList.toggle('is-fixed', !entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0
+      }
+    );
+    observer.observe(sentinel);
 
   function buildHero(panel) {
     const kids = [...panel.children];

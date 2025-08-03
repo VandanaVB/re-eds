@@ -14,6 +14,7 @@ main > .section > div.tabs-wrapper {
 /* ---------- Tablist Styling ---------- */
 .tabs-list {
   display: flex;
+  position: relative;
   gap: 0;
   overflow-x: auto;
   padding: 20px 0 20px 30px;
@@ -26,10 +27,11 @@ main > .section > div.tabs-wrapper {
 }
 
 /* Stick the tab bar to top */
-.tabs-list {
+.tabs-list.is-fixed {
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 /*Logo container  */
@@ -47,8 +49,6 @@ main > .section > div.tabs-wrapper {
 
 .tabs-list .tab-logo img {
   display: inline-block;
-  width: 175px;
-  margin-right: 25px;
   vertical-align: middle;
 }
 
@@ -59,11 +59,6 @@ main > .section > div.tabs-wrapper {
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
-}
-
-/* When stuck, drop a shadow*/
-.tabs-list.is-fixed {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- Individual Tab Button ---------- */
