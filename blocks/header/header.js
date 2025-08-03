@@ -145,6 +145,12 @@ export default async function decorate(block) {
       });
     });
   }
+  const navSections = nav.querySelector('.nav-tools');
+  if (navSections) {
+    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+     if (navSection.querySelector('a')) navSection.classList.add('nav-drop');
+    }
+  }
 
   // hamburger for mobile
   const hamburger = document.createElement('div');

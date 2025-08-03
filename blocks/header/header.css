@@ -286,5 +286,7 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools .default-content-wrapper > ul {
   display: flex;
   align-items: center;
+  letter-spacing: 1px;
+  font-size:12px;
   gap: 16px;
 }

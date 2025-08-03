@@ -344,10 +344,6 @@ main .section.nomargin {
     content: '\0043'
 }
 
-.icon-search:before {
-    content: '\0044'
-}
-
 .icon-globe:before {
     content: '\0045'
 }
