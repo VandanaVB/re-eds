@@ -164,11 +164,19 @@ footer {
     padding: 0 15px;
   }
   
+  /* Centering and stacking the social links section */
   .footer-social-wrapper {
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: center; /* Center the child element horizontally */
+    flex-direction: column; /* Stack the children vertically */
+    align-items: center; /* Center the child element */
     gap: 15px;
+  }
+
+  /* Make the social links themselves stack */
+  .social-links {
+    flex-direction: column; /* Stack the <p> and <ul> vertically */
+    align-items: center; /* Center the text and icons */
+    gap: 15px; /* Add space between the text and the icons */
   }
 
   .footer-links-wrapper {
@@ -191,7 +199,12 @@ footer {
 
   .footer-bottom-wrapper {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center the copyright and links */
     gap: 10px;
+  }
+  
+  /* Since we centered the bottom wrapper, we also need to center its text content */
+  .footer-bottom-wrapper .copyright-text p {
+    text-align: center;
   }
 }
