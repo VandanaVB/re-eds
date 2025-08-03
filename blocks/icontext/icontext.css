@@ -1,0 +1,62 @@
+/* ── outer wrapper from your columns grid ───────────────────────── */
+.icon-text {
+  text-align: center;
+  margin-bottom: 0; /* flush inside the 3-column grid */
+}
+
+/* ── the tile box ───────────────────────────────────────────────── */
+.icon-wit-btn {
+  width: 100%;
+  display: block;
+  background: #212121;       /* dark background */
+}
+.icon-wit-btn .inner-box {
+  padding: 20px 0;
+}
+.icon-wit-btn .icon-wit-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #b4b2b2;
+}
+
+/* ── the icon glyph (uses your existing font-icon CSS) ──────────── */
+.icon-wit-btn span {
+  display: block;
+  font-size: 60px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+/* ── the label under the icon ──────────────────────────────────── */
+.icon-wit-btn h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #b4b2b2;
+}
+.icon-wit-btn .custom-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+/* the little arrow after the text */
+.icon-wit-btn .custom-btn.arrow-r::after {
+  content: '›';
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+/* ── hover state ───────────────────────────────────────────────── */
+.icon-wit-btn .inner-box:hover .custom-btn {
+  color: #da291c;
+}
+
+/* ── responsive tweaks ──────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .icon-wit-btn span { font-size: 48px; }
+  .icon-wit-btn h4   { font-size: 14px; }
+}
