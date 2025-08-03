@@ -115,7 +115,7 @@ main > .section > div.carousel-wrapper {
   place-content: center;
   font: 50px monospace;
   cursor: pointer;
-  z-index: 2;
+  z-index: 1;
   transition: background .25s;
 }
 
