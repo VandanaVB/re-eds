@@ -145,10 +145,10 @@ export default async function decorate(block) {
       });
     });
   }
-  const navSections = nav.querySelector('.nav-tools');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-     if (navSection.querySelector('a')) navSection.classList.add('nav-drop');
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    navTools.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navTool) => {
+     if (navTool.querySelector('a')) navTool.classList.add('nav-drop');
     }
   }
 
