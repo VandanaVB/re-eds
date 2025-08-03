@@ -545,5 +545,36 @@
         ]
       }
     ]
+  },
+  {
+    "id": "icontext",
+    "fields": [
+      {
+        "component": "select",
+        "name": "iconType",
+        "label": "Seclect Icon",
+        "options": [
+          {
+            "name": "Store Pointer Icon",
+            "value": "icon-map-store-point"
+          },
+          {
+            "name": "Servide Icon",
+            "value": "icon-rsa"
+          },
+          {
+            "name": "Book Ride Icon",
+            "value": "icon-hand-point"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "iconLabel",
+        "value": "",
+        "label": "Icon Label",
+        "valueType": "string"
+      }
+    ]
   }
 ]
