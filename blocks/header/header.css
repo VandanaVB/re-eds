@@ -210,19 +210,21 @@ header nav .nav-sections ul > li > ul > li {
     display: inline-block;
     position: absolute;
     top: 0.3em;
-    right: 2px;
+    right: 0px;
     transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border: 2px solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
+    transition: transform .6s ease;
   }
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
     top: unset;
     bottom: 0.5em;
     transform: rotate(315deg);
+    color: #da291c;
   }
 
   header nav .nav-sections ul {
@@ -252,7 +254,12 @@ header nav .nav-sections ul > li > ul > li {
     color: #fff;
     white-space: initial;
   }
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true']{
+    color: #da291c; 
+  }
 
+
+/** Roylenfield hide arrow
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     content: '';
     position: absolute;
@@ -263,7 +270,7 @@ header nav .nav-sections ul > li > ul > li {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
-  }
+  }**/
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
