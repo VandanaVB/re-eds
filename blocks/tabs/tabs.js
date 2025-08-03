@@ -12,6 +12,19 @@ export default async function decorate(block) {
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
+ // make it sticky
+  tablist.style.position = 'sticky';
+  tablist.style.top = '0';
+  tablist.style.zIndex = '1000';
+
+   const logoWrapper = document.createElement('div');
+    logoWrapper.className = 'tab-logo';
+    logoWrapper.innerHTML = `
+      <a href="/in/en/home" title="Royal Enfield">
+        <img src="/content/dam/royal-enfield/india/logos/logo.svg"
+             alt="Royal Enfield" />
+      </a>`;
+  tablist.append(logoWrapper);
   //Inject Title
   const titleSpan = document.createElement('span');
   titleSpan.className = 'tabs-title';
@@ -59,6 +72,15 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
+
+  // ───  add drop-shadow when “stuck” ─────────────────────────────
+  const observer = new IntersectionObserver(
+    ([e]) => {
+      tablist.classList.toggle('is-fixed', !e.isIntersecting);
+    },
+    { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
+  );
+  observer.observe(block);
 
   function buildHero(panel) {
     const kids = [...panel.children];

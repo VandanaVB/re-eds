@@ -25,6 +25,37 @@ main > .section > div.tabs-wrapper {
   display: none;
 }
 
+/* Stick the tab bar to top */
+.tabs-list {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/*Logo container  */
+.tabs-list .tab-logo {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+}
+.tabs-list .tab-logo img {
+  height: 2.2rem;
+  display: inline-block;
+}
+
+/*Title (if present)*/
+.tabs-list .tabs-title {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* When stuck, drop a shadow*/
+.tabs-list.is-fixed {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
 /* ---------- Individual Tab Button ---------- */
 .tabs-tab {
   flex: 0 0 auto;
