@@ -36,7 +36,15 @@ main > .section > div.tabs-wrapper {
 .tabs-list .tab-logo {
   flex: 0 0 auto;
   margin-right: 2rem;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
 }
+
+.tabs-list.is-fixed .tab-logo {
+  width: 175px;
+}
+
 .tabs-list .tab-logo img {
   display: inline-block;
   width: 175px;
@@ -56,19 +64,6 @@ main > .section > div.tabs-wrapper {
 /* When stuck, drop a shadow*/
 .tabs-list.is-fixed {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.tabs-list .tab-logo {
-  /* start completely offscreen + invisible */
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* once your decorator/JS adds “.is-fixed” to the tablist… */
-.tabs-list.is-fixed .tab-logo {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 /* ---------- Individual Tab Button ---------- */
