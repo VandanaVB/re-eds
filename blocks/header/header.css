@@ -229,13 +229,18 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    letter-spacing: 1px;
     margin: 0;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
+    padding: 26px 15px;
     position: relative;
+  }
+
+ header nav .nav-sections .default-content-wrapper > ul > li.nav-drop {
+    padding-right: 15px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -255,7 +260,7 @@ header nav .nav-sections ul > li > ul > li {
     white-space: initial;
   }
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true']{
-    color: #da291c; 
+    color: #da291c;
   }
 
 
