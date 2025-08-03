@@ -76,7 +76,8 @@
 }
 /* the little arrow after the text */
 .icon-wit-btn .custom-btn.arrow-r::after {
-  content: '›';
+  content: "\0043";
+  font-family: "reicons";
   display: inline-block;
   margin-left: 8px;
   font-size: 1em;
