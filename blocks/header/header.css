@@ -149,7 +149,9 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  display: inline-block;
+  width: 175px;
+  margin-right: 25px;
   height: auto;
 }
 
