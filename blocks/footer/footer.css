@@ -22,8 +22,6 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid #bababa;
-}
 
 .footer-links-wrapper {
   padding: 35px 0 30px;
@@ -194,7 +192,6 @@ footer {
     cursor: pointer;
     position: relative;
     padding: 18px 0; /* Adjusted padding for a taller title area */
-    border-bottom: 1px solid #bababa;
     margin-bottom: 0;
   }
 
