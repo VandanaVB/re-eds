@@ -162,3 +162,36 @@
     padding: 0 20px;
   }
 }
+
+
+.faqtab-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ensures “Categories” is always top */
+  top: 0;                       /* your sticky already sets this */
+}
+
+.faqtab-left h2,
+.faqtab-left p {
+  margin-top: 0;
+}
+
+.faqtab-left .faqtab-nav {
+  margin-top: 24px;
+}
+
+.faqtab-container > .default-content-wrapper {
+  grid-column: 1 / -1;           /* already full-width but re-declared for clarity */
+  background-color: #212121;
+  color: #fff;
+  padding: 40px 20px;            /* tweak to taste */
+  text-align: center;
+}
+
+.faqtab-container > .default-content-wrapper h2 {
+  margin: 0;                     /* remove any default margin */
+}
+
+.tabs-tab:last-of-type::after {
+  content: none;
+}
