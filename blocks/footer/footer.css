@@ -1,12 +1,11 @@
 /* --- Global Footer Styles --- */
 footer {
   background: #e5e3e3;
-  /* Using a system font stack is a safe bet if the exact font isn't loaded */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 footer .footer > div {
-  padding: 0 30px; /* Fluid layout with side padding */
+  padding: 0 30px;
 }
 
 footer a {
@@ -17,9 +16,9 @@ footer a {
 .footer-social-wrapper {
   padding: 25px 0;
   display: flex;
-  justify-content: flex-end; /* Aligns content to the right */
+  justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid #bababa; /* This row also has a bottom border */
+  border-bottom: 1px solid #bababa;
 }
 
 .footer-links-wrapper {
@@ -155,22 +154,33 @@ footer a {
   }
 }
 
+/* This is the key change for mobile */
 @media (max-width: 767px) {
   .footer-social-wrapper {
-    justify-content: flex-start; /* Align left on mobile */
-    flex-direction: column; /* Stack vertically */
+    justify-content: flex-start;
+    flex-direction: column;
     align-items: flex-start;
     gap: 15px;
   }
 
   .footer-links-wrapper {
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 0; /* Remove border on mobile */
+    /* Updated grid-template-columns to create a single column layout */
+    grid-template-columns: 1fr; 
+    border-bottom: 0;
     padding-top: 15px;
   }
 
   .list-of-links {
     margin-bottom: 25px;
+  }
+  
+  /* Additional mobile styles to show the h3 and ul one after another */
+  .list-of-links h3 {
+    margin-bottom: 0;
+  }
+
+  .list-of-links .nav-list {
+    margin-top: 10px; /* Add some space between the h3 and ul */
   }
 
   .footer-bottom-wrapper {
