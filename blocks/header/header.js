@@ -149,7 +149,7 @@ export default async function decorate(block) {
   if (navTools) {
     navTools.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navTool) => {
      if (navTool.querySelector('a')) navTool.classList.add('nav-drop');
-    }
+    });
   }
 
   // hamburger for mobile
