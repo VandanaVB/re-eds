@@ -105,6 +105,7 @@ main > .section > div.tabs-wrapper {
   position: relative;
   /* min-height: clamp(360px, 70vw, 720px)*/
   height: 100%;
+  line-height: 0;
 }
 
 .hero-bg img {
