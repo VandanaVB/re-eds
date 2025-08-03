@@ -65,6 +65,7 @@
   margin: 0;
   font-size: 16px;
   color: #b4b2b2;
+  font-family: "guardiansans-semibold";
 }
 .icon-wit-btn .custom-btn {
   background: none;
@@ -73,14 +74,16 @@
   color: inherit;
   font: inherit;
   cursor: pointer;
+  margin: 0;
 }
 /* the little arrow after the text */
 .icon-wit-btn .custom-btn.arrow-r::after {
-  content: "\0043";
-  font-family: "reicons";
+  position: static;
+  content: "A";
   display: inline-block;
+  font-family: reicons;
+  font-size: 12px;
   margin-left: 8px;
-  font-size: 1em;
   vertical-align: middle;
 }
 
