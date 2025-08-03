@@ -222,7 +222,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
     top: unset;
-    bottom: 0.5em;
+    bottom: 2.6em;
     transform: rotate(315deg);
     color: #da291c;
   }
@@ -253,7 +253,7 @@ header nav .nav-sections ul > li > ul > li {
     position: absolute;
     left: -24px;
     width: 200px;
-    top: 150%;
+    top: 70%;
     padding: 16px;
     background-color: #0a0a0a;
     color: #fff;
@@ -283,6 +283,8 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 /* tools */
-header nav .nav-tools {
-  grid-area: tools;
+header nav .nav-tools .default-content-wrapper > ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
