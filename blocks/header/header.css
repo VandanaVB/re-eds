@@ -292,6 +292,10 @@ header nav .nav-tools .default-content-wrapper > ul {
 }
 
 header nav .nav-tools .default-content-wrapper > ul > li {
+    padding: 26px 10px;
+}
+
+header nav .nav-tools .default-content-wrapper > ul > li.nav-drop {
     padding: 26px 15px;
 }
 
@@ -304,7 +308,7 @@ header nav .nav-tools .nav-drop::after {
   transform: rotate(135deg);
   width: 5px;
   height: 5px;
-  border: 2px solid currentcolor;
+  border: 2px solid #fff;
   border-radius: 0 1px 0 0;
   border-width: 2px 2px 0 0;
   transition: transform .6s ease;
@@ -312,6 +316,6 @@ header nav .nav-tools .nav-drop::after {
 
 header nav .nav-tools .nav-drop {
   position: relative;
-  padding-right: 16px;
   cursor: pointer;
+  margin-right:5px;
 }
