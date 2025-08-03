@@ -134,12 +134,12 @@ footer {
 .footer-bottom-wrapper .extra-links li:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 45%;
+  top: 60%;
   right: 0;
   transform: translateY(-50%);
   background: #000;
   width: 1px;
-  height: 8px;
+  height: 10px;
 }
 
 /* --- Responsive Layout --- */
