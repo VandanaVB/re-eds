@@ -191,7 +191,7 @@ footer {
   .list-of-links h3 {
     cursor: pointer;
     position: relative;
-    padding: 18px 0; /* Adjusted padding for a taller title area */
+    padding: 12px 0; /* Reduced padding to bring items closer */
     margin-bottom: 0;
   }
 
@@ -208,7 +208,7 @@ footer {
   /* Styles for the expanded accordion state */
   .list-of-links.expanded h3 {
     color: #da291c; /* Change text color to a specific red */
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin to bring content closer */
   }
 
   .list-of-links.expanded h3::before {
