@@ -39,7 +39,7 @@ main > .section.faqtab-container > .faqtab-left {
   line-height: 28px;
   font-family: "guardiansans-semibold";
   margin: 0 0 8px;
-  padding: 0px;
+  padding: 15px 0px 0px 0px;
 }
 .faqtab-left p {
   margin: 0 0 24px;
