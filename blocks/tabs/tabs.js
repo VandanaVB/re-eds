@@ -22,6 +22,7 @@ export default async function decorate(block) {
     logoWrapper.className = 'tab-logo';
     logoWrapper.innerHTML = `<span class="icon icon-relogo"></span>`;
   tablist.append(logoWrapper);
+  decorateIcons(tablist,'');
   //Inject Title
   const titleSpan = document.createElement('span');
   titleSpan.className = 'tabs-title';

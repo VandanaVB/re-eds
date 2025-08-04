@@ -43,7 +43,7 @@ main > .section > div.tabs-wrapper {
   transition: width 0.3s ease;
 }
 
-.tabs-list.is-fixed .tab-logo {
+.tabs-list.is-fixed .tab-logo .icon {
   width: 175px;
 }
 
