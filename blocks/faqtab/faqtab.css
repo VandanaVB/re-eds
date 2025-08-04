@@ -3,7 +3,7 @@
 /* 1) Top row: full‐width black header */
 .faqtab-container {
   display: grid;
-  grid-template-columns: 390px 1fr;
+  grid-template-columns: 400px 1fr;
   grid-template-rows: auto 1fr;
   gap: 0;
 }
@@ -44,6 +44,8 @@ main > .section.faqtab-container > .faqtab-left {
 .faqtab-left p {
   margin: 0 0 24px;
   font-family: "montserrat-regular";
+  font-size: 14px;
+  line-height: 18px;
 }
 
 /* Category tabs */
@@ -94,7 +96,7 @@ main > .section.faqtab-container > .faqtab-wrapper {
 /* Each panel gets full width & its own padding */
 .faqtab.block {
   width: 100%;
-  padding: 40px 48px;
+  padding: 40px 7%;
   box-sizing: border-box;
 }
 
@@ -109,8 +111,8 @@ main > .section.faqtab-container > .faqtab-wrapper {
 
 /* Accordion styling */
 .faqtab.block details {
-  border-bottom: 1px solid #dcdcdc;
-  padding: 28px 0;
+  border-bottom: 1px solid #212121;
+  padding: 25px 0;
 }
 .faqtab.block summary {
   display: flex;
@@ -119,7 +121,6 @@ main > .section.faqtab-container > .faqtab-wrapper {
   font-family: "guardiansans-semibold";
   cursor: pointer;
   font-size: 18px;
-  padding-right: 32px;
 }
 .faqtab.block summary::after {
   content: "\0043";
