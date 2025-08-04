@@ -3,7 +3,7 @@
 /* 1) Top row: full‐width black header */
 .faqtab-container {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 390px 1fr;
   grid-template-rows: auto 1fr;
   gap: 0;
 }
@@ -35,9 +35,11 @@ main > .section.faqtab-container > .faqtab-left {
 /* Categories heading */
 .faqtab-left h2 {
   margin: 0 0 8px;
+   padding: 0px 24px; 
 }
 .faqtab-left p {
   margin: 0 0 24px;
+  padding: 0px 24px;
 }
 
 /* Category tabs */
@@ -50,26 +52,34 @@ main > .section.faqtab-container > .faqtab-left {
   padding: 18px 24px;
   cursor: pointer;
   position: relative;
-  font: 600 20px/1.2 "Helvetica Neue", sans-serif;
-  border-bottom: 1px solid #d1d1d1;
+  font-family: "montserrat-regular";
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  border-bottom: 1px solid #212121;
+  color:#212121;
 }
 .faqtab-nav-item[aria-selected="true"] {
   color: #c32424;
   font-weight: 700;
 }
 .faqtab-nav-item[aria-selected="true"]::after {
-  content: '›';
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "A";
+    display: inline-block;
+    font-family: reicons;
+    font-size: 13px;
 }
 
 /* The right‐hand panel wrapper in column 2, row 2 */
-.faqtab-wrapper {
+main > .section.faqtab-container > .faqtab-wrapper {
   grid-column: 2;
   grid-row: 2;
   padding: 0;
+  margin:0px;
 }
 
 /* Hide panels via the built-in [hidden] attribute */
@@ -144,6 +154,6 @@ main > .section.faqtab-container > .faqtab-left {
     border: none;
   }
   .faqtab-nav-item[aria-selected="true"] {
-    color: #c32424;
+    color: #da291c;
   }
 }
