@@ -17,7 +17,7 @@ export default function decorate(block) {
   });
 
 
-// grab the container once
+/** runs on publish only Commented icontext component, revist later**/
 const container = block.querySelector('.icontheme .columns-wrapper .columns > div');
 if (container) {
   container.classList.add('icon-text');
@@ -55,7 +55,7 @@ if (container) {
 
     icontext.append(wrapper);
   });
-/** Commented icontext component, revist later
+/** runs on author Commented icontext component, revist later**/
   block.querySelectorAll('.icon-text').forEach((icontext) => {
     // read the authored props
     const iconName = icontext.querySelector('[data-aue-prop="iconType"]')?.textContent.trim();
@@ -77,5 +77,5 @@ if (container) {
       </div>`;
 
     icontext.append(wrapper);
-  });**/
+  });
 }
