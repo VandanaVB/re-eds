@@ -19,7 +19,7 @@ export default function decorate(block) {
 
   let pictureHTML = desktopPic.outerHTML;
   if (mobilePicDiv && mobilePicDiv.querySelector('img')) {
-    const desktopSrc = desktopPic.querySelector('img').src;
+    const desktopSrc = desktopPic.querySelector('source[type="image/jpeg"]').srcset;
     const mobileSrc  = mobilePicDiv.querySelector('img').src;
     const alt        = desktopPic.querySelector('img').alt || '';
     pictureHTML = `

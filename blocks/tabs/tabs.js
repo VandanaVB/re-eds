@@ -20,8 +20,8 @@ export default async function decorate(block) {
    const logoWrapper = document.createElement('div');
     logoWrapper.className = 'tab-logo';
     logoWrapper.innerHTML = `
-      <a href="/in/en/home" title="Royal Enfield">
-        <img src="/icons/re-logo.svg"
+      <a href="https://www.royalenfield.com/in/en/home/" title="Royal Enfield">
+        <img src="/content/re-eds.resource/icons/search.svg/icons/re-logo.svg"
              alt="Royal Enfield" />
       </a>`;
   tablist.append(logoWrapper);
