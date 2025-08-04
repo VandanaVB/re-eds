@@ -1,35 +1,40 @@
-/* ---------- Overall container now flex, not grid ---------- */
+
+
+/* 1) Top row: full‐width black header */
 .faqtab-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
 }
 
-/* Row 1 – full-width black headline banner */
+/* Row 1 spans both columns */
 .faqtab-container > .default-content-wrapper {
-  order: 0;                 /* keep it first in flex order */
-  width: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1;
   background: #212121;
   color: #fff;
   padding: 40px 0;
+  margin: 0;
   text-align: center;
-  margin-bottom: 0;
 }
 .faqtab-container > .default-content-wrapper h2 {
   margin: 0;
 }
 
-/* Left column (“Categories”) */
+/* Left menu sits in column 1, row 2 and sticks */
 .faqtab-left {
-  flex: 0 0 320px;
+  grid-column: 1;
+  grid-row: 2;
   background: #e5e6e8;
   padding: 40px 32px 0;
   position: sticky;
   top: 0;
-  height: fit-content;
   display: flex;
   flex-direction: column;
 }
 
-/* Left column heading & intro */
+/* Categories heading */
 .faqtab-left h2 {
   margin: 0 0 8px;
 }
@@ -37,7 +42,7 @@
   margin: 0 0 24px;
 }
 
-/* Categories list */
+/* Category tabs */
 .faqtab-nav {
   list-style: none;
   margin: 0;
@@ -62,34 +67,38 @@
   transform: translateY(-50%);
 }
 
-/* Right column wrapper */
+/* The right‐hand panel wrapper in column 2, row 2 */
 .faqtab-wrapper {
-  flex: 1;
-  padding: 40px 48px;
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0;
 }
 
-/* Each panel is 100% width and hides via [hidden] attr */
-.faqtab.block {
-  width: 100%;
-}
+/* Hide panels via the built-in [hidden] attribute */
 .faqtab.block[hidden] {
   display: none !important;
 }
 
-/* Panel title (“Motorcycle”, “Safety Call”, etc.) */
+/* Each panel gets full width & its own padding */
+.faqtab.block {
+  width: 100%;
+  padding: 40px 48px;
+  box-sizing: border-box;
+}
+
+/* Panel title (“Motorcycle”, etc.) */
 .faqtab.block > div:first-child p[data-aue-prop="tabTitle"] {
-  margin: 0;
-  padding: 40px 0 20px;
+  margin: 0 0 20px;
   font-family: "guardiansans-semibold";
   font-size: 24px;
+  line-height: 28px;
   background: #fff;
 }
 
-/* Accordion / details styling */
+/* Accordion styling */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
-  width: 100%;
 }
 .faqtab.block summary {
   display: flex;
@@ -98,7 +107,6 @@
   cursor: pointer;
   font-weight: 700;
   padding-right: 32px;
-  width: 100%;
 }
 .faqtab.block summary::after {
   content: "\0043";
@@ -117,7 +125,7 @@
 /* ================= MOBILE ================ */
 @media (max-width: 768px) {
   .faqtab-container {
-    flex-direction: column;
+    display: block;
   }
   .faqtab-left {
     position: static;
