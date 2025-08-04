@@ -43,6 +43,7 @@ main > .section.faqtab-container > .faqtab-left {
 }
 .faqtab-left p {
   margin: 0 0 24px;
+  font-family: "montserrat-regular";
 }
 
 /* Category tabs */
