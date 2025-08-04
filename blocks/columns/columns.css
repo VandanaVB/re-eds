@@ -46,6 +46,9 @@
 .icon-wit-btn .inner-box {
   padding: 20px 0;
 }
+.icon-wit-btn .inner-box h4{
+    font-weight: 500;
+}
 .icon-wit-btn .icon-wit-link {
   display: inline-block;
   text-decoration: none;
