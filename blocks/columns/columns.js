@@ -17,7 +17,7 @@ export default function decorate(block) {
   });
 
 
-/** runs on publish only Commented icontext component, revist later**/
+/** runs on author & publish  Commented icontext component, revist later**/
 const container = block.querySelector('.icontheme .columns-wrapper .columns > div');
 if (container) {
   container.classList.add('icon-text');
