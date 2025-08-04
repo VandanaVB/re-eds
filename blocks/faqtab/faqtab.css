@@ -24,7 +24,7 @@
 }
 
 /* Left menu sits in column 1, row 2 and sticks */
-main > .section > div.faqtab-container .faqtab-left {
+main > .section > .faqtab-container > .faqtab-left {
   grid-column: 1;
   grid-row: 2;
   background: #e5e6e8;
