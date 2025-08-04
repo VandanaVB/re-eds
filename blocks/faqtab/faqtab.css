@@ -132,6 +132,9 @@ main > .section.faqtab-container > .faqtab-wrapper {
 .faqtab-answer {
   margin-top: 18px;
   line-height: 1.6;
+  p{
+    font-family: "montserrat-regular";
+  }
 }
 
 /* ================= MOBILE ================ */
