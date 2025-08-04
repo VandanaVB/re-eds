@@ -179,6 +179,24 @@ main > .section > div.tabs-wrapper {
   text-align: right
 }
 
+.hero-overlay.align-left-bottom {
+  place-content: end start;
+  text-align: left;
+  padding-bottom:60px;
+}
+
+.hero-overlay.align-center-bottom {
+  place-content: end center;
+  text-align: center;
+  padding-bottom:60px;
+}
+
+.hero-overlay.align-right-bottom {
+  place-content: end end;
+  text-align: right;
+  padding-bottom:60px;
+}
+
 .hero-copy {
   font-size: 24px;
   line-height: 28px;
@@ -209,15 +227,28 @@ main > .section > div.tabs-wrapper {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 35px 10px 15px;
+  padding: 10px 15px;
   border: 2px solid #fff;
   text-decoration: none;
   font: 14px "montserrat-regular";
   transition: .25s;
 }
 
-.cta span {
-  transition: transform .25s
+.cta::after{
+    position: static;
+    content: "A";
+    display: inline-block;
+    font-family: reicons;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.cta:hover::after {
+   animation-name: hvr-icon-wobble-horizontal;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
 }
 
 .cta:is(:hover, :focus-visible) {
@@ -226,9 +257,6 @@ main > .section > div.tabs-wrapper {
   text-decoration: none;
 }
 
-.cta:is(:hover, :focus-visible) span {
-  transform: translateX(4px)
-}
 a:any-link {
     color:#000;
 }

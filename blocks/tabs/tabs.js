@@ -113,7 +113,7 @@ export default async function decorate(block) {
     const label = labelDiv?.textContent.trim();
     const href  = linkDiv?.querySelector('a')?.getAttribute('href');
     return label && href
-      ? `<a class="cta" href="${href}">${label} <span>›</span></a>`
+      ? `<a class="cta" href="${href}">${label}</a>`
       : '';
   }
 

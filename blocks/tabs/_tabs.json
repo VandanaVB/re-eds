@@ -94,12 +94,24 @@
               "value": "center"
             },
             {
+              "name": "center bottom",
+              "value": "center-bottom"
+            },
+            {
               "name": "left",
               "value": "left"
             },
             {
+              "name": "left bottom",
+              "value": "left-bottom"
+            },
+            {
               "name": "right",
               "value": "right"
+            },
+            {
+              "name": "right bottom",
+              "value": "right-bottom"
             }
           ]
         }
