@@ -138,12 +138,6 @@ export default async function decorate(block) {
     navItem.closest('.button-container').className = '';
   });
 
-
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const pic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, pic.querySelector('img'));
-    img.closest('picture').replaceWith(pic);
-  });
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
