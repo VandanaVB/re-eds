@@ -17,8 +17,14 @@ export default function decorate(block) {
   });
 
 
-// inside your columns.js decorate(block) function, *after* your existing columns logic:
-block.querySelectorAll('.icontheme .columns-wrapper .columns > div > div')
+// grab the container once
+const container = block.querySelector('.icontheme .columns-wrapper .columns > div');
+if (container) {
+  container.classList.add('icon-text');
+}
+
+  // then transform each cell inside it
+  container?.querySelectorAll('> div')
   .forEach((icontext) => {
     // grab the three <p> elements
     const [iconP, labelP, linkP] = icontext.querySelectorAll('p');
