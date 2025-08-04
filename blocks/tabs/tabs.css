@@ -43,13 +43,18 @@ main > .section > div.tabs-wrapper {
   transition: width 0.3s ease;
 }
 
-.tabs-list.is-fixed .tab-logo .icon {
+.tabs-list.is-fixed .tab-logo {
+  width: 175px;
+}
+
+.tabs-list.is-fixed .tab-logo img {
   width: 175px;
 }
 
 .tabs-list .tab-logo img {
   display: inline-block;
   vertical-align: middle;
+  max-width:fit-content;
 }
 
 /*Title (if present)*/
