@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
 
@@ -114,4 +115,6 @@ export default async function decorate(block) {
       ? `<a class="cta" href="${href}">${label} <span>›</span></a>`
       : '';
   }
+
+
  }
