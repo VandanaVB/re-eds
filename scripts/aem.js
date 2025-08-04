@@ -407,9 +407,6 @@ function wrapTextNodes(block) {
  * @param {Element} element container element
  */
 function decorateButtons(element) {
-  if (element.closest('.header_block[data-block-name="header"]')) {
-    return;
-  }
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {

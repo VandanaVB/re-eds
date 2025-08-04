@@ -47,7 +47,7 @@ header nav[aria-expanded='true'] {
 
 header nav p {
   margin: 0;
-  line-height: 1;
+  line-height: 0;
 }
 
 header nav a:any-link {
@@ -288,7 +288,7 @@ header nav .nav-tools .default-content-wrapper > ul {
   align-items: center;
   letter-spacing: 1px;
   font-size:12px;
-  margin-top:1.6em;
+  margin: 0px;
 }
 
 header nav .nav-tools .default-content-wrapper > ul > li {
