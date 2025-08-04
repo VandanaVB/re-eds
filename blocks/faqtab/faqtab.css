@@ -1,56 +1,48 @@
-/* ==============================================================
-   GRID LAYOUT
-   ============================================================== */
+/* ---------- Overall container now flex, not grid ---------- */
 .faqtab-container {
-  display: grid;
-  grid-template-columns: 320px 1fr;
+  display: flex;
 }
 
-/* Row 1 – full-width headline */
-.faqtab-container>.default-content-wrapper:first-child {
-  grid-column: 1 / -1;
+/* Row 1 – full-width black headline banner */
+.faqtab-container > .default-content-wrapper {
+  order: 0;                 /* keep it first in flex order */
+  width: 100%;
+  background: #212121;
+  color: #fff;
+  padding: 40px 0;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 0;
+}
+.faqtab-container > .default-content-wrapper h2 {
+  margin: 0;
 }
 
-/* Row 2 – “Categories / Pick a Category” (grey box) */
+/* Left column (“Categories”) */
 .faqtab-left {
-  grid-column: 1;
-  grid-row: 2;
+  flex: 0 0 320px;
   background: #e5e6e8;
   padding: 40px 32px 0;
-  display: block;
-  flex-direction: column;
-  gap: 24px;
   position: sticky;
   top: 0;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
-.faqtab-left h2:first-child {
-  margin-top: 0 0 8px 0;
+/* Left column heading & intro */
+.faqtab-left h2 {
+  margin: 0 0 8px;
+}
+.faqtab-left p {
+  margin: 0 0 24px;
 }
 
-.faqtab-left p{
-  margin: 0 0 24px 0;
-}
-
-/* Row 3 – nav list and panels */
+/* Categories list */
 .faqtab-nav {
   list-style: none;
-  margin: 24px 0 0 0;
+  margin: 0;
   padding: 0;
-  max-height: none;
-  flex: 0 0 auto;
 }
-
-.faqtab-wrapper {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-/* ==============================================================
-   NAV LIST
-   ============================================================== */
 .faqtab-nav-item {
   padding: 18px 24px;
   cursor: pointer;
@@ -58,12 +50,10 @@
   font: 600 20px/1.2 "Helvetica Neue", sans-serif;
   border-bottom: 1px solid #d1d1d1;
 }
-
 .faqtab-nav-item[aria-selected="true"] {
   color: #c32424;
   font-weight: 700;
 }
-
 .faqtab-nav-item[aria-selected="true"]::after {
   content: '›';
   position: absolute;
@@ -72,31 +62,35 @@
   transform: translateY(-50%);
 }
 
-/* ==============================================================
-   PANELS / ACCORDION
-   ============================================================== */
-.faqtab.block {
+/* Right column wrapper */
+.faqtab-wrapper {
+  flex: 1;
   padding: 40px 48px;
 }
 
-.faqtab.block > div:first-child p[data-aue-prop="tabTitle"] {
-  margin:0;
-  font-family:"guardiansans-semibold";
-  font-size:24px;
-  font-height:28px;
- }
-
+/* Each panel is 100% width and hides via [hidden] attr */
+.faqtab.block {
+  width: 100%;
+}
 .faqtab.block[hidden] {
   display: none !important;
 }
 
+/* Panel title (“Motorcycle”, “Safety Call”, etc.) */
+.faqtab.block > div:first-child p[data-aue-prop="tabTitle"] {
+  margin: 0;
+  padding: 40px 0 20px;
+  font-family: "guardiansans-semibold";
+  font-size: 24px;
+  background: #fff;
+}
+
+/* Accordion / details styling */
 .faqtab.block details {
   border-bottom: 1px solid #dcdcdc;
   padding: 28px 0;
-  display: block;
   width: 100%;
 }
-
 .faqtab.block summary {
   display: flex;
   justify-content: space-between;
@@ -104,61 +98,46 @@
   cursor: pointer;
   font-weight: 700;
   padding-right: 32px;
+  width: 100%;
 }
-
-.faqtab.block summary > *:first-child {
-  flex: 1 1 auto; /* text grows to take whatever is left */
-}
-
-
 .faqtab.block summary::after {
-  width: 0px;
-  height: 28px;
   content: "\0043";
   font-family: "reicons";
-  margin-top: -10px;
   font-size: 14px;
+  margin-top: -10px;
 }
-
 .faqtab.block details[open] summary::after {
   content: "\0030";
 }
-
 .faqtab-answer {
   margin-top: 18px;
   line-height: 1.6;
 }
 
-/* ==============================================================
-   MOBILE
-   ============================================================== */
+/* ================= MOBILE ================ */
 @media (max-width: 768px) {
   .faqtab-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
-
-  .faqtab-left,
-  .faqtab-nav {
-    grid-column: 1;
+  .faqtab-left {
+    position: static;
+    width: 100%;
+    padding: 16px;
   }
-
+  .faqtab-wrapper {
+    padding: 0 16px 40px;
+  }
   .faqtab-nav {
     display: flex;
     overflow-x: auto;
     background: #212121;
   }
-
   .faqtab-nav-item {
     flex: 0 0 auto;
     color: #e6e6e6;
     border: none;
   }
-
   .faqtab-nav-item[aria-selected="true"] {
     color: #c32424;
-  }
-
-  .faqtab-wrapper {
-    padding: 0 20px;
   }
 }
