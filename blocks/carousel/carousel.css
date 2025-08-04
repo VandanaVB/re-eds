@@ -159,3 +159,27 @@ main > .section > div.carousel-wrapper {
     font-size: 26px;
   }
 }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #999;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: #da291c;
+}

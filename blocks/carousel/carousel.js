@@ -46,6 +46,20 @@ export default function decorate(block) {
     slide.append(overlay);
   });
 
+  // After defining slides...
+  const dotsContainer = document.createElement('div');
+  dotsContainer.className = 'carousel-dots';
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'carousel-dot';
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => show(i));
+    dotsContainer.append(dot);
+  });
+
+  block.append(dotsContainer);
+
   /* ---------- arrow / autoplay handlers ---------- */
   const next = block.querySelector('.carousel-arrow.next');
   const prev = block.querySelector('.carousel-arrow.prev');
