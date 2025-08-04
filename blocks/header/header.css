@@ -57,6 +57,11 @@ header nav a:any-link {
   }
 }
 
+header nav a:hover {
+    color: #da291c;
+    text-decoration: none;
+}
+
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
