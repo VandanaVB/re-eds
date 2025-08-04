@@ -87,8 +87,21 @@ main > .section > div.carousel-wrapper {
   transition: .25s;
 }
 
-.carousel-cta a span {
-  transition: transform .25s;
+.carousel-cta a::after{
+    position: static;
+    content: "A";
+    display: inline-block;
+    font-family: reicons;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.carousel-cta a:hover::after {
+   animation-name: hvr-icon-wobble-horizontal;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
 }
 
 .carousel-cta a:hover {
@@ -96,11 +109,6 @@ main > .section > div.carousel-wrapper {
   color: #000;
   text-decoration: none;
 }
-
-.carousel-cta a:hover span {
-  transform: translateX(4px);
-}
-
 
 .carousel-arrow {
   position: absolute;

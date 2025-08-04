@@ -59,11 +59,11 @@ export default function decorate(block) {
   prev.addEventListener('click', () => show(index - 1));
 
   /* Auto-play (8 s) — pause on hover */
-  let timer = setInterval(() => show(index + 1), 8000);
+  let timer = setInterval(() => show(index + 1), 5000);
   block.addEventListener('mouseenter', () => clearInterval(timer));
   block.addEventListener('mouseleave', () => {
     clearInterval(timer);
-    timer = setInterval(() => show(index + 1), 8000);
+    timer = setInterval(() => show(index + 1), 5000);
   });
 
   show(0);
@@ -72,7 +72,7 @@ export default function decorate(block) {
     const label = labelDiv?.textContent.trim();
     const href  = linkDiv?.querySelector('a')?.href;
     return label && href
-      ? `<a href="${href}">${label} <span>›</span></a>`
+      ? `<a href="${href}">${label}</a>`
       : '';
   }
 }
