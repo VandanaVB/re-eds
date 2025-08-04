@@ -121,6 +121,7 @@ main > .section.faqtab-container > .faqtab-wrapper {
   font-family: "guardiansans-semibold";
   cursor: pointer;
   font-size: 18px;
+  padding-right: 32px;
 }
 .faqtab.block summary::after {
   content: "\0043";
