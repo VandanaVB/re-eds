@@ -24,7 +24,7 @@ if (container) {
 }
 
   // then transform each cell inside it
-  container?.querySelectorAll('> div')
+  container?.querySelectorAll('div')
   .forEach((icontext) => {
     // grab the three <p> elements
     const [iconP, labelP, linkP] = icontext.querySelectorAll('p');
