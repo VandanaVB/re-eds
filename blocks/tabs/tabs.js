@@ -19,11 +19,7 @@ export default async function decorate(block) {
 
    const logoWrapper = document.createElement('div');
     logoWrapper.className = 'tab-logo';
-    logoWrapper.innerHTML = `
-      <a href="https://www.royalenfield.com/in/en/home/" title="Royal Enfield">
-        <img src="/content/re-eds.resource/icons/search.svg/icons/re-logo.svg"
-             alt="Royal Enfield" />
-      </a>`;
+    logoWrapper.innerHTML = `<span class="icon icon-relogo"></span>`;
   tablist.append(logoWrapper);
   //Inject Title
   const titleSpan = document.createElement('span');
