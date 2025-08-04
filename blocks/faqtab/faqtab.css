@@ -116,8 +116,9 @@ main > .section.faqtab-container > .faqtab-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "guardiansans-semibold";
   cursor: pointer;
-  font-weight: 700;
+  font-size: 18px;
   padding-right: 32px;
 }
 .faqtab.block summary::after {
