@@ -33,7 +33,7 @@ main > .section.faqtab-container > .faqtab-left {
 }
 
 /* Categories heading */
-.section.nomargin > .faqtab-left > h2 {
+.section.nomargin > .faqtab-left > div > h2 {
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
