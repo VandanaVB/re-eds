@@ -121,7 +121,6 @@ main > .section.faqtab-container > .faqtab-wrapper {
   font-family: "guardiansans-semibold";
   cursor: pointer;
   font-size: 18px;
-  padding-right: 32px;
 }
 .faqtab.block summary::after {
   content: "\0043";
@@ -135,12 +134,12 @@ main > .section.faqtab-container > .faqtab-wrapper {
 .faqtab-answer {
   margin-top: 18px;
   line-height: 1.6;
-  p{
-    font-family: "montserrat-regular";
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: normal;
-  }
+}
+.faqtab-answer p {
+  font-family: "montserrat-regular";
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
 }
 
 /* ================= MOBILE ================ */
