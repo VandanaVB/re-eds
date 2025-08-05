@@ -1,16 +1,28 @@
-/*  Decorator fires once per .faqtab.block.
- *  ■ Builds an accordion for its own Q-A rows
- *  ■ Registers itself so the first block can build / refresh the nav
- *  ■ Keeps UE bindings intact (no author markup removed)
- */
 export default function decorate(block) {
   const section = block.closest('.faqtab-container');
   if (!section) return;
 
+  const orig = section.querySelector('.default-content-wrapper');
+  if (orig) {
+    const faqH2 = orig.querySelector('h2');
+    const rest = Array.from(orig.children).slice(1);
+
+    const faqWrapper = document.createElement('div');
+    faqWrapper.className = 'default-content-wrapper';
+    if (faqH2) faqWrapper.append(faqH2.cloneNode(true));
+
+    const leftWrapper = document.createElement('div');
+    leftWrapper.className = 'faqtab-left';
+    const catDiv = document.createElement('div');
+    rest.forEach((el) => catDiv.append(el.cloneNode(true)));
+    leftWrapper.append(catDiv);
+
+    orig.replaceWith(faqWrapper, leftWrapper);
+  }
+
   const rows = Array.from(block.children);
   if (rows.length < 2) return;
 
-  // extract panel title
   const titleRow = rows[0];
   const titleP = titleRow.querySelector('p');
   const panelTitle = titleP?.textContent.trim() || '';
@@ -52,13 +64,6 @@ export default function decorate(block) {
 
   function buildOrRefreshNav() {
     let left = section.querySelector('.faqtab-left');
-    if (!left) {
-      left = document.createElement('div');
-      left.className = 'faqtab-left';
-      const cats = section.querySelector('.default-content-wrapper > *:first-child');
-      if (cats) left.append(cats.cloneNode(true));
-      section.insertBefore(left, section.querySelector('.faqtab-wrapper'));
-    }
 
     let nav = left.querySelector('.faqtab-nav');
     if (!nav) {

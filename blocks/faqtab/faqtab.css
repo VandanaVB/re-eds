@@ -101,7 +101,7 @@ main > .section.faqtab-container > .faqtab-wrapper {
 }
 
 /* Panel title (“Motorcycle”, etc.) */
-.faqtab.block > div:first-child p[data-aue-prop="tabTitle"] {
+.faqtab.block > p[data-aue-prop="tabTitle"] {
   margin: 0 0 20px;
   font-family: "guardiansans-semibold";
   font-size: 24px;
