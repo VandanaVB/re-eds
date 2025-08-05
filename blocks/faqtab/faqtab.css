@@ -123,14 +123,11 @@ main > .section.faqtab-container > .faqtab-wrapper {
   font-size: 18px;
 }
 .faqtab.block summary::after {
-  content: '▾';
-  transition: transform .25s;
-  flex: 0 0 auto;
-  width: 0px;
-  height: 28px;
   content: "\0043";
   font-family: "reicons";
-  margin-top: -10px;
+  right: 65px;
+  position: absolute;
+  transition: transform .25s;
   font-size: 14px;
 }
 
