@@ -7,95 +7,89 @@ export default function decorate(block) {
   const section = block.closest('.faqtab-container');
   if (!section) return;
 
-  /* ------------------------------------------------------------------
-   * 1. Build accordion inside *this* block (idempotent)
-   * ---------------------------------------------------------------- */
-  const inEditor = !!document.documentElement.dataset.editor;
+  const rows = Array.from(block.children);
+  if (rows.length < 2) return;
 
-  [...block.querySelectorAll('[data-aue-model="questionanswer"]')].forEach(
-    (qa, rowIdx) => {
-      if (qa.querySelector('details')) return;          // already done
+  // extract panel title
+  const titleRow = rows[0];
+  const titleP = titleRow.querySelector('p');
+  const panelTitle = titleP?.textContent.trim() || '';
+  block.textContent = '';
 
-      const q = qa.querySelector('[data-aue-prop="question"]');
-      const a = qa.querySelector('[data-aue-prop="answer"]');
-      if (!q || !a) return;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'faqtab-inner';
+  rows.slice(1).forEach((row, idx) => {
+    const paras = row.querySelectorAll('p');
+    if (paras.length < 2) return;
+    const qText = paras[0].innerHTML;
+    const aText = paras[1].innerHTML;
 
-      const details  = document.createElement('details');
-      const summary  = document.createElement('summary');
-      const body     = document.createElement('div');
+    const details = document.createElement('details');
+    if (idx === 0) details.open = true;
 
-      summary.innerHTML = q.innerHTML;
-      body.className    = 'faqtab-answer';
-      body.innerHTML    = a.innerHTML;
+    const summary = document.createElement('summary');
+    summary.innerHTML = qText;
 
-      details.append(summary, body);
-      if (!rowIdx) details.open = true;                 // first row open
-      qa.textContent = '';
-      qa.append(details);
-    }
-  );
+    const body = document.createElement('div');
+    body.className = 'faqtab-answer';
+    body.innerHTML = aText;
 
-  /* ------------------------------------------------------------------
-   * 2. Register this panel
-   * ---------------------------------------------------------------- */
+    details.append(summary, body);
+    wrapper.append(details);
+  });
+
+  const titleEl = document.createElement('p');
+  titleEl.setAttribute('data-aue-prop', 'tabTitle');
+  titleEl.textContent = panelTitle;
+  block.append(titleEl, wrapper);
+
   if (!section.faqtabs) section.faqtabs = [];
-  section.faqtabs.push(block);
+  if (!section.faqtabs.includes(block)) {
+    section.faqtabs.push(block);
+  }
 
-  /* always refresh nav (handles lazy-loaded blocks) */
   buildOrRefreshNav();
 
-  /* ------------------------------------------------------------------
-   * Helper: create / refresh nav + left column wrapper
-   * ---------------------------------------------------------------- */
   function buildOrRefreshNav() {
-    /* left wrapper: “Categories / Pick a Category” — one-time */
-    if (!section.querySelector('.faqtab-left')) {
-      const left      = document.createElement('div');
-      left.className  = 'faqtab-left';
-
-      /*  grab the *entire* text component that holds Categories + prompt  */
-      const catsBlock = section.querySelector('.default-content-wrapper > [data-aue-prop="text"]');
-      if (catsBlock) left.append(catsBlock);
-      const firstWrapper = section.querySelector('.faqtab-wrapper');
-      section.insertBefore(left, firstWrapper);     // now comes first
+    let left = section.querySelector('.faqtab-left');
+    if (!left) {
+      left = document.createElement('div');
+      left.className = 'faqtab-left';
+      const cats = section.querySelector('.default-content-wrapper > *:first-child');
+      if (cats) left.append(cats.cloneNode(true));
+      section.insertBefore(left, section.querySelector('.faqtab-wrapper'));
     }
 
-    /* nav list */
-    let nav = section.querySelector('.faqtab-nav');
+    let nav = left.querySelector('.faqtab-nav');
     if (!nav) {
       nav = document.createElement('ul');
       nav.className = 'faqtab-nav';
       nav.setAttribute('role', 'tablist');
-      section.querySelector('.faqtab-left').append(nav);
+      left.append(nav);
     }
-
-    /* rebuild items */
     nav.innerHTML = '';
-    section.faqtabs.forEach((panel, idx) => {
-      const titleEl = panel.querySelector('[data-aue-prop="tabTitle"]');
-      const title   = titleEl ? titleEl.textContent.trim() : `Tab ${idx + 1}`;
 
-      panel.id = panel.id || `faqtab-${idx}`;
+    section.faqtabs.forEach((panel, i) => {
+      const tabTitle = panel.querySelector('[data-aue-prop="tabTitle"]')?.textContent.trim() || `Tab ${i+1}`;
+      panel.id = panel.id || `faqtab-${i}`;
+      panel.hidden = i !== 0;
       panel.setAttribute('role', 'tabpanel');
-      panel.hidden = !!idx;                            // show first only
 
       const li = document.createElement('li');
       li.className = 'faqtab-nav-item';
-      li.textContent = title;
+      li.textContent = tabTitle;
       li.setAttribute('role', 'tab');
       li.setAttribute('aria-controls', panel.id);
-      li.setAttribute('aria-selected', !idx);
-
+      li.setAttribute('aria-selected', i === 0);
       li.addEventListener('click', () => {
         nav.querySelectorAll('.faqtab-nav-item')
-          .forEach(n => n.setAttribute('aria-selected', n === li));
-        section.faqtabs.forEach(p => { p.hidden = p !== panel; });
-
-        /* auto-expand first Q-A of the newly shown panel */
-        const first = panel.querySelector('details');
-        if (first) first.open = true;
+           .forEach((n,j) => n.setAttribute('aria-selected', j === i));
+        section.faqtabs.forEach((p,j) => {
+          p.hidden = j !== i;
+          const firstDetails = p.querySelector('details');
+          if (firstDetails) firstDetails.open = (j===i);
+        });
       });
-
       nav.append(li);
     });
   }
