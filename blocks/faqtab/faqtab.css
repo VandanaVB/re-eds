@@ -123,12 +123,19 @@ main > .section.faqtab-container > .faqtab-wrapper {
   font-size: 18px;
 }
 .faqtab.block summary::after {
+  content: '▾';
+  transition: transform .25s;
+  flex: 0 0 auto;
+  width: 0px;
+  height: 28px;
   content: "\0043";
   font-family: "reicons";
-  font-size: 14px;
   margin-top: -10px;
+  font-size: 14px;
 }
+
 .faqtab.block details[open] summary::after {
+  transform: rotate(180deg);
   content: "\0030";
 }
 .faqtab-answer {
