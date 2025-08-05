@@ -2,6 +2,7 @@ export default function decorate(block) {
   const section = block.closest('.faqtab-container');
   if (!section) return;
 
+if (!section.querySelector('.faqtab-left')) {
   const orig = section.querySelector('.default-content-wrapper');
   if (orig) {
     const faqH2 = orig.querySelector('h2');
@@ -19,6 +20,7 @@ export default function decorate(block) {
 
     orig.replaceWith(faqWrapper, leftWrapper);
   }
+}
 
   const rows = Array.from(block.children);
   if (rows.length < 2) return;
