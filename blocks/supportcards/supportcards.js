@@ -9,7 +9,7 @@ export default function decorate(block) {
     const [imgDiv, iconDiv, textDiv, labelDiv, linkDiv] = [...row.children];
 
     if (imgDiv) imgDiv.className = 'supportcards-card-image';
-    if (iconDiv) iconDiv.className = 'supportcards-card-icon';
+    if (iconDiv.hasChildNodes()) iconDiv.className = 'supportcards-card-icon';
 
     const bodyDiv = document.createElement('div');
     bodyDiv.className = 'supportcards-card-body';
