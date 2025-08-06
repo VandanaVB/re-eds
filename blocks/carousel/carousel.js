@@ -50,12 +50,14 @@ export default function decorate(block) {
   const dotsContainer = document.createElement('div');
   dotsContainer.className = 'carousel-dots';
 
+  const dots = [];
   slides.forEach((_, i) => {
     const dot = document.createElement('span');
     dot.className = 'carousel-dot';
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', () => show(i));
     dotsContainer.append(dot);
+    dots.push(dot);
   });
 
   block.append(dotsContainer);
