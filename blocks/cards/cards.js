@@ -17,7 +17,7 @@ export default function decorate(block) {
     });
 
     /* ---------- overlay variant? ---------- */
-    const ctaLabelDiv = li.querySelector('[data-aue-prop="ctaLabel"]');
+    const ctaLabelDiv = li.querySelector('.cards-card-body:nth-of-type(3) > p');
     const ctaLinkDiv  = li.querySelector('.cards-card-body a');
 
     if (ctaLabelDiv && ctaLinkDiv) {
