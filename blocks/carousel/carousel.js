@@ -67,6 +67,8 @@ export default function decorate(block) {
   function show(i) {
     index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
   }
 
   next.addEventListener('click', () => show(index + 1));
