@@ -62,9 +62,31 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    // Auto-detect Motorcycles showcase section (runs before decorateSections)
+    main.querySelectorAll(':scope > div').forEach((section) => {
+      const h2 = section.querySelector(':scope > h2');
+      if (h2 && h2.textContent.trim() === 'Motorcycles') {
+        const block = document.createElement('div');
+        block.className = 'motorcycles-showcase';
+        const inner = document.createElement('div');
+        // Move all children except section-metadata into the block
+        [...section.children].forEach((child) => {
+          if (!child.classList.contains('section-metadata')) {
+            inner.append(child);
+          }
+        });
+        block.append(inner);
+        // Insert block before section-metadata (or at end)
+        const meta = section.querySelector('.section-metadata');
+        if (meta) {
+          section.insertBefore(block, meta);
+        } else {
+          section.append(block);
+        }
+      }
+    });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

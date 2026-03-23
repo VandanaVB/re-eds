@@ -1,0 +1,127 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.royalenfield.com/in/en/home/"
+      ],
+      "description": "Royal Enfield India homepage with hero banners, product showcases, and brand content",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [".swipercarousel.cmp--royal-enfield-swiper .swiper-slide"]
+        },
+        {
+          "name": "cards-spotlight",
+          "instances": ["#highlights-section .whats-trending-cmp-desktop .swiper-slide"]
+        },
+        {
+          "name": "tabs-showcase",
+          "instances": [".motorcyclewithcategories", ".iridegrid"]
+        },
+        {
+          "name": "cards-culture",
+          "instances": [".motoculture .swiper-slide"]
+        },
+        {
+          "name": "cards-events",
+          "instances": [".marquee-rides-events-cards .marquee-rides-events-card"]
+        },
+        {
+          "name": "carousel-legacy",
+          "instances": [".swiper-container--legacy .swiper-slide"]
+        },
+        {
+          "name": "columns-locator",
+          "instances": [".section-locate-centre.re-rides-home-locate-us-component"]
+        },
+        {
+          "name": "cards-shop",
+          "instances": [".shop-section .shop-section__cards .shop-card"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Carousel",
+          "selector": ".swipercarousel.carousel.panelcontainer.cmp--royal-enfield-swiper",
+          "style": null,
+          "blocks": ["carousel-hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "In the Headlights",
+          "selector": "#highlights-section",
+          "style": "dark",
+          "blocks": ["cards-spotlight"],
+          "defaultContent": ["#highlights-section .whatstrending h2"]
+        },
+        {
+          "id": "section-3",
+          "name": "Motorcycles Showcase",
+          "selector": ".motorcyclewithcategories",
+          "style": "dark",
+          "blocks": ["tabs-showcase"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "MotoCulture",
+          "selector": ".motoculture",
+          "style": "dark",
+          "blocks": ["cards-culture"],
+          "defaultContent": [".motoculture h3.heading"]
+        },
+        {
+          "id": "section-5",
+          "name": "Ride",
+          "selector": ".iridegrid",
+          "style": "dark",
+          "blocks": ["tabs-showcase"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Rides and Events",
+          "selector": "#latestSection",
+          "style": "dark",
+          "blocks": ["cards-events"],
+          "defaultContent": [".marquee-rides-events-container .marquee-rides-header h3"]
+        },
+        {
+          "id": "section-7",
+          "name": "Legacy since 1901",
+          "selector": ".swipercarousel.carousel.panelcontainer.swiper-container--legacy",
+          "style": "dark",
+          "blocks": ["carousel-legacy"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Locate Us",
+          "selector": ".locateservicecentrecard",
+          "style": "dark",
+          "blocks": ["columns-locator"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Shop",
+          "selector": ".royal-enfield-shop-us",
+          "style": "dark",
+          "blocks": ["cards-shop"],
+          "defaultContent": [".shop-section h3.shop-section__title"]
+        },
+        {
+          "id": "section-10",
+          "name": "Footer",
+          "selector": ".re-revamp__footer-fragment",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

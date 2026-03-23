@@ -12,84 +12,106 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #000;
+  --light-color: #181818;
+  --dark-color: #000;
+  --text-color: #fff;
+  --link-color: #fff;
+  --link-hover-color: #daaa00;
+  --accent-color: #da291c;
+  --accent-gold: #daaa00;
+  --overlay-bg: rgb(66 66 66 / 70%);
 
   /* fonts */
-  --body-font-family: guardiansans-regular, sans-serif;
-  --body-mon-font-family: montserrat-regular, sans-serif;
-  --header-font-family: guardiansans-medium, sans-serif;
-  --heading-font-family: guardiansans-semibold, sans-serif;
+  --body-font-family: montserrat, montserrat-fallback, sans-serif;
+  --heading-font-family: guardiansans-semibold, guardiansans-fallback, sans-serif;
+  --heading-bold-font-family: guardiansans-semibold, guardiansans-fallback, sans-serif;
+  --header-font-family: guardiansans-medium, guardiansans-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 14px;
+  --body-font-size-s: 12px;
+  --body-font-size-xs: 10px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
+  --heading-font-size-xxl: 28px;
   --heading-font-size-xl: 24px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 16px;
+  --heading-font-size-s: 14px;
+  --heading-font-size-xs: 12px;
+
+  /* display sizes (hero/feature text) */
+  --display-font-size: 40px;
+
+  /* spacing */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
 
   /* nav height */
   --nav-height: 64px;
-}
 
-[class*='reicons-']:before {
-    display: inline-block;
-    font-family: 'royalenfield icon';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-[class*='icon-']:before {
-    display: inline-block;
-    font-family: 'reicons';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
+  /* transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
 }
 
 @media (width >= 900px) {
   :root {
     /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
+    --body-font-size-m: 14px;
+    --body-font-size-s: 12px;
+    --body-font-size-xs: 10px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 22px;
-    --heading-font-size-l: 18px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-xxl: 32px;
+    --heading-font-size-xl: 28px;
+    --heading-font-size-l: 24px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 16px;
+    --heading-font-size-xs: 14px;
+
+    /* display sizes */
+    --display-font-size: 60px;
   }
+}
+
+/* icon fonts */
+[class*='reicons-']::before {
+  display: inline-block;
+  font-family: 'royalenfield icon', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*='icon-']::before {
+  display: inline-block;
+  font-family: reicons, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* fallback fonts */
+@font-face {
+  font-family: montserrat-fallback;
+  size-adjust: 112%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: guardiansans-fallback;
+  size-adjust: 90%;
+  src: local('Arial Narrow'), local('Arial');
 }
 
 body {
@@ -99,7 +121,8 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 body.appear {
@@ -132,6 +155,8 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -180,42 +205,47 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/* buttons */
+/* buttons - primary (glass/frosted style) */
 a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: 0;
+  border-radius: 0;
+  padding: 13px 24px;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  text-transform: uppercase;
+  background-color: var(--overlay-bg);
+  backdrop-filter: blur(5px);
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: background-color var(--transition-base);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: rgb(100 100 100 / 80%);
   cursor: pointer;
 }
 
@@ -223,13 +253,23 @@ button:disabled,
 button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
+  opacity: 0.5;
 }
 
+/* buttons - secondary (bordered/golden style) */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: transparent;
+  backdrop-filter: none;
+  border: 1px solid #808080;
+  color: var(--accent-gold);
+  text-transform: none;
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  border-color: var(--accent-gold);
+  background-color: transparent;
 }
 
 main img {
@@ -251,13 +291,13 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
 }
 
 main > .section > div {
   max-width: 1200px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 main > .section:first-of-type {
@@ -270,476 +310,176 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* section metadata - dark (default for Royal Enfield) */
+main .section.dark {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--spacing-l) 0;
+}
+
+main .section.dark a:any-link {
+  color: var(--link-color);
+}
+
+main .section.dark a:hover {
+  color: var(--link-hover-color);
+}
+
+/* section metadata - light variant */
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+  color: var(--text-color);
   margin: 0;
   padding: 40px 0;
 }
 
+/* legacy section variants */
 main .section.retheme {
   background-color: #212529;
   color: #fff;
-  h2 {
-    text-align:center;
-  }
+}
+
+main .section.retheme h2 {
+  text-align: center;
 }
 
 main .section.icontheme {
   background-color: #212121;
   color: #fff;
-  h2 {
-    text-align:center;
-  }
+}
+
+main .section.icontheme h2 {
+  text-align: center;
 }
 
 main .section.nomargin {
-  padding:0;
-  margin:0;
-  h2 {
-     margin: 0;
-     padding: 15px 0;
-  }
-  .tabs-title h2{
-    padding: 0px;
-  }
+  padding: 0;
+  margin: 0;
 }
+
+main .section.nomargin h2 {
+  margin: 0;
+  padding: 15px 0;
+}
+
+main .section.nomargin .tabs-title h2 {
+  padding: 0;
+}
+
+/* icon classes */
 @keyframes hvr-icon-wobble-horizontal {
-    16.65% {
-        transform: translateX(2px)
-    }
-
-    33.3% {
-        transform: translateX(-1px)
-    }
-
-    49.95% {
-        transform: translateX(1px)
-    }
-
-    66.6% {
-        transform: translateX(-1px)
-    }
-
-    83.25% {
-        transform: translateX(1px)
-    }
-
-    100% {
-        transform: translateX(0)
-    }
-}
-
-
-.icon-arrow-forward:before {
-    content: '\0041'
-}
-
-.icon-button-arrow:before {
-    content: '\0042'
-}
-
-.icon-arrow-down:before {
-    content: '\0043'
-}
-
-.icon-globe:before {
-    content: '\0045'
-}
-
-.icon-fb:before {
-    content: '\0046'
-}
-
-.icon-tw:before {
-    content: '\0047'
-}
-
-.icon-yt:before {
-    content: '\0048'
-}
-
-.icon-ig:before {
-    content: '\0049'
-}
-
-.icon-hand-point:before {
-    content: '\004a'
-}
-
-.icon-map-store-point:before {
-    content: '\004b'
-}
-
-.icon-thread:before {
-    content: '\004c'
-}
-
-.icon-ride-out:before {
-    content: '\004d'
-}
-
-.icon-star:before {
-    content: '\004e'
-}
-
-.icon-star-filled:before {
-    content: '\004f'
-}
-
-.icon-date:before {
-    content: '\0050'
-}
-
-.icon-play:before {
-    content: '\0051'
-}
-
-.icon-download:before {
-    content: '\0052'
-}
-
-.icon-destination:before {
-    content: '\0053'
-}
-
-.icon-distance:before {
-    content: '\0054'
-}
-
-.icon-duration:before {
-    content: '\0055'
-}
-
-.icon-origin:before {
-    content: '\0056'
-}
-
-.icon-price:before {
-    content: '\0057'
-}
-
-.icon-hilly-terrain:before {
-    content: '\0058'
-}
-
-.icon-re-store-point:before {
-    content: '\0059'
-}
-
-.icon-re-service-point:before {
-    content: '\005a'
-}
-
-.icon-after_sales:before {
-    content: '\0061'
-}
-
-.icon-country-side:before {
-    content: '\0062'
-}
-
-.icon-customisation:before {
-    content: '\0063'
-}
-
-.icon-desert:before {
-    content: '\0064'
-}
-
-.icon-dirt-track:before {
-    content: '\0065'
-}
-
-.icon-highways:before {
-    content: '\0066'
-}
-
-.icon-off-roading:before {
-    content: '\0067'
-}
-
-.icon-members:before {
-    content: '\0068'
-}
-
-.icon-motorcycle:before {
-    content: '\0069'
-}
-
-.icon-motorcycle_maintainance:before {
-    content: '\006a'
-}
-
-.icon-new_to_motorcycling:before {
-    content: '\006b'
-}
-
-.icon-post:before {
-    content: '\006c'
-}
-
-.icon-pause:before {
-    content: '\006d'
-}
-
-.icon-time:before {
-    content: '\006e'
-}
-
-.icon-eye:before {
-    content: '\006f'
-}
-
-.icon-close:before {
-    content: '\0070'
-}
-
-.icon-visible:before {
-    content: '\0071'
-}
-
-.icon-invisible:before {
-    content: '\0072'
-}
-
-.icon-ribbon:before {
-    content: '\0073'
-}
-
-.icon-call:before {
-    content: '\0074'
-}
-
-.icon-chat:before {
-    content: '\0075'
-}
-
-.icon-faq:before {
-    content: '\0076'
-}
-
-.icon-check:before {
-    content: '\0077'
-}
-
-.icon-mail:before {
-    content: '\0078'
-}
-
-.icon-rsa:before {
-    content: '\0079'
-}
-
-.icon-arrow-backward:before {
-    content: '\007a'
-}
-
-.icon-arrow-up:before {
-    content: '\0030'
-}
-
-.icon-user:before {
-    content: '\0031'
-}
-
-.icon-delet:before {
-    content: '\0032'
-}
-
-.icon-edit:before {
-    content: '\0033'
-}
-
-.icon-muted:before {
-    content: '\0034'
-}
-
-.icon-unmute:before {
-    content: '\0035'
-}
-
-.icon-finance:before {
-    content: '\0036'
-}
-
-.icon-gplus:before {
-    content: '\0037'
-}
-
-.icon-motorcycle-accessories:before {
-    content: '\0038'
-}
-
-.icon-arrow-down-double:before {
-    content: '\0039'
-}
-
-.icon-plus:before {
-    content: '\0021'
-}
-
-.icon-rupee:before {
-    content: '\0022'
-}
-
-.icon-motorcycle-men:before {
-    content: '\0023'
-}
-
-.icon-location:before {
-    content: '\0024'
-}
-
-.icon-minus:before {
-    content: '\0025'
-}
-
-.icon-my-motorcycle:before {
-    content: '\0026'
-}
-
-.icon-my-discussions:before {
-    content: '\0027'
-}
-
-.icon-international:before {
-    content: '\0028'
-}
-
-.icon-new-branch-members:before {
-    content: '\0028'
-}
-
-.icon-corporate:before {
-    content: '\0029'
-}
-
-.icon-experimental-partners:before {
-    content: '\0029'
-}
-
-.icon-awards:before {
-    content: '\002a'
-}
-
-.icon-offers:before {
-    content: '\002a'
-}
-
-.icon-on-site-minor-repairs:before {
-    content: '\002b'
-}
-
-.icon-vehicle-breakdown:before {
-    content: '\002c'
-}
-
-.icon-battery-drain:before {
-    content: '\002d'
-}
-
-.icon-incorrect-fuelling:before {
-    content: '\002e'
-}
-
-.icon-fuel-delivery:before {
-    content: '\002f'
-}
-
-.icon-flat-tyre-assistance:before {
-    content: '\005b'
-}
-
-.icon-key-lock-out:before {
-    content: '\005c'
-}
-
-.icon-medical-referral:before {
-    content: '\005d'
-}
-
-.icon-announcement:before {
-    content: '\005e'
-}
-
-.icon-financial:before {
-    content: '\005f'
-}
-
-.icon-cart:before {
-    content: '\0060'
-}
-
-.icon-events:before {
-    content: '\007b'
-}
-
-.icon-vehicle-accident:before {
-    content: '\007c'
-}
-
-.icon-accessories:before {
-    content: '\007d'
-}
-
-.icon-local-rides:before {
-    content: '\007d'
-}
-
-.icon-product-launches:before {
-    content: '\007e'
-}
-
-.icon-european-rides:before {
-    content: '\007e'
-}
-
-.icon-difficulty:before {
-    content: '\003f'
-}
-
-.icon-reviews:before {
-    content: '\003d'
-}
-
-.icon-product-reviews:before {
-    content: '\003b'
-}
-
-.icon-features-branch-profiles:before {
-    content: '\003b'
-}
-
-.icon-icon-public:before {
-    content: '\0040'
-}
-
-.icon-icon-private:before {
-    content: '\003c'
-}
-
-.icon-icon-closed:before {
-    content: '\003e'
-}
-
-.icon-camera:before {
-    content: '\20b9'
-}
-
-.icon-eurorides:before {
-    content: '\007e'
-}
-
-.icon-localrides:before {
-    content: '\007d'
-}
-
-.icon-branchprofiles:before {
-    content: '\0029'
-}
-
-.icon-branchmember:before {
-    content: '\0028'
-}
+  16.65% { transform: translateX(2px); }
+  33.3% { transform: translateX(-1px); }
+  49.95% { transform: translateX(1px); }
+  66.6% { transform: translateX(-1px); }
+  83.25% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+.icon-arrow-forward::before { content: '\0041'; }
+.icon-button-arrow::before { content: '\0042'; }
+.icon-arrow-down::before { content: '\0043'; }
+.icon-globe::before { content: '\0045'; }
+.icon-fb::before { content: '\0046'; }
+.icon-tw::before { content: '\0047'; }
+.icon-yt::before { content: '\0048'; }
+.icon-ig::before { content: '\0049'; }
+.icon-hand-point::before { content: '\004a'; }
+.icon-map-store-point::before { content: '\004b'; }
+.icon-thread::before { content: '\004c'; }
+.icon-ride-out::before { content: '\004d'; }
+.icon-star::before { content: '\004e'; }
+.icon-star-filled::before { content: '\004f'; }
+.icon-date::before { content: '\0050'; }
+.icon-play::before { content: '\0051'; }
+.icon-download::before { content: '\0052'; }
+.icon-destination::before { content: '\0053'; }
+.icon-distance::before { content: '\0054'; }
+.icon-duration::before { content: '\0055'; }
+.icon-origin::before { content: '\0056'; }
+.icon-price::before { content: '\0057'; }
+.icon-hilly-terrain::before { content: '\0058'; }
+.icon-re-store-point::before { content: '\0059'; }
+.icon-re-service-point::before { content: '\005a'; }
+/* stylelint-disable-next-line selector-class-pattern */
+.icon-after_sales::before { content: '\0061'; }
+.icon-country-side::before { content: '\0062'; }
+.icon-customisation::before { content: '\0063'; }
+.icon-desert::before { content: '\0064'; }
+.icon-dirt-track::before { content: '\0065'; }
+.icon-highways::before { content: '\0066'; }
+.icon-off-roading::before { content: '\0067'; }
+.icon-members::before { content: '\0068'; }
+.icon-motorcycle::before { content: '\0069'; }
+/* stylelint-disable-next-line selector-class-pattern */
+.icon-motorcycle_maintainance::before { content: '\006a'; }
+/* stylelint-disable-next-line selector-class-pattern */
+.icon-new_to_motorcycling::before { content: '\006b'; }
+.icon-post::before { content: '\006c'; }
+.icon-pause::before { content: '\006d'; }
+.icon-time::before { content: '\006e'; }
+.icon-eye::before { content: '\006f'; }
+.icon-close::before { content: '\0070'; }
+.icon-visible::before { content: '\0071'; }
+.icon-invisible::before { content: '\0072'; }
+.icon-ribbon::before { content: '\0073'; }
+.icon-call::before { content: '\0074'; }
+.icon-chat::before { content: '\0075'; }
+.icon-faq::before { content: '\0076'; }
+.icon-check::before { content: '\0077'; }
+.icon-mail::before { content: '\0078'; }
+.icon-rsa::before { content: '\0079'; }
+.icon-arrow-backward::before { content: '\007a'; }
+.icon-arrow-up::before { content: '\0030'; }
+.icon-user::before { content: '\0031'; }
+.icon-delet::before { content: '\0032'; }
+.icon-edit::before { content: '\0033'; }
+.icon-muted::before { content: '\0034'; }
+.icon-unmute::before { content: '\0035'; }
+.icon-finance::before { content: '\0036'; }
+.icon-gplus::before { content: '\0037'; }
+.icon-motorcycle-accessories::before { content: '\0038'; }
+.icon-arrow-down-double::before { content: '\0039'; }
+.icon-plus::before { content: '\0021'; }
+.icon-rupee::before { content: '\0022'; }
+.icon-motorcycle-men::before { content: '\0023'; }
+.icon-location::before { content: '\0024'; }
+.icon-minus::before { content: '\0025'; }
+.icon-my-motorcycle::before { content: '\0026'; }
+.icon-my-discussions::before { content: '\0027'; }
+.icon-international::before { content: '\0028'; }
+.icon-new-branch-members::before { content: '\0028'; }
+.icon-corporate::before { content: '\0029'; }
+.icon-experimental-partners::before { content: '\0029'; }
+.icon-awards::before { content: '\002a'; }
+.icon-offers::before { content: '\002a'; }
+.icon-on-site-minor-repairs::before { content: '\002b'; }
+.icon-vehicle-breakdown::before { content: '\002c'; }
+.icon-battery-drain::before { content: '\002d'; }
+.icon-incorrect-fuelling::before { content: '\002e'; }
+.icon-fuel-delivery::before { content: '\002f'; }
+.icon-flat-tyre-assistance::before { content: '\005b'; }
+.icon-key-lock-out::before { content: '\005c'; }
+.icon-medical-referral::before { content: '\005d'; }
+.icon-announcement::before { content: '\005e'; }
+.icon-financial::before { content: '\005f'; }
+.icon-cart::before { content: '\0060'; }
+.icon-events::before { content: '\007b'; }
+.icon-vehicle-accident::before { content: '\007c'; }
+.icon-accessories::before { content: '\007d'; }
+.icon-local-rides::before { content: '\007d'; }
+.icon-product-launches::before { content: '\007e'; }
+.icon-european-rides::before { content: '\007e'; }
+.icon-difficulty::before { content: '\003f'; }
+.icon-reviews::before { content: '\003d'; }
+.icon-product-reviews::before { content: '\003b'; }
+.icon-features-branch-profiles::before { content: '\003b'; }
+.icon-icon-public::before { content: '\0040'; }
+.icon-icon-private::before { content: '\003c'; }
+.icon-icon-closed::before { content: '\003e'; }
+.icon-camera::before { content: '\20b9'; }
+.icon-eurorides::before { content: '\007e'; }
+.icon-localrides::before { content: '\007d'; }
+.icon-branchprofiles::before { content: '\0029'; }
+.icon-branchmember::before { content: '\0028'; }

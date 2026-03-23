@@ -1,80 +1,49 @@
-/* stylelint-disable max-line-length */
-@font-face {
-  font-family: roboto-condensed;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-condensed-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+/* stylelint-disable */
 
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+/* Montserrat - Google Fonts (Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
+/* GuardianSans - Self-hosted */
 @font-face {
   font-family: 'guardiansans-regular';
   src: url('../fonts/guardiansans-regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'guardiansans-medium';
   src: url('../fonts/guardiansans-medium.woff') format('woff');
-  font-weight: 400;
-  font-style: normal
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'guardiansans-semibold';
   src: url('../fonts/guardiansans-semibold.woff') format('woff');
-  font-weight: 400;
-  font-style: normal
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: 'montserrat-regular';
-  src: url('../fonts/montserrat-regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal
-}
-
-
+/* Icon Fonts */
 @font-face {
   font-family: 'reicons';
   src: url('../fonts/reicons.woff') format('woff');
   font-weight: normal;
-  font-style: normal
+  font-style: normal;
+  font-display: block;
 }
 
 @font-face {
-    font-family: 'royalenfield icon';
-    src: url('../fonts/royalenfield-icon.eot');
-    src: url('../fonts/royalenfield-icon.eot?#iefix') format('embedded-opentype'),url('../fonts/royalenfield-icon.woff') format('woff'),url('../fonts/royalenfield-icon.ttf') format('truetype'),url('../fonts/royalenfield-icon.svg#royalenfield-icon') format('svg');
-    font-weight: normal;
-    font-style: normal
+  font-family: 'royalenfield icon';
+  src: url('../fonts/royalenfield-icon.eot');
+  src: url('../fonts/royalenfield-icon.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/royalenfield-icon.woff') format('woff'),
+       url('../fonts/royalenfield-icon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }

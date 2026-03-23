@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-culture",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-20T05:15:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.royalenfield.com/in/en/home/",
+    "originPage": "Royal Enfield India Homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "culture-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + title",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["lifestyle content cards", "culture/brand story cards", "editorial content grids"],
+    "notSuitableFor": ["product listings", "data-heavy cards", "pricing tables"]
+  },
+  "usage": {
+    "pagesUsing": ["/in/en/home/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T05:15:00.000Z"
+  }
+}

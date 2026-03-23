@@ -1,0 +1,103 @@
+/* ==========================================================================
+   columns-locator — "Locate Us" store finder section
+   Original: Royal Enfield India Homepage
+   Pattern: Background image, 2-col text + search (search not in EDS content)
+   ========================================================================== */
+
+/* --- Section container — background image (no gradient overlay per original) --- */
+main .section.dark.columns-locator-container {
+  position: relative;
+  padding: 87px 56px 86px;
+  box-sizing: border-box;
+  min-height: 400px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('https://www.royalenfield.com/content/dam/revamp-dam/home/locate-us/locate-us.webp');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* --- Block wrapper — constrain content width to match original (1040px inner) --- */
+.columns-locator-wrapper {
+  padding: 0;
+  max-width: 1040px;
+}
+
+/* --- Two-column flex layout --- */
+.columns-locator > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Left column — text content (heading + description) */
+.columns-locator > div > div:first-child {
+  width: 38%;
+  flex-shrink: 0;
+}
+
+/* Right column — hidden (original has interactive search form, not in EDS content) */
+.columns-locator > div > .columns-locator-img-col {
+  display: none;
+}
+
+/* --- Heading — "Locate Us" --- */
+.columns-locator h3 {
+  font-family: var(--heading-font-family, var(--body-font-family));
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0 0 10px;
+  text-transform: none;
+}
+
+/* --- Description text --- */
+.columns-locator p {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #fff;
+  margin: 0;
+}
+
+/* --- Hide "View More" CTA (not visible in original) --- */
+.columns-locator .button-container {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+@media (width >= 768px) and (width < 1200px) {
+  main .section.dark.columns-locator-container {
+    padding: 60px 32px 50px;
+    min-height: 350px;
+  }
+
+  .columns-locator > div > div:first-child {
+    width: 50%;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile
+   ========================================================================== */
+@media (width < 768px) {
+  main .section.dark.columns-locator-container {
+    padding: 40px 24px;
+    min-height: auto;
+  }
+
+  .columns-locator h3 {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+}

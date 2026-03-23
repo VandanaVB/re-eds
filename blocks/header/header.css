@@ -210,7 +210,7 @@ header nav .nav-sections ul > li > ul > li {
     display: inline-block;
     position: absolute;
     top: 2.5em;
-    right: 0px;
+    right: 0;
     transform: rotate(135deg);
     width: 5px;
     height: 5px;
@@ -259,6 +259,7 @@ header nav .nav-sections ul > li > ul > li {
     color: #fff;
     white-space: initial;
   }
+
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true']{
     color: #da291c;
   }
@@ -275,7 +276,7 @@ header nav .nav-sections ul > li > ul > li {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
-  }**/
+  } **/
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
@@ -286,9 +287,11 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools .default-content-wrapper > ul {
   display: flex;
   align-items: center;
+  list-style: none;
+  padding-left: 0;
   letter-spacing: 1px;
   font-size:12px;
-  margin: 0px;
+  margin: 0;
 }
 
 header nav .nav-tools .default-content-wrapper > ul > li {
@@ -304,7 +307,7 @@ header nav .nav-tools .nav-drop::after {
   display: inline-block;
   position: absolute;
   top: 2.5em;
-  right: 0px;
+  right: 0;
   transform: rotate(135deg);
   width: 5px;
   height: 5px;
