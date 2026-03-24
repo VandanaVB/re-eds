@@ -140,13 +140,13 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
+    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navItem) => {
+      if (navItem.querySelector('ul')) navItem.classList.add('nav-drop');
+      navItem.addEventListener('click', () => {
         if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
+          const expanded = navItem.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          navItem.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         }
       });
     });
@@ -154,7 +154,7 @@ export default async function decorate(block) {
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     navTools.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navTool) => {
-     if (navTool.querySelector('a')) navTool.classList.add('nav-drop');
+      if (navTool.querySelector('ul')) navTool.classList.add('nav-drop');
     });
   }
 

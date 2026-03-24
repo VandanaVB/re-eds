@@ -1,0 +1,53 @@
+- [![Royal Enfield](https://www.royalenfield.com/content/dam/RE-Platform-Revamp/re-revamp-commons/logo.webp)](/)
+
+---
+
+- **Motorcycles**
+  - [Himalayan 450](/in/en/motorcycles/new-himalayan/)
+  - [Guerrilla 450](/in/en/motorcycles/guerrilla-450/)
+  - [Classic 350](/in/en/motorcycles/classic-350/)
+  - [Classic 650](/in/en/motorcycles/classic-650/)
+  - [Bullet 650](/in/en/motorcycles/bullet-650/)
+  - [Hunter 350](/in/en/motorcycles/hunter-350/)
+  - [Meteor 350](/in/en/motorcycles/meteor/)
+  - [Shotgun 650](/in/en/motorcycles/shotgun-650/)
+  - [Continental GT 650](/in/en/motorcycles/continental-gt/)
+  - [Interceptor 650](/in/en/motorcycles/interceptor/)
+  - [Super Meteor 650](/in/en/motorcycles/super-meteor-650/)
+  - [Scram 440](/in/en/motorcycles/scram-440/)
+  - [Bear 650](/in/en/motorcycles/bear-650/)
+  - [Goan Classic 350](/in/en/motorcycles/goan-classic-350/)
+  - [Bullet 350](/in/en/motorcycles/bullet-350/)
+- **Shop**
+  - [Personalise Your Ride](https://makeityours.royalenfield.com/)
+  - [Explore Accessories](/in/en/gma/)
+  - [Riding Gear](https://store.royalenfield.com/en/riding-gear)
+  - [Apparel](https://store.royalenfield.com/en/lifestyle-apparel)
+  - [Rentals](/in/en/rentals/)
+  - [Tours](/in/en/tours/)
+  - [REOwn](/in/en/reown/)
+- **Service**
+  - [Book a Service](/in/en/service/)
+  - [Service Cost Calculator](/in/en/service/#scc)
+  - [Service Centres](/in/en/locate-us/)
+  - [Service Packages](/in/en/service/ride-sure)
+- **Ride**
+  - [Rides & Events](/in/en/rides-calendar/)
+  - [Tours](/in/en/tours/)
+  - [Motoverse](/in/en/rides/events/motoverse/)
+  - [Rentals](/in/en/rentals/)
+- **MotoCulture**
+  - [Royal Enfield TV](https://tv.royalenfield.com/)
+  - [Custom World](/in/en/custom-world/)
+  - [Art of Motorcycling](/in/en/art-of-motorcycling/)
+  - [MLG Comics](/in/en/mlg/)
+- **Explore**
+  - [News & Media](/in/en/our-world/media/news/)
+  - [Legacy Since 1901](/in/en/our-world/since-1901/)
+  - [Made In Madras](/in/en/made-in-madras/)
+  - [Social Mission](https://socialmission.royalenfield.com/)
+
+---
+
+- [Locate Us](/in/en/locate-us/)
+- [Book a Test Ride](/in/en/forms/book-a-test-ride/)

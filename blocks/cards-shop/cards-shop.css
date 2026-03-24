@@ -1,0 +1,196 @@
+/* ==========================================================================
+   cards-shop — Shop category cards (Apparel, Accessories, Ride Sure)
+   Original: Royal Enfield India Homepage — .shop-section
+   Pattern: Dark section, 3 tall image cards with text + CTA below
+   ========================================================================== */
+
+/* --- Section container — dark background --- */
+main .section.dark.cards-shop-container {
+  background-color: #181818;
+  padding: 64px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 24px;
+  max-width: 100%;
+}
+
+/* --- Section heading "Shop" — full width, centered --- */
+.cards-shop-container > .default-content-wrapper {
+  width: 100%;
+  flex-basis: 100%;
+  text-align: center;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.cards-shop-container > .default-content-wrapper h3 {
+  font-family: var(--heading-font-family, var(--body-font-family));
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+/* --- Card wrappers — equal-width flex items (3 across) --- */
+.cards-shop-wrapper {
+  flex: 0 1 324px;
+  max-width: 324px;
+  padding: 0;
+}
+
+/* --- Block reset --- */
+.cards-shop > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.cards-shop > ul > li {
+  background-color: #181818;
+  overflow: hidden;
+  border: 1px solid #373737;
+  border-image: linear-gradient(240deg, #373737, #373737, #373737) 1;
+  transition: border-image-source 0.3s;
+}
+
+/* Card hover — shimmer gradient border */
+.cards-shop > ul > li:hover {
+  border-image-source: linear-gradient(232deg, #fff, #191919, #fff);
+}
+
+/* --- Card image — tall portrait crop with gradient overlay --- */
+.cards-shop .cards-shop-card-image {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-shop > ul > li img {
+  width: 100%;
+  aspect-ratio: 322 / 450;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gradient overlay blending image bottom into dark background */
+.cards-shop .cards-shop-card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(357deg, #191818 10%, rgb(25 24 24 / 0%) 73%);
+  pointer-events: none;
+}
+
+/* --- Card body — text content below image --- */
+.cards-shop .cards-shop-card-body {
+  padding: 0 14px 20px;
+  text-align: center;
+  background-color: #181818;
+  margin: 0;
+}
+
+/* Card title */
+.cards-shop .cards-shop-card-body h3 {
+  font-family: var(--heading-font-family, var(--body-font-family));
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  margin: 0;
+  padding: 0 6px;
+  text-transform: none;
+}
+
+/* Card description */
+.cards-shop .cards-shop-card-body > p {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #a6a6a6;
+  margin: 16px 0 0;
+}
+
+/* CTA button container (paragraph wrapping the link) */
+.cards-shop .cards-shop-card-body > p:last-child {
+  margin: 18px 25px 0;
+}
+
+/* CTA link — outlined button style */
+.cards-shop .cards-shop-card-body a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #cacaca;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.cards-shop .cards-shop-card-body a:hover {
+  border-color: #fff;
+}
+
+/* --- Hide trailing empty default-content-wrapper in section --- */
+.cards-shop-container > .default-content-wrapper:last-child:empty,
+.cards-shop-container > .default-content-wrapper:last-child:not(:first-child) {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+@media (width >= 768px) and (width < 1200px) {
+  main .section.dark.cards-shop-container {
+    padding: 48px 20px;
+    gap: 0 16px;
+  }
+
+  .cards-shop-wrapper {
+    flex: 0 1 280px;
+    max-width: 280px;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile
+   ========================================================================== */
+@media (width < 768px) {
+  main .section.dark.cards-shop-container {
+    padding: 40px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px 0;
+  }
+
+  .cards-shop-container > .default-content-wrapper {
+    margin-bottom: 0;
+  }
+
+  .cards-shop-container > .default-content-wrapper h3 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .cards-shop-wrapper {
+    flex: 0 1 auto;
+    max-width: 400px;
+    width: 100%;
+  }
+}
