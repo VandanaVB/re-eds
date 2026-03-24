@@ -71,7 +71,7 @@ if (!token) {
 
 // Files to upload: [localPath, remotePath]
 const uploads = [
-  ['content/in/en/home.html', 'in/en/home.html'],
+  ['da-upload/in/en/home.html', 'in/en/home.html'],
   ['nav.html', 'nav.html'],
 ];
 
