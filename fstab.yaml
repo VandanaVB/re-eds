@@ -1,5 +1,3 @@
 mountpoints:
   /:
     url: "https://content.da.live/vandanavb/re-eds"
-    type: "markup"
-    suffix: ".html"
