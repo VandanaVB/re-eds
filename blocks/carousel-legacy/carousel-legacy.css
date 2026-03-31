@@ -1,0 +1,410 @@
+/* ==========================================================================
+   carousel-legacy — "Legacy since 1901" heritage timeline carousel
+   Original: Royal Enfield India Homepage
+   Pattern: Vertical cards carousel with gradient overlay, glassmorphism nav
+   ========================================================================== */
+
+/* --- Section container --- */
+main .section.dark.carousel-legacy-container {
+  background-color: #181818;
+  padding: 44px 0 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* --- "Legacy since 1901" heading (default content before block) --- */
+main .section.dark.carousel-legacy-container > .default-content-wrapper:first-child {
+  display: none;
+}
+
+/* --- Section-level navigation (injected by JS) --- */
+.carousel-legacy-section-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+  padding: 0 4.9rem;
+  box-sizing: border-box;
+}
+
+.carousel-legacy-section-nav button {
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(124 110 110 / 30%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  backdrop-filter: blur(11px);
+  background:
+    linear-gradient(rgb(38 38 38), rgb(38 38 38)) padding-box,
+    linear-gradient(133deg, rgb(255 255 255 / 33%), rgb(255 255 255 / 1%) 84%) border-box;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-legacy-section-nav button:hover {
+  background:
+    linear-gradient(rgb(58 58 58), rgb(58 58 58)) padding-box,
+    linear-gradient(133deg, rgb(255 255 255 / 50%), rgb(255 255 255 / 2%) 84%) border-box;
+}
+
+.carousel-legacy-section-nav button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23fff' d='M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512L340.864 831.872a30.59 30.59 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z' stroke-width='45' stroke='%23fff'/%3E%3C/svg%3E");
+  background-position: 50% center;
+  background-repeat: no-repeat;
+  background-size: 35%;
+}
+
+.carousel-legacy-section-nav button.legacy-prev::after {
+  transform: rotate(180deg);
+}
+
+/* --- Pagination indicators --- */
+.carousel-legacy-section-indicators {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 16px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-legacy-section-indicators li {
+  width: 30px;
+  height: 3px;
+  background: rgb(255 255 255 / 50%);
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-legacy-section-indicators li.active {
+  background: #fff;
+}
+
+/* --- Carousel area (holds all carousel-legacy-wrappers) --- */
+.carousel-legacy-carousel-area {
+  position: relative;
+  max-width: 90%;
+  height: 470px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* --- Individual carousel-legacy wrappers --- */
+main .section.dark.carousel-legacy-container .carousel-legacy-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out;
+  transform: scale(0.95) translateY(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+main .section.dark.carousel-legacy-container .carousel-legacy-wrapper.legacy-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+main .section.dark.carousel-legacy-container .carousel-legacy-wrapper:not(.legacy-active) {
+  opacity: 0.6;
+  transform: scale(0.92) translateY(16px);
+}
+
+/* --- Block-level resets --- */
+.carousel-legacy {
+  padding: 0;
+}
+
+.carousel-legacy .carousel-legacy-slides-container {
+  position: relative;
+  height: 100%;
+}
+
+.carousel-legacy .carousel-legacy-slides,
+.carousel-legacy .carousel-legacy-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-legacy .carousel-legacy-slides {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-legacy .carousel-legacy-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Individual slide --- */
+.carousel-legacy .carousel-legacy-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background-color: #000;
+}
+
+/* --- Slide image — full bleed --- */
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image p {
+  margin: 0;
+  height: 100%;
+}
+
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image picture > img,
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image > p > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* --- Content overlay — gradient from bottom --- */
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 5px 5px 30px;
+  margin: 0;
+  background: linear-gradient(0deg, #000, transparent);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Year heading (e.g. "1901") — hidden because images already contain year overlay */
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content h2 {
+  display: none;
+}
+
+/* Description text */
+.carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content p {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  width: 88%;
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+
+/* --- Hide per-block indicators and nav (section-level controls used instead) --- */
+.carousel-legacy .carousel-legacy-slide-indicators,
+.carousel-legacy .carousel-legacy-navigation-buttons,
+.carousel-legacy nav {
+  display: none;
+}
+
+/* --- "Legacy since 1901" section heading (injected by JS) --- */
+.carousel-legacy-section-heading {
+  font-family: var(--heading-font-family);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #fff;
+  padding-left: 5.5%;
+  margin: 0 0 24px;
+}
+
+/* --- EXPLORE CTA (bottom default content) --- */
+main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child {
+  text-align: center;
+  margin-top: 30px;
+  padding: 0;
+}
+
+main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child .button-container {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 312px;
+  height: 56px;
+  padding: 12px 90px;
+  margin: 0 auto;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22.4px;
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+  background: linear-gradient(
+    112.38deg,
+    rgb(255 255 255 / 50%) -120.84%,
+    rgb(255 255 255 / 10%) 79.67%
+  );
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child a.button:hover {
+  background: linear-gradient(
+    104.31deg,
+    rgb(255 255 255 / 70%) -84.21%,
+    transparent 102.45%
+  );
+  color: #fff;
+}
+
+/* Hide the empty image in the last default-content-wrapper */
+main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child p:last-child:has(img[src='']) {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+@media (width >= 768px) and (width < 1200px) {
+  .carousel-legacy-section-nav {
+    padding: 0 2.5rem;
+  }
+
+  .carousel-legacy-carousel-area {
+    max-width: 95%;
+    height: 420px;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image picture > img,
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image > p > img {
+    object-fit: contain;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile
+   ========================================================================== */
+@media (width < 768px) {
+  main .section.dark.carousel-legacy-container {
+    background-color: #000;
+    padding: 0 0 32px;
+  }
+
+  .carousel-legacy-section-heading {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 10px 0 16px;
+    padding-left: 24px;
+  }
+
+  .carousel-legacy-section-nav {
+    display: none;
+  }
+
+  .carousel-legacy-section-indicators {
+    display: flex;
+  }
+
+  .carousel-legacy-carousel-area {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main .section.dark.carousel-legacy-container .carousel-legacy-wrapper {
+    position: relative;
+    height: auto;
+    display: none;
+  }
+
+  main .section.dark.carousel-legacy-container .carousel-legacy-wrapper.legacy-active {
+    display: block;
+    opacity: 1;
+    transform: none;
+  }
+
+  .carousel-legacy .carousel-legacy-slide {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image {
+    position: relative;
+    height: 222px;
+    overflow: hidden;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-image > p > img {
+    object-fit: cover;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content {
+    position: static;
+    background: #000;
+    padding: 24px 10px 14px;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content h2 {
+    font-size: 32px;
+    width: 100%;
+  }
+
+  .carousel-legacy .carousel-legacy-slide .carousel-legacy-slide-content p {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child {
+    padding: 24px 5% 12px;
+  }
+
+  main .section.dark.carousel-legacy-container > .default-content-wrapper:last-child a.button {
+    width: 100%;
+  }
+}

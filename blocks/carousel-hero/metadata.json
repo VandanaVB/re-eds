@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-20T05:15:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.royalenfield.com/in/en/home/",
+    "originPage": "Royal Enfield India Homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + subtitle + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero banners",
+      "promotional carousels with full-bleed images",
+      "motorcycle showcase sliders"
+    ],
+    "notSuitableFor": [
+      "text-only carousels",
+      "thumbnail galleries",
+      "content-heavy slideshows"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/in/en/home/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T05:15:00.000Z"
+  }
+}

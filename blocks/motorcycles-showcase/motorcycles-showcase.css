@@ -1,0 +1,324 @@
+/* Motorcycles Showcase - Interactive carousel with category tabs */
+
+/* Section container */
+.section:has(.motorcycles-showcase) {
+  background-color: rgb(24 24 24);
+  padding: 0 0 66px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section:has(.motorcycles-showcase) > div {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Block wrapper */
+.motorcycles-showcase {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Section heading — padding matches cards-spotlight for consistent left alignment */
+.motorcycles-showcase .moto-heading {
+  box-sizing: border-box;
+  font-family: var(--heading-font-family);
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 32px;
+  padding: 40px 144px 0;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: left;
+  width: 100%;
+}
+
+/* Category tabs strip */
+.motorcycles-showcase .moto-categories {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  overflow: hidden;
+  scrollbar-width: none;
+  height: 58px;
+  position: relative;
+}
+
+.motorcycles-showcase .moto-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.motorcycles-showcase .moto-cat {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(79 79 79);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s, font-size 0.3s;
+  position: relative;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.motorcycles-showcase .moto-cat.is-active {
+  color: rgb(166 166 166);
+  font-size: 28px;
+  line-height: 38px;
+}
+
+/* Bike names navigation area */
+.motorcycles-showcase .moto-bikes-nav {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto 16px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+}
+
+/* Arrow buttons */
+.motorcycles-showcase .moto-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: rgb(38 38 38);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: border-color 0.2s, background-color 0.2s;
+  padding: 0;
+}
+
+.motorcycles-showcase .moto-arrow:hover {
+  background-color: rgb(50 50 50);
+}
+
+.motorcycles-showcase .moto-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.motorcycles-showcase .moto-prev {
+  left: 10px;
+}
+
+.motorcycles-showcase .moto-next {
+  right: 10px;
+}
+
+/* Bike names container */
+.motorcycles-showcase .moto-bike-names {
+  width: 100%;
+  height: 68px;
+  position: relative;
+  overflow: hidden;
+}
+
+.motorcycles-showcase .moto-bike-name {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateX(0) translateY(-50%);
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(79 79 79);
+  letter-spacing: 1px;
+  line-height: 48px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease, color 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.motorcycles-showcase .moto-bike-name.is-visible {
+  pointer-events: auto;
+}
+
+.motorcycles-showcase .moto-bike-name.is-active {
+  color: #fff;
+}
+
+/* Motorcycle image area */
+.motorcycles-showcase .moto-image-area {
+  width: 100%;
+  max-width: 740px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.motorcycles-showcase .moto-bike-img {
+  max-width: 100%;
+  max-height: 370px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* CTA area */
+.motorcycles-showcase .moto-cta-area {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Know More link - red/accent color (high specificity to override global dark section styles) */
+/* stylelint-disable-next-line no-descending-specificity */
+.section .motorcycles-showcase a.moto-cta-know-more:any-link {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.section .motorcycles-showcase a.moto-cta-know-more:hover {
+  color: rgb(255 60 45);
+}
+
+/* CTA row: Configure + Test Ride side by side */
+.motorcycles-showcase .moto-cta-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+}
+
+/* Configure Now button - white outline */
+/* stylelint-disable-next-line no-descending-specificity */
+.section .motorcycles-showcase a.moto-cta-configure:any-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 53px;
+  border: 1px solid rgb(255 255 255 / 72.5%);
+  background: transparent;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.section .motorcycles-showcase a.moto-cta-configure:hover {
+  background-color: rgb(255 255 255 / 10%);
+  border-color: #fff;
+}
+
+/* Book a Test Ride button - golden/accent style */
+/* stylelint-disable-next-line no-descending-specificity */
+.section .motorcycles-showcase a.moto-cta-test-ride:any-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  height: 53px;
+  border: 1px solid rgb(128 128 128);
+  background: transparent;
+  color: var(--accent-gold);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.section .motorcycles-showcase a.moto-cta-test-ride:hover {
+  background-color: rgb(255 255 255 / 5%);
+  border-color: var(--accent-gold);
+}
+
+.motorcycles-showcase .moto-cta-arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* Tablet responsive */
+@media (width >= 768px) and (width < 1200px) {
+  .motorcycles-showcase .moto-heading {
+    padding: 40px 80px 0;
+  }
+}
+
+/* Mobile responsive */
+@media (width < 768px) {
+  .motorcycles-showcase .moto-heading {
+    font-size: 28px;
+    padding: 24px 24px 0;
+  }
+
+  .motorcycles-showcase .moto-categories {
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .motorcycles-showcase .moto-cat {
+    font-size: 16px;
+  }
+
+  .motorcycles-showcase .moto-bike-name {
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .motorcycles-showcase .moto-image-area {
+    height: 280px;
+  }
+
+  .motorcycles-showcase .moto-bike-img {
+    max-height: 260px;
+  }
+
+  .motorcycles-showcase .moto-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .motorcycles-showcase .moto-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .motorcycles-showcase .moto-cta-row {
+    flex-direction: column;
+  }
+}

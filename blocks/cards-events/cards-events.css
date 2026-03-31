@@ -1,0 +1,249 @@
+/* Cards Events — Latest section: full-bleed image cards with overlay */
+
+/* ---- Section-level styling ---- */
+
+/* Section container padding — higher specificity to override EDS defaults */
+main .section.dark.cards-events-container {
+  padding: 0 144px;
+  box-sizing: border-box;
+}
+
+/* Header row: "Latest" + "VIEW ALL" side by side */
+.cards-events-container > .default-content-wrapper:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  margin-top: 30px;
+}
+
+/* Hide empty image placeholder in header */
+.cards-events-container > .default-content-wrapper:first-child p:has(img[src=""]) {
+  display: none;
+}
+
+/* Hide leaked "Legacy since 1901" heading (belongs to next section) */
+.cards-events-container > .default-content-wrapper:last-child {
+  display: none;
+}
+
+/* "Latest" heading */
+.cards-events-container > .default-content-wrapper:first-child h3 {
+  font-family: var(--heading-font-family, var(--body-font-family));
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 48px;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* "VIEW ALL" link — red text, no button styling */
+.cards-events-container > .default-content-wrapper:first-child .button-container {
+  margin: 0;
+}
+
+.cards-events-container > .default-content-wrapper:first-child .button-container a.button {
+  background: transparent;
+  border: none;
+  color: #da291c;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.cards-events-container > .default-content-wrapper:first-child .button-container a.button:hover {
+  background: transparent;
+  color: #f24d3e;
+}
+
+/* Arrow chevron after VIEW ALL */
+.cards-events-container > .default-content-wrapper:first-child .button-container a.button::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* ---- Block-level styling ---- */
+
+.cards-events-wrapper {
+  padding: 0;
+}
+
+/* Cards list — horizontal flex layout */
+.cards-events > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.cards-events > ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual card — tall portrait with full-bleed image */
+.cards-events > ul > li {
+  position: relative;
+  overflow: hidden;
+  height: 430px;
+  min-width: 320px;
+  flex: 0 0 calc(33.333% - 11px);
+  border: none;
+  background: rgb(32 32 32);
+  cursor: pointer;
+}
+
+/* Card image — fills entire card */
+.cards-events .cards-events-card-image {
+  position: absolute;
+  inset: 0;
+}
+
+.cards-events .cards-events-card-image img,
+.cards-events .cards-events-card-image picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cards-events .cards-events-card-image img {
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover: subtle image zoom */
+.cards-events > ul > li:hover .cards-events-card-image img {
+  transform: scale(1.03);
+}
+
+/* Content overlay at bottom with gradient */
+.cards-events .cards-events-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 24px;
+  z-index: 2;
+}
+
+/* Gradient background behind content */
+.cards-events .cards-events-card-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(0 0 0 / 80%) 70.98%, rgb(33 33 33 / 0%));
+  z-index: -1;
+}
+
+/* Card title */
+.cards-events .cards-events-card-title {
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+  text-align: left;
+  text-transform: none;
+}
+
+/* Divider between title and details */
+.cards-events .cards-events-card-divider {
+  border-top: 1px solid #373737;
+  margin: 8px 0;
+}
+
+/* Location text */
+.cards-events .cards-events-card-location {
+  color: #a6a6a6;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  margin: 10px 0;
+}
+
+/* Date text */
+.cards-events .cards-events-card-date {
+  color: #a6a6a6;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* CTA link — red (high specificity to override dark section a:any-link) */
+main .section.dark .cards-events > ul > li .cards-events-card-cta {
+  color: #da291c;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+main .section.dark .cards-events > ul > li .cards-events-card-cta:hover {
+  color: #f24d3e;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ---- Responsive ---- */
+
+/* Tablet */
+@media (width >= 768px) and (width < 1200px) {
+  main .section.dark.cards-events-container {
+    padding: 0 80px;
+  }
+
+  .cards-events > ul > li {
+    flex: 0 0 calc(50% - 8px);
+    height: 380px;
+  }
+}
+
+/* Mobile */
+@media (width < 768px) {
+  main .section.dark.cards-events-container {
+    padding: 0 24px;
+  }
+
+  .cards-events-container > .default-content-wrapper:first-child h3 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .cards-events-container > .default-content-wrapper:first-child .button-container a.button {
+    font-size: 14px;
+  }
+
+  .cards-events > ul {
+    flex-direction: column;
+  }
+
+  .cards-events > ul > li {
+    flex: none;
+    width: 100%;
+    min-width: unset;
+    height: 338px;
+  }
+}

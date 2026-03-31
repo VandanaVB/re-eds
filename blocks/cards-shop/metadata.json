@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-shop",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-20T05:15:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.royalenfield.com/in/en/home/",
+    "originPage": "Royal Enfield India Homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "shop-category-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + category name + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["product category cards", "shop navigation cards", "e-commerce category grids"],
+    "notSuitableFor": ["blog article cards", "team members", "testimonials"]
+  },
+  "usage": {
+    "pagesUsing": ["/in/en/home/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T05:15:00.000Z"
+  }
+}

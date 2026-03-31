@@ -1,0 +1,223 @@
+/* Hero Carousel - Full-viewport hero with background images and overlay content */
+
+/* Container */
+.carousel-hero-container {
+  padding: 0;
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.carousel-hero-container > div {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Hide default-content-wrappers (preloader artifacts and scroll indicator) */
+.carousel-hero-container .default-content-wrapper {
+  display: none;
+}
+
+.carousel-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Slides wrapper - horizontal scroll */
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slide - full viewport */
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* Background image - full bleed */
+.carousel-hero .carousel-hero-slide-image {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-hero .carousel-hero-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-hero .carousel-hero-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Content overlay - positioned bottom-left */
+.carousel-hero .carousel-hero-slide-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 200px;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+}
+
+.carousel-hero .carousel-hero-slide-content h2 {
+  font-family: var(--heading-bold-font-family);
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+.carousel-hero .carousel-hero-slide-content p {
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(255 255 255 / 80%);
+  margin: 0 0 12px;
+  letter-spacing: 0.5px;
+}
+
+/* CTA button - glass/frosted style */
+.carousel-hero .carousel-hero-slide-content a.button:any-link {
+  display: inline-block;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(66 66 66 / 70%);
+  backdrop-filter: blur(5px);
+  border: 0;
+  border-radius: 0;
+  padding: 13px 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: normal;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.carousel-hero .carousel-hero-slide-content a.button:hover {
+  background-color: rgb(100 100 100 / 80%);
+}
+
+/* Slide indicators - horizontal bars, not circles */
+.carousel-hero .carousel-hero-slide-indicators {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 130px;
+  left: 24px;
+  z-index: 2;
+  background: none;
+  padding: 0;
+  line-height: 0;
+}
+
+.carousel-hero .carousel-hero-slide-indicator {
+  line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-slide-indicator button {
+  width: 30px;
+  height: 3px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: rgb(255 255 255 / 20%);
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: none;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled {
+  width: 45px;
+  background-color: #fff;
+  opacity: 1;
+  cursor: default;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:hover:not(:disabled) {
+  background-color: rgb(255 255 255 / 50%);
+}
+
+/* Navigation arrows - hidden by default (original uses swiper, not arrows) */
+.carousel-hero .carousel-hero-navigation-buttons {
+  display: none;
+}
+
+/* Desktop styles */
+@media (width >= 900px) {
+  .carousel-hero .carousel-hero-slide-content {
+    padding: 0 0 274px 144px;
+    width: 530px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content h2 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content p {
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    bottom: 180px;
+    left: 144px;
+  }
+}
+
+/* Tablet */
+@media (width >= 600px) and (width < 900px) {
+  .carousel-hero .carousel-hero-slide-content {
+    padding: 0 0 220px 80px;
+    width: 400px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content h2 {
+    font-size: 48px;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    bottom: 150px;
+    left: 80px;
+  }
+}
