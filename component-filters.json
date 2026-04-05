@@ -23,33 +23,33 @@
     ]
   },
   {
-    "id": "carousel-hero",
-    "components": [
-      "carousel-hero-item"
-    ]
-  },
-  {
-    "id": "cards-spotlight",
-    "components": [
-      "card-spotlight"
-    ]
-  },
-  {
-    "id": "tabs-showcase",
-    "components": [
-      "tabs-showcase-item"
-    ]
-  },
-  {
     "id": "cards-culture",
     "components": [
-      "card-culture"
+      "card"
     ]
   },
   {
     "id": "cards-events",
     "components": [
-      "card-event"
+      "card"
+    ]
+  },
+  {
+    "id": "cards-shop",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-spotlight",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel-hero",
+    "components": [
+      "carousel-hero-item"
     ]
   },
   {
@@ -59,9 +59,24 @@
     ]
   },
   {
-    "id": "cards-shop",
+    "id": "columns-locator",
     "components": [
-      "card-shop"
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "tabs-showcase",
+    "components": [
+      "tabs-showcase-item"
     ]
   }
 ]
