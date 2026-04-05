@@ -1,5 +1,7 @@
 {
   "project": "AEM XWalk Boilerplate",
   "editUrlLabel": "AEM Editor",
-  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
+  "contentSourceUrl": "https://author-p8803-e21945.adobeaemcloud.com/bin/franklin.delivery/VandanaVB/re-eds/main",
+  "contentSourceType": "markup"
 }
