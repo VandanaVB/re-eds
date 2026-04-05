@@ -12,69 +12,56 @@
       "image",
       "button",
       "title",
-      "hero",
-      "cards",
-      "motocards",
-      "doodle-detail",
-      "supportcards",
-      "columns",
-      "fragment",
-      "tabs",
-      "carousel",
-      "imagetext",
-      "icontext",
-      "dynamic-media-asset",
-      "faqtabs",
-      "featured-cards",
-      "featured-updated-cards"
+      "carousel-hero",
+      "cards-spotlight",
+      "tabs-showcase",
+      "cards-culture",
+      "cards-events",
+      "carousel-legacy",
+      "columns-locator",
+      "cards-shop"
     ]
   },
   {
-    "id": "cards",
+    "id": "carousel-hero",
     "components": [
-      "card"
+      "carousel-hero-item"
     ]
   },
   {
-    "id": "supportcards",
+    "id": "cards-spotlight",
     "components": [
-      "supportcard"
+      "card-spotlight"
     ]
   },
   {
-    "id": "carousel",
+    "id": "tabs-showcase",
     "components": [
-      "slide"
+      "tabs-showcase-item"
     ]
   },
   {
-    "id": "columns",
+    "id": "cards-culture",
     "components": [
-      "column"
+      "card-culture"
     ]
   },
   {
-    "id": "column",
+    "id": "cards-events",
     "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "icontext"
+      "card-event"
     ]
   },
   {
-    "id": "tabs",
+    "id": "carousel-legacy",
     "components": [
-      "imagetext",
-      "tab",
-      "title"
+      "carousel-legacy-item"
     ]
   },
   {
-    "id": "faqtab",
+    "id": "cards-shop",
     "components": [
-      "questionanswer"
+      "card-shop"
     ]
   }
 ]
