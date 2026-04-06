@@ -612,6 +612,7 @@ function decorateBlocks(main) {
  * @returns {Promise}
  */
 async function loadHeader(header) {
+  if (!header) return undefined;
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
@@ -624,6 +625,7 @@ async function loadHeader(header) {
  * @returns {Promise}
  */
 async function loadFooter(footer) {
+  if (!footer) return undefined;
   const footerBlock = buildBlock('footer', '');
   footer.append(footerBlock);
   decorateBlock(footerBlock);
