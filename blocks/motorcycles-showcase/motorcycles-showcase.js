@@ -33,7 +33,7 @@ function parseContent(block) {
         bikeNames.push(text);
       }
     } else if (el.tagName === 'P') {
-      const img = el.querySelector('img');
+      const img = el.querySelector('img') || el.querySelector('picture img');
       const links = el.querySelectorAll('a');
 
       if (links.length > 0) {
