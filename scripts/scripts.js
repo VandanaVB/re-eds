@@ -119,6 +119,9 @@ async function loadEager(doc) {
     decorateMain(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
+  } else {
+    // Universal Editor / franklin.delivery context — no <main> wrapper
+    document.body.classList.add('appear');
   }
 
   try {
